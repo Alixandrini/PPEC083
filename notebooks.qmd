@@ -1,0 +1,13 @@
+---
+title: "Notebooks"
+page-layout: full
+title-block-banner: false
+listing:
+  type: grid                  
+  contents: 
+    - "Notebooks/*.ipynb"          
+  sort: "date desc"
+  categories: true
+  grid-columns: 3             
+  image-height: "180px"       
+---

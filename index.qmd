@@ -1,0 +1,49 @@
+---
+title: "PPEC083"
+---
+# Sensoriamento Remoto 
+
+![Laboratório de Fotogrametria e Sensoriamento Remoto](logo_labfsr.png)
+
+## Módulo 1: Fundamentos e Ambiente (19/08/2026 - 02/09/2026)
+
+    **Semana 1:** Apresentação do curso e configuração do ambiente Python (conda/mamba, VS Code, Jupyter, bibliotecas de GeoAI).
+
+    **Semana 2:** Revisão de manipulação de dados raster e vetoriais em Python (rioxarray, geopandas, rasterio).
+
+    **Semana 3:** Visão geral de GeoAI: aprendizado supervisionado vs. não supervisionado aplicado à observação da Terra.   
+  
+## Módulo 2: Aquisição e Preparação de Dados (09/09/2026 - 23/09/2026)
+
+    **Semana 4:** Acesso programmatico a catálogos STAC (SpatioTemporal Asset Catalog) e APIs abertas (Sentinel, Landsat) via Python.
+
+    **Semana 5:** Pré-processamento, amostragem espacial, criação de máscaras e tiling (recorte de imagens em chips para entrada em modelos).
+
+    **Semana 6:** Rotulagem e preparação de datasets de treino/teste (uso de formatos GeoJSON, Cloud-Optimized GeoTIFF - COG).
+
+## Módulo 3: Tarefas Principais de IA em Sensoriamento Remoto (30/09/2026 - 21/10/2026)
+
+    **Semana 7:** Classificação de Uso e Cobertura da Terra (Pixel-based vs. Object-based): Random Forest, SVM e Redes Convolucionais básicas (CNNs).
+
+    **Semana 8:** Detecção de Objetos: Identificação de alvos específicos (edificações, reservatórios, vegetação específica).
+
+    **Semana 9:** Segmentação Semântica e Instância: Aplicações de U-Net e similares para mapeamento automatizado.
+
+    **Semana 10:** Avaliação de acurácia em GeoAI: Matriz de confusão espacial, métricas IoU (Intersection over Union) e validação cruzada espacial.
+
+ 
+## Módulo 4: Modelos Fundacionais e Embeddings de Satélite (28/10/2026 - 11/11/2026)
+
+    **Semana 11:** Segment Anything Model (SAM) & LangSAM: Utilização de modelos baseados em prompts de texto/pontos aplicados a imagens de satélite e ortofotos.
+
+    **Semana 12:** Embeddings Geoespaciais e Foundation Models: Mapeamento de representações latentes e transferência de aprendizado (fine-tuning).
+
+    **Semana 13:** Aplicação prática de Foundation Models no ecossistema Python (leafmap / samgeo).
+
+
+## Módulo 5: Integração com QGIS e Projetos Práticos (18/11/2026 - 02/12/2026)
+
+    **Semana 14:** Plugins de QGIS para GeoAI: Utilização e desenvolvimento/customização de plugins (ex: Geo-AI, segment-geospatial no QGIS).
+
+    **Semana 15:** Apresentação dos projetos finais práticos desenvolvidos pelos alunos durante o semestre.
+

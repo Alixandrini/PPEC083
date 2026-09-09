@@ -1,0 +1,114 @@
+[
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Folhas de Apresentação",
+    "section": "",
+    "text": "Aulas 1 - Apresentação da disciplina introdução à GeoAI aplicada ao SR\nAula introdutória que descreve principais assuntos a serem debatidos durante o curso.\n\n\n\nAulas 2 - Configuração do Ambiente\nIntrodução ao Python e instalação de bibliotécas e recursos importantes para execussão de tarefas de GeoAI."
+  },
+  {
+    "objectID": "Notebooks/Aula 2.html",
+    "href": "Notebooks/Aula 2.html",
+    "title": "Aula 2",
+    "section": "",
+    "text": "import sys\nimport importlib\nprint(f\"Python version: {sys.version}\\n\")\n# Check core packages\npackages = {\n    \"torch\": \"PyTorch\",\n    \"torchvision\": \"TorchVision\",\n    \"geoai\": \"GeoAI\",\n    \"leafmap\": \"Leafmap\",\n    \"geopandas\": \"GeoPandas\",\n    \"rasterio\": \"Rasterio\",\n    \"samgeo\": \"Segment-Geospatial\",\n    \"torchgeo\": \"TorchGeo\",\n}\nfor module_name, display_name in packages.items():\n    try:\n        mod = importlib.import_module(module_name)\n        version = getattr(mod, \"__version__\", \"installed\")\n        print(f\"  {display_name}: {version}\")\n    except ImportError:\n        print(f\"  {display_name}: NOT FOUND\")\n        \nimport torch\nprint(f\"\\nCUDA available: {torch.cuda.is_available()}\")\nif torch.cuda.is_available():\n    print(f\"GPU device: {torch.cuda.get_device_name(0)}\")\n    print(f\"CUDA version: {torch.version.cuda}\")\nelse:\n    print(\"Running in CPU-only mode.\")\n\nPython version: 3.13.15 | packaged by Anaconda, Inc. | (main, Aug 14 2026, 17:17:48) [MSC v.1942 64 bit (AMD64)]\n\n  PyTorch: 2.13.0\n  TorchVision: 0.28.0\n  GeoAI: 0.42.0\n\n\nc:\\Users\\mauro\\.conda\\envs\\geoai\\Lib\\site-packages\\pyproj\\network.py:59: UserWarning: pyproj unable to set PROJ database path.\n  _set_context_ca_bundle_path(ca_bundle_path)\n\n\n  Leafmap: 0.63.0\n  GeoPandas: 1.1.4\n  Rasterio: 1.4.4\n  Segment-Geospatial: NOT FOUND\n  TorchGeo: 0.10.0\n\nCUDA available: True\nGPU device: NVIDIA RTX 2000 Ada Generation Laptop GPU\nCUDA version: 12.8\n\n\n\nimport leafmap\nm = leafmap.Map(center=[40, -100], zoom=4)\nm"
+  },
+  {
+    "objectID": "Notebooks/Aula 2.html#o-que-são-dados-raster",
+    "href": "Notebooks/Aula 2.html#o-que-são-dados-raster",
+    "title": "Aula 2",
+    "section": "O Que São Dados Raster?",
+    "text": "O Que São Dados Raster?\nDados raster representam o mundo como uma grade regular de células, comumente chamadas de pixels. Cada pixel armazena um ou mais valores numéricos que descrevem uma propriedade naquela localização, como reflectância de superfície, elevação ou temperatura. A grade tem uma resolução espacial fixa (a área de terreno representada por cada pixel) e pode conter múltiplas bandas, onde cada banda captura uma medição diferente.\nPense em uma fotografi a digital. Ela é uma grade de pixels com três bandas (vermelho, verde, azul). Imagens de satélite funcionam da mesma forma, exceto com mais bandas, coordenadas georreferenciadas e pixels que podem abranger metros ou até quilômetros no terreno."
+  },
+  {
+    "objectID": "Notebooks/Aula 2.html#lendo-dados-raster-com-python",
+    "href": "Notebooks/Aula 2.html#lendo-dados-raster-com-python",
+    "title": "Aula 2",
+    "section": "Lendo Dados Raster com Python",
+    "text": "Lendo Dados Raster com Python\nA biblioteca rasterio é a ferramenta padrão para leitura de dados raster em Python. Ela fornece uma interface limpa para o GDAL, a Geospatial Data Abstraction Library subjacente.\n\nimport geoai\nimport rasterio\nraster_url = \"https://data.source.coop/opengeos/geoai/naip-train.tif\"\nraster_path = geoai.download_file(raster_url)\nwith rasterio.open(raster_path) as src:\n    print(f\"Shape: {src.height} x {src.width}\")\n    print(f\"Bands: {src.count}\")\n    print(f\"CRS: {src.crs}\")\n    print(f\"Resolution: {src.res}\")\n    band1 = src.read(1)  # Read the first band as a NumPy array\n    print(f\"Band 1 dtype: {band1.dtype}\")\n\nShape: 1126 x 2503\nBands: 4\nCRS: PROJCS[\"NAD83 / UTM zone 11N\",GEOGCS[\"NAD83\",DATUM[\"North American Datum 1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-117],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]\nResolution: (0.5999999999999953, 0.5999999999996691)\nBand 1 dtype: uint8\n\n\nAlternativamente, você pode usar a biblioteca geoai para imprimir metadados do raster e exibir a imagem em uma linha de código:\n\ngeoai.print_raster_info(raster_path, figsize=(18, 10))\n\n===== RASTER INFORMATION: naip-train.tif =====\nDriver: GTiff\nDimensions: 2503 x 1126 pixels\nNumber of bands: 4\nData type: uint8\nCoordinate Reference System: PROJCS[\"NAD83 / UTM zone 11N\",GEOGCS[\"NAD83\",DATUM[\"North American Datum 1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-117],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]\nGeoreferenced Bounds: BoundingBox(left=454780.8, bottom=5277567.0, right=456282.6, top=5278242.6)\nPixel Resolution: 0.6, 0.6\nNoData Value: None\n----- Band Statistics -----\nBand 1:\n  Min: 12.00\n  Max: 251.00\n  Mean: 150.67\n  Std Dev: 48.02\nBand 2:\n  Min: 49.00\n  Max: 251.00\n  Mean: 141.92\n  Std Dev: 43.47\nBand 3:\n  Min: 53.00\n  Max: 251.00\n  Mean: 120.90\n  Std Dev: 41.78\nBand 4:\n  Min: 22.00\n  Max: 251.00\n  Mean: 159.69\n  Std Dev: 54.96\n\n\n\n\n\n\n\n\n\nLer uma janela específica (subconjunto) de um raster grande é simples e frequentemente essencial ao trabalhar com cenas grandes:\n\nclip_raster_path = \"naip_clip.tif\"\ngeoai.clip_raster_by_bbox(\n    raster_path,\n    clip_raster_path,\n    bbox=(0, 0, 500, 500),\n    bands=[1, 2, 3],\n    bbox_type=\"pixel\",\n)\ngeoai.view_image(clip_raster_path)"
+  },
+  {
+    "objectID": "Notebooks/Aula 2.html#o-que-são-dados-vetoriais",
+    "href": "Notebooks/Aula 2.html#o-que-são-dados-vetoriais",
+    "title": "Aula 2",
+    "section": "O Que São Dados Vetoriais?",
+    "text": "O Que São Dados Vetoriais?\nEnquanto dados raster se destacam na representação de fenômenos contínuos como reflectância, elevação e temperatura, muitas feições geográficas são melhor descritas como objetos discretos com limites bem definidos. Uma edificação tem bordas. Uma estrada tem uma linha central. Um lago tem uma margem.\nDados vetoriais capturam essas feições usando primitivos geométricos, tornando-os o formato natural para representar estruturas construídas pelo homem, limites administrativos e muitos rótulos de anotação em fluxos de trabalho de GeoAI."
+  },
+  {
+    "objectID": "Notebooks/Aula 2.html#lendo-dados-vetoriais-com-python",
+    "href": "Notebooks/Aula 2.html#lendo-dados-vetoriais-com-python",
+    "title": "Aula 2",
+    "section": "Lendo Dados Vetoriais com Python",
+    "text": "Lendo Dados Vetoriais com Python\n\n############### Aqui para quem tem problemas com PROJ/GDAL no Windows ###############\nimport os\nimport sys\n\n# 1. Limpa qualquer variável de PROJ/GDAL global da máquina que cause interferência\nfor var in [\"PROJ_LIB\", \"PROJ_DATA\", \"GDAL_DATA\"]:\n    if var in os.environ:\n        del os.environ[var]\n\n# 2. Aponta para os diretórios corretos do ambiente Conda 'geoai'\nconda_prefix = sys.prefix\nproj_dir = os.path.join(conda_prefix, \"Library\", \"share\", \"proj\")\ngdal_dir = os.path.join(conda_prefix, \"Library\", \"share\", \"gdal\")\n\nos.environ[\"PROJ_DATA\"] = proj_dir\nos.environ[\"GDAL_DATA\"] = gdal_dir\n\n# 3. Força o pyproj a inicializar o contexto antes de qualquer outra lib geoespacial\nimport pyproj\npyproj.datadir.set_data_dir(proj_dir)\n\n# 4. Importa as demais bibliotecas\nimport geoai\nimport geopandas as gpd\n\nprint(\"PROJ ativo em:\", pyproj.datadir.get_data_dir())\n\nPROJ ativo em: c:\\Users\\mauro\\.conda\\envs\\geoai\\Library\\share\\proj\n\n\n\nimport geopandas as gpd\nvector_url = \"https://data.source.coop/opengeos/geoai/naip-train-buildings.geojson\"\nvector_path = geoai.download_file(vector_url)\ngdf = gpd.read_file(vector_path)\nprint(f\"Features: {len(gdf)}\")\nprint(f\"CRS: {gdf.crs}\")\ngdf.head()\n\nFeatures: 735\nCRS: EPSG:4326\n\n\n\n\n\n\n\n\n\nid\nheight\nclass\ngeometry\n\n\n\n\n0\n1\n0\nbuilding\nPOLYGON ((-117.60111 47.6502, -117.60109 47.65...\n\n\n1\n2\n0\nbuilding\nPOLYGON ((-117.6008 47.65042, -117.6008 47.650...\n\n\n2\n3\n0\nbuilding\nPOLYGON ((-117.60049 47.65046, -117.60049 47.6...\n\n\n3\n4\n0\nbuilding\nPOLYGON ((-117.60048 47.65021, -117.60035 47.6...\n\n\n4\n5\n0\nbuilding\nPOLYGON ((-117.60012 47.65046, -117.60012 47.6...\n\n\n\n\n\n\n\nA biblioteca geoai também fornece uma alternativa de uma linha que imprime metadados vetoriais e exibe os dados:\n\ngeoai.print_vector_info(vector_path, figsize=(18, 10))\n\n===== VECTOR INFORMATION: naip-train-buildings.geojson =====\nDriver: GEOJSON\nFeature count: 735\nGeometry types: {'Polygon': 735}\nCoordinate Reference System: EPSG:4326\nBounds: [-117.6017984, 47.65016239407519, -117.58246913360121, 47.655846]\nNumber of attributes: 3\nAttribute names: id, height, class\n----- Attribute Statistics -----\nAttribute: id\n  min: 1\n  max: 735\n  mean: 368.0000\n  std: 212.3205\n  null_count: 0\nAttribute: height\n  min: 0\n  max: 0\n  mean: 0.0000\n  std: 0.0000\n  null_count: 0\n\n\n\n\n\n\n\n\n\nPara visualizar os dados vetoriais em um mapa base, você pode usar a função geoai.view_vector() com basemap=True . Ela busca tiles do OpenStreetMap e os adiciona como camada de fundo.\n\ngeoai.view_vector(vector_path, basemap=True)\n\n\n\n\n\n\n\n\nPara visualizar os dados vetoriais sobre um raster, você pode usar a função geoai.view_vector() com o parâmetro raster_path defi nido como o arquivo raster.\n\ngeoai.view_vector(\n    vector_path,\n    raster_path=raster_path,\n    outline_only=True,\n    edge_color=\"red\",\n    figsize=(18, 10),\n)"
+  },
+  {
+    "objectID": "Notebooks/Aula 2.html#reprojeção",
+    "href": "Notebooks/Aula 2.html#reprojeção",
+    "title": "Aula 2",
+    "section": "Reprojeção",
+    "text": "Reprojeção\nA reprojeção converte dados de um CRS para outro. Para reprojetar dados raster, você pode usar a função leafmap.reproject() . Escolha o método de reamostragem cuidadosamente: reamostragem bilinear ou cúbica é apropriada para imagens contínuas, enquanto vizinho mais próximo é mais seguro para rasters categóricos como rótulos de cobertura do solo ou máscaras de segmentação.\n\nimport leafmap\nleafmap.reproject(\n    image=raster_path,\n    output=\"naip_reprojected.tif\",\n    dst_crs=\"EPSG:3857\",\n    resampling=\"bilinear\",\n)\n\nReading input: c:\\Users\\mauro\\OneDrive\\Documentos\\PPEC083 - Sensoriamento Remoto\\naip_reprojected.tif\n\nAdding overviews...\nUpdating dataset tags...\nWriting output to: c:\\Users\\mauro\\OneDrive\\Documentos\\PPEC083 - Sensoriamento Remoto\\naip_reprojected.tif"
+  },
+  {
+    "objectID": "Notebooks/Aula 2.html#tiling-de-imagens",
+    "href": "Notebooks/Aula 2.html#tiling-de-imagens",
+    "title": "Aula 2",
+    "section": "Tiling de Imagens",
+    "text": "Tiling de Imagens\n\nleafmap.split_raster(\n    raster_path,\n    out_dir=\"naip_tiles\",\n    tile_size=512,\n    overlap=128,\n)"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Sobre o Curso",
+    "section": "",
+    "text": "O componente curricular Sensoriamento Remoto do Programa de Pós-graduação em Engenharia Civil - PPEC da UFBA é oferecido esporádicamente como componente optativo da área de informações espaciais e sistemas de transportes do programa.\n\n\n\nLaboratório de Fotogrametria e Sensoriamento Remoto"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PPEC083",
+    "section": "",
+    "text": "Laboratório de Fotogrametria e Sensoriamento Remoto\n\n\n\n\n**Semana 1:** Apresentação do curso e configuração do ambiente Python (conda/mamba, VS Code, Jupyter, bibliotecas de GeoAI).\n\n**Semana 2:** Revisão de manipulação de dados raster e vetoriais em Python (rioxarray, geopandas, rasterio).\n\n**Semana 3:** Visão geral de GeoAI: aprendizado supervisionado vs. não supervisionado aplicado à observação da Terra.   \n\n\n\n**Semana 4:** Acesso programmatico a catálogos STAC (SpatioTemporal Asset Catalog) e APIs abertas (Sentinel, Landsat) via Python.\n\n**Semana 5:** Pré-processamento, amostragem espacial, criação de máscaras e tiling (recorte de imagens em chips para entrada em modelos).\n\n**Semana 6:** Rotulagem e preparação de datasets de treino/teste (uso de formatos GeoJSON, Cloud-Optimized GeoTIFF - COG).\n\n\n\n**Semana 7:** Classificação de Uso e Cobertura da Terra (Pixel-based vs. Object-based): Random Forest, SVM e Redes Convolucionais básicas (CNNs).\n\n**Semana 8:** Detecção de Objetos: Identificação de alvos específicos (edificações, reservatórios, vegetação específica).\n\n**Semana 9:** Segmentação Semântica e Instância: Aplicações de U-Net e similares para mapeamento automatizado.\n\n**Semana 10:** Avaliação de acurácia em GeoAI: Matriz de confusão espacial, métricas IoU (Intersection over Union) e validação cruzada espacial.\n\n\n\n**Semana 11:** Segment Anything Model (SAM) & LangSAM: Utilização de modelos baseados em prompts de texto/pontos aplicados a imagens de satélite e ortofotos.\n\n**Semana 12:** Embeddings Geoespaciais e Foundation Models: Mapeamento de representações latentes e transferência de aprendizado (fine-tuning).\n\n**Semana 13:** Aplicação prática de Foundation Models no ecossistema Python (leafmap / samgeo).\n\n\n\n**Semana 14:** Plugins de QGIS para GeoAI: Utilização e desenvolvimento/customização de plugins (ex: Geo-AI, segment-geospatial no QGIS).\n\n**Semana 15:** Apresentação dos projetos finais práticos desenvolvidos pelos alunos durante o semestre."
+  },
+  {
+    "objectID": "index.html#módulo-1-fundamentos-e-ambiente-19082026---02092026",
+    "href": "index.html#módulo-1-fundamentos-e-ambiente-19082026---02092026",
+    "title": "PPEC083",
+    "section": "",
+    "text": "**Semana 1:** Apresentação do curso e configuração do ambiente Python (conda/mamba, VS Code, Jupyter, bibliotecas de GeoAI).\n\n**Semana 2:** Revisão de manipulação de dados raster e vetoriais em Python (rioxarray, geopandas, rasterio).\n\n**Semana 3:** Visão geral de GeoAI: aprendizado supervisionado vs. não supervisionado aplicado à observação da Terra."
+  },
+  {
+    "objectID": "index.html#módulo-2-aquisição-e-preparação-de-dados-09092026---23092026",
+    "href": "index.html#módulo-2-aquisição-e-preparação-de-dados-09092026---23092026",
+    "title": "PPEC083",
+    "section": "",
+    "text": "**Semana 4:** Acesso programmatico a catálogos STAC (SpatioTemporal Asset Catalog) e APIs abertas (Sentinel, Landsat) via Python.\n\n**Semana 5:** Pré-processamento, amostragem espacial, criação de máscaras e tiling (recorte de imagens em chips para entrada em modelos).\n\n**Semana 6:** Rotulagem e preparação de datasets de treino/teste (uso de formatos GeoJSON, Cloud-Optimized GeoTIFF - COG)."
+  },
+  {
+    "objectID": "index.html#módulo-3-tarefas-principais-de-ia-em-sensoriamento-remoto-30092026---21102026",
+    "href": "index.html#módulo-3-tarefas-principais-de-ia-em-sensoriamento-remoto-30092026---21102026",
+    "title": "PPEC083",
+    "section": "",
+    "text": "**Semana 7:** Classificação de Uso e Cobertura da Terra (Pixel-based vs. Object-based): Random Forest, SVM e Redes Convolucionais básicas (CNNs).\n\n**Semana 8:** Detecção de Objetos: Identificação de alvos específicos (edificações, reservatórios, vegetação específica).\n\n**Semana 9:** Segmentação Semântica e Instância: Aplicações de U-Net e similares para mapeamento automatizado.\n\n**Semana 10:** Avaliação de acurácia em GeoAI: Matriz de confusão espacial, métricas IoU (Intersection over Union) e validação cruzada espacial."
+  },
+  {
+    "objectID": "index.html#módulo-4-modelos-fundacionais-e-embeddings-de-satélite-28102026---11112026",
+    "href": "index.html#módulo-4-modelos-fundacionais-e-embeddings-de-satélite-28102026---11112026",
+    "title": "PPEC083",
+    "section": "",
+    "text": "**Semana 11:** Segment Anything Model (SAM) & LangSAM: Utilização de modelos baseados em prompts de texto/pontos aplicados a imagens de satélite e ortofotos.\n\n**Semana 12:** Embeddings Geoespaciais e Foundation Models: Mapeamento de representações latentes e transferência de aprendizado (fine-tuning).\n\n**Semana 13:** Aplicação prática de Foundation Models no ecossistema Python (leafmap / samgeo)."
+  },
+  {
+    "objectID": "index.html#módulo-5-integração-com-qgis-e-projetos-práticos-18112026---02122026",
+    "href": "index.html#módulo-5-integração-com-qgis-e-projetos-práticos-18112026---02122026",
+    "title": "PPEC083",
+    "section": "",
+    "text": "**Semana 14:** Plugins de QGIS para GeoAI: Utilização e desenvolvimento/customização de plugins (ex: Geo-AI, segment-geospatial no QGIS).\n\n**Semana 15:** Apresentação dos projetos finais práticos desenvolvidos pelos alunos durante o semestre."
+  },
+  {
+    "objectID": "notebooks.html",
+    "href": "notebooks.html",
+    "title": "Notebooks",
+    "section": "",
+    "text": "Aula 2\n\n\n\nGeoAI\n\ntechnology\n\n\n\n\n\n\n\nMauro Alixandrini\n\n\nSep 9, 2026\n\n\n\n\n\n\nNo matching items"
+  }
+]

@@ -1,0 +1,8 @@
+---
+title: "Sobre o Curso"
+---
+
+O componente curricular Sensoriamento Remoto do [Programa de Pós-graduação em Engenharia Civil - PPEC](www.ppec.ufba.br) da [UFBA](www.ufba.br) é oferecido esporádicamente como componente optativo da área de informações espaciais e sistemas de transportes do programa. 
+
+![Laboratório de Fotogrametria e Sensoriamento Remoto](logo_labfsr.png)
+

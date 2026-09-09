@@ -1,0 +1,16 @@
+---
+title: "Folhas de Apresentação"
+format: html
+---
+
+# Aulas 1 - Apresentação da disciplina introdução à GeoAI aplicada ao SR
+
+Aula introdutória que descreve principais assuntos a serem debatidos durante o curso.
+
+[![](Slides/aula1.jpg)](Slides/Aula_1.pdf)
+
+# Aulas 2 - Configuração do Ambiente
+
+Introdução ao Python e instalação de bibliotécas e recursos importantes para execussão de tarefas de GeoAI.
+
+[![](Slides/aula2.jpg)](Slides/Aula_2.pdf)
