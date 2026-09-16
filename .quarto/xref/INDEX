@@ -13,5 +13,14 @@
   },
   "slides.qmd": {
     "slides.html": "2b6d555d"
+  },
+  "Notebooks/Aula3.ipynb": {
+    "Aula3.html": "8ca88b4c"
+  },
+  "Notebooks/Aula_2.ipynb": {
+    "Aula_2.html": "ec41f6c1"
+  },
+  "Notebooks/Aula_3.ipynb": {
+    "Aula_3.html": "3126a721"
   }
 }

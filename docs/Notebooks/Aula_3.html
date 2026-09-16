@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mauro Alixandrini">
+<meta name="dcterms.date" content="2027-04-09">
+
+<title>Aula 3 – PPEC083</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">PPEC083</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Apresentação</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../notebooks.html"> 
+<span class="menu-text">Notebooks das Aulas</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../slides.html"> 
+<span class="menu-text">Folhas de apresentação</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">Sobre o Curso</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#download-de-dados-de-sensoriamento-remoto" id="toc-download-de-dados-de-sensoriamento-remoto" class="nav-link active" data-scroll-target="#download-de-dados-de-sensoriamento-remoto">Download de Dados de Sensoriamento Remoto</a>
+  <ul class="collapse">
+  <li><a href="#bibliotecas-python-para-stac" id="toc-bibliotecas-python-para-stac" class="nav-link" data-scroll-target="#bibliotecas-python-para-stac">4.4.4 Bibliotecas Python para STAC</a></li>
+  <li><a href="#pesquisando-itens" id="toc-pesquisando-itens" class="nav-link" data-scroll-target="#pesquisando-itens">4.4.6. Pesquisando Itens</a></li>
+  <li><a href="#inspecionando-itens-e-ativos" id="toc-inspecionando-itens-e-ativos" class="nav-link" data-scroll-target="#inspecionando-itens-e-ativos">4.4.7. Inspecionando Itens e Ativos</a></li>
+  <li><a href="#download-de-imagens-naip" id="toc-download-de-imagens-naip" class="nav-link" data-scroll-target="#download-de-imagens-naip">4.5. Download de Imagens NAIP</a></li>
+  <li><a href="#download-de-dados-sentinel-2" id="toc-download-de-dados-sentinel-2" class="nav-link" data-scroll-target="#download-de-dados-sentinel-2">4.6. Download de Dados Sentinel-2</a>
+  <ul class="collapse">
+  <li><a href="#pesquisando-itens-sentinel-2" id="toc-pesquisando-itens-sentinel-2" class="nav-link" data-scroll-target="#pesquisando-itens-sentinel-2">4.6.1. Pesquisando Itens Sentinel-2</a></li>
+  <li><a href="#download-e-mesclagem-de-bandas" id="toc-download-e-mesclagem-de-bandas" class="nav-link" data-scroll-target="#download-e-mesclagem-de-bandas">4.6.2. Download e Mesclagem de Bandas</a></li>
+  </ul></li>
+  <li><a href="#download-de-dados-landsat" id="toc-download-de-dados-landsat" class="nav-link" data-scroll-target="#download-de-dados-landsat">4.7. Download de Dados Landsat</a></li>
+  <li><a href="#download-de-dados-abertos-vantor" id="toc-download-de-dados-abertos-vantor" class="nav-link" data-scroll-target="#download-de-dados-abertos-vantor">4.8. Download de Dados Abertos Vantor</a></li>
+  <li><a href="#acesso-a-dados-vetoriais" id="toc-acesso-a-dados-vetoriais" class="nav-link" data-scroll-target="#acesso-a-dados-vetoriais">4.9. Acesso a Dados Vetoriais</a>
+  <ul class="collapse">
+  <li><a href="#edificações-do-overture-maps" id="toc-edificações-do-overture-maps" class="nav-link" data-scroll-target="#edificações-do-overture-maps">4.9.1. Edificações do Overture Maps</a></li>
+  </ul></li>
+  <li><a href="#organizando-seus-dados" id="toc-organizando-seus-dados" class="nav-link" data-scroll-target="#organizando-seus-dados">4.10. Organizando Seus Dados</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Aula 3</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">GeoAI</div>
+    <div class="quarto-category">technology</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mauro Alixandrini </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 9, 2027</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://colab.research.google.com/github/Alixandrini/PPEC083/blob/main/Notebooks/Aula_3.ipynb.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid"></a></p>
+<section id="download-de-dados-de-sensoriamento-remoto" class="level1">
+<h1>Download de Dados de Sensoriamento Remoto</h1>
+<section id="bibliotecas-python-para-stac" class="level3">
+<h3 class="anchored" data-anchor-id="bibliotecas-python-para-stac">4.4.4 Bibliotecas Python para STAC</h3>
+<p>Para começar, conecte-se à API STAC do Planetary Computer e explore suas coleções:</p>
+<div id="1270cdff" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pystac_client <span class="im">import</span> Client</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>catalog <span class="op">=</span> Client.<span class="bu">open</span>(<span class="st">"https://planetarycomputer.microsoft.com/api/stac/v1"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Catalog title: </span><span class="sc">{</span>catalog<span class="sc">.</span>title<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Catalog description: </span><span class="sc">{</span>catalog<span class="sc">.</span>description<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>collections <span class="op">=</span> <span class="bu">list</span>(catalog.get_collections())</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Number of collections: </span><span class="sc">{</span><span class="bu">len</span>(collections)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">First 10 collections:"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> collection <span class="kw">in</span> collections[:<span class="dv">10</span>]:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>collection<span class="sc">.</span><span class="bu">id</span><span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>collection<span class="sc">.</span>title<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Catalog title: Microsoft Planetary Computer STAC API
+Catalog description: Searchable spatiotemporal metadata describing Earth science datasets hosted by the Microsoft Planetary Computer
+
+Number of collections: 136
+
+First 10 collections:
+  daymet-annual-pr: Daymet Annual Puerto Rico
+  daymet-daily-hi: Daymet Daily Hawaii
+  3dep-seamless: USGS 3DEP Seamless DEMs
+  3dep-lidar-dsm: USGS 3DEP Lidar Digital Surface Model
+  fia: Forest Inventory and Analysis
+  gridmet: gridMET
+  daymet-annual-na: Daymet Annual North America
+  daymet-monthly-na: Daymet Monthly North America
+  daymet-annual-hi: Daymet Annual Hawaii
+  daymet-monthly-hi: Daymet Monthly Hawaii</code></pre>
+</div>
+</div>
+<p>4.4.5. Explorando uma Coleção STAC</p>
+<p>Antes de pesquisar itens, é útil inspecionar os metadados de uma coleção para entender o que ela contém, sua extensão espacial e temporal, e quais propriedades estão disponíveis para filtragem.</p>
+<div id="b1efd964" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>collection <span class="op">=</span> catalog.get_collection(<span class="st">"sentinel-2-l2a"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Title: </span><span class="sc">{</span>collection<span class="sc">.</span>title<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Description: </span><span class="sc">{</span>collection<span class="sc">.</span>description[:<span class="dv">200</span>]<span class="sc">}</span><span class="ss">..."</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"License: </span><span class="sc">{</span>collection<span class="sc">.</span>license<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Temporal extent: </span><span class="sc">{</span>collection<span class="sc">.</span>extent<span class="sc">.</span>temporal<span class="sc">.</span>intervals<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Spatial extent: </span><span class="sc">{</span>collection<span class="sc">.</span>extent<span class="sc">.</span>spatial<span class="sc">.</span>bboxes<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Title: Sentinel-2 Level-2A
+Description: The [Sentinel-2](https://sentinel.esa.int/web/sentinel/missions/sentinel-2) program provides global imagery in thirteen spectral bands at 10m-60m resolution and a revisit time of approximately five da...
+License: proprietary
+Temporal extent: [[datetime.datetime(2015, 6, 27, 10, 25, 31, tzinfo=tzutc()), None]]
+Spatial extent: [[-180, -90, 180, 90]]</code></pre>
+</div>
+</div>
+</section>
+<section id="pesquisando-itens" class="level3">
+<h3 class="anchored" data-anchor-id="pesquisando-itens">4.4.6. Pesquisando Itens</h3>
+<p>Uma vez que você sabe quais coleções estão disponíveis, pode pesquisar itens que correspondam aos seus critérios espaciais, temporais e de qualidade. O exemplo a seguir pesquisa cenas Sentinel-2 sobre Knoxville, Tennessee, durante o verão de 2025 com baixa cobertura de nuvens:</p>
+<div id="7ccd94c1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bbox <span class="op">=</span> [<span class="op">-</span><span class="fl">83.95</span>, <span class="fl">35.94</span>, <span class="op">-</span><span class="fl">83.91</span>, <span class="fl">35.98</span>]  <span class="co"># Small area near Knoxville, TN</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>search <span class="op">=</span> catalog.search(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    collections<span class="op">=</span>[<span class="st">"sentinel-2-l2a"</span>],</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    bbox<span class="op">=</span>bbox,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    datetime<span class="op">=</span><span class="st">"2025-06-01/2025-08-31"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    query<span class="op">=</span>{<span class="st">"eo:cloud_cover"</span>: {<span class="st">"lt"</span>: <span class="dv">10</span>}},</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    max_items<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>items <span class="op">=</span> search.item_collection()</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Found </span><span class="sc">{</span><span class="bu">len</span>(items)<span class="sc">}</span><span class="ss"> items</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> items:</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    cloud_cover <span class="op">=</span> item.properties.get(<span class="st">"eo:cloud_cover"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    cloud_cover_text <span class="op">=</span> (</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"</span><span class="sc">{</span>cloud_cover<span class="sc">:.1f}</span><span class="ss">%"</span> <span class="cf">if</span> cloud_cover <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="cf">else</span> <span class="st">"N/A"</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"ID: </span><span class="sc">{</span>item<span class="sc">.</span><span class="bu">id</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Date: </span><span class="sc">{</span>item<span class="sc">.</span>datetime<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Cloud cover: </span><span class="sc">{</span>cloud_cover_text<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Bounding box: </span><span class="sc">{</span>item<span class="sc">.</span>bbox<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Found 3 items
+
+ID: S2B_MSIL2A_20250816T161829_R040_T16SGE_20250816T201128
+  Date: 2025-08-16 16:18:29.024000+00:00
+  Cloud cover: 9.7%
+  Bounding box: [-84.8052687, 35.1072182, -83.5595813, 36.1242843]
+
+ID: S2A_MSIL2A_20250704T162711_R040_T16SGE_20250705T010417
+  Date: 2025-07-04 16:27:11.024000+00:00
+  Cloud cover: 8.0%
+  Bounding box: [-84.8052687, 35.1072182, -83.5595813, 36.1242843]
+
+ID: S2C_MSIL2A_20250622T161851_R040_T16SGE_20250622T215416
+  Date: 2025-06-22 16:18:51.025000+00:00
+  Cloud cover: 9.9%
+  Bounding box: [-84.8052687, 35.1072182, -83.5595813, 36.1242843]
+</code></pre>
+</div>
+</div>
+</section>
+<section id="inspecionando-itens-e-ativos" class="level3">
+<h3 class="anchored" data-anchor-id="inspecionando-itens-e-ativos">4.4.7. Inspecionando Itens e Ativos</h3>
+<p>Uma vez que você tem resultados de busca, inspecione um item individual para ver suas propriedades completas e os ativos disponíveis para download. Cada item Sentinel-2 tipicamente contém ativos para bandas espectrais individuais (B01 a B12, mais B8A), um composto visual, um mapa de classifi cação de cena e vários arquivos de metadados.</p>
+<div id="865eb36a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> items:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    item <span class="op">=</span> items[<span class="dv">0</span>]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    cloud_cover <span class="op">=</span> item.properties.get(<span class="st">"eo:cloud_cover"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    cloud_cover_text <span class="op">=</span> (</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"</span><span class="sc">{</span>cloud_cover<span class="sc">}</span><span class="ss">%"</span> <span class="cf">if</span> cloud_cover <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="cf">else</span> <span class="st">"N/A"</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Item ID: </span><span class="sc">{</span>item<span class="sc">.</span><span class="bu">id</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Date: </span><span class="sc">{</span>item<span class="sc">.</span>datetime<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Cloud cover: </span><span class="sc">{</span>cloud_cover_text<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Platform: </span><span class="sc">{</span>item<span class="sc">.</span>properties<span class="sc">.</span>get(<span class="st">'platform'</span>, <span class="st">'N/A'</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Available assets (</span><span class="sc">{</span><span class="bu">len</span>(item.assets)<span class="sc">}</span><span class="ss">):"</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, asset <span class="kw">in</span> item.assets.items():</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        roles <span class="op">=</span> <span class="st">", "</span>.join(asset.roles) <span class="cf">if</span> asset.roles <span class="cf">else</span> <span class="st">"N/A"</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>asset<span class="sc">.</span>title <span class="kw">or</span> <span class="st">'No title'</span><span class="sc">}</span><span class="ss"> [</span><span class="sc">{</span>roles<span class="sc">}</span><span class="ss">]"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Item ID: S2B_MSIL2A_20250816T161829_R040_T16SGE_20250816T201128
+Date: 2025-08-16 16:18:29.024000+00:00
+Cloud cover: 9.708405%
+Platform: Sentinel-2B
+
+Available assets (23):
+  AOT: Aerosol optical thickness (AOT) [data]
+  B01: Band 1 - Coastal aerosol - 60m [data]
+  B02: Band 2 - Blue - 10m [data]
+  B03: Band 3 - Green - 10m [data]
+  B04: Band 4 - Red - 10m [data]
+  B05: Band 5 - Vegetation red edge 1 - 20m [data]
+  B06: Band 6 - Vegetation red edge 2 - 20m [data]
+  B07: Band 7 - Vegetation red edge 3 - 20m [data]
+  B08: Band 8 - NIR - 10m [data]
+  B09: Band 9 - Water vapor - 60m [data]
+  B11: Band 11 - SWIR (1.6) - 20m [data]
+  B12: Band 12 - SWIR (2.2) - 20m [data]
+  B8A: Band 8A - Vegetation red edge 4 - 20m [data]
+  SCL: Scene classfication map (SCL) [data]
+  WVP: Water vapour (WVP) [data]
+  visual: True color image [data]
+  safe-manifest: SAFE manifest [metadata]
+  granule-metadata: Granule metadata [metadata]
+  inspire-metadata: INSPIRE metadata [metadata]
+  product-metadata: Product metadata [metadata]
+  datastrip-metadata: Datastrip metadata [metadata]
+  tilejson: TileJSON with default rendering [tiles]
+  rendered_preview: Rendered preview [overview]</code></pre>
+</div>
+</div>
+</section>
+<section id="download-de-imagens-naip" class="level2">
+<h2 class="anchored" data-anchor-id="download-de-imagens-naip">4.5. Download de Imagens NAIP</h2>
+<p>O pacote geoai fornece uma função conveniente download_naip() que encapsula o fluxo de trabalho de busca e download STAC em uma única chamada. Ela pesquisa o Planetary Computer por imagens NAIP que intersectam sua caixa delimitadora, baixa os resultados como arquivos GeoTIFF e retorna uma lista de caminhos de arquivos.</p>
+<div id="52d442bb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;subslide&quot;}}" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geoai</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>bbox <span class="op">=</span> [<span class="op">-</span><span class="fl">83.94</span>, <span class="fl">35.96</span>, <span class="op">-</span><span class="fl">83.92</span>, <span class="fl">35.98</span>]  <span class="co"># Small area near Knoxville, TN</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>output_dir <span class="op">=</span> <span class="st">"naip_data"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>filepaths <span class="op">=</span> geoai.download_naip(</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    bbox<span class="op">=</span>bbox,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    output_dir<span class="op">=</span>output_dir,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    year<span class="op">=</span><span class="dv">2021</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    max_items<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Downloaded </span><span class="sc">{</span><span class="bu">len</span>(filepaths)<span class="sc">}</span><span class="ss"> file(s):"</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fp <span class="kw">in</span> filepaths:</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>fp<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>c:\Users\mauro\.conda\envs\geoai\Lib\site-packages\pyproj\network.py:59: UserWarning: pyproj unable to set PROJ database path.
+  _set_context_ca_bundle_path(ca_bundle_path)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"de5e7981f5dc40c0b8f561cf5676d968","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Downloaded 1 file(s):
+  naip_data\m_3508301_nw_17_060_20210403.tif</code></pre>
+</div>
+</div>
+<p>Os parâmetros da função são: * <strong>bbox</strong>: Uma tupla de (min_lon, min_lat, max_lon, max_lat) em coordenadas WGS84 * <strong>output_dir</strong>: Diretório onde os arquivos GeoTIFF baixados são salvos * <strong>year</strong>: Ano de aquisição NAIP específi co (por exemplo, 2021). Se None , retorna imagens de todos os anos disponíveis * <strong>max_items</strong>: Número máximo de tiles de cena para baixar Após o download, você pode inspecionar as imagens com rasterio para verifi car suas propriedades:</p>
+<div id="f91ee7e4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;fragment&quot;}}" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> filepaths:</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> rasterio.<span class="bu">open</span>(filepaths[<span class="dv">0</span>]) <span class="im">as</span> src:</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Dimensions: </span><span class="sc">{</span>src<span class="sc">.</span>width<span class="sc">}</span><span class="ss"> x </span><span class="sc">{</span>src<span class="sc">.</span>height<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Bands: </span><span class="sc">{</span>src<span class="sc">.</span>count<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"CRS: </span><span class="sc">{</span>src<span class="sc">.</span>crs<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Resolution: </span><span class="sc">{</span>src<span class="sc">.</span>res[<span class="dv">0</span>]<span class="sc">:.2f}</span><span class="ss"> m"</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Bounds: </span><span class="sc">{</span>src<span class="sc">.</span>bounds<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Data type: </span><span class="sc">{</span>src<span class="sc">.</span>dtypes[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[3]</span><span class="ansi-green-fg">, line 2</span>
+<span class="ansi-green-fg">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span> rasterio
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> filepaths:
+<span class="ansi-green-fg">      3</span>     <span style="font-weight:bold;color:rgb(0,135,0)">with</span> rasterio.open(filepaths[<span class="ansi-green-fg">0</span>]) <span style="font-weight:bold;color:rgb(0,135,0)">as</span> src:
+<span class="ansi-green-fg">      4</span>         print(f"Dimensions: {src.width} x {src.height}")
+<span class="ansi-green-fg">      5</span>         print(f"Bands: {src.count}")
+
+<span class="ansi-red-fg">NameError</span>: name 'filepaths' is not defined</pre>
+</div>
+</div>
+</div>
+<p>As imagens NAIP são entregues como GeoTIFFs de 4 bandas com bandas ordenadas como Vermelho, Verde, Azul e Infravermelho Próximo (RGBN). O tipo de dado típico é uint8 com valores variando de 0 a 255.</p>
+<p>Alternativamente, você pode usar a biblioteca geoai para imprimir metadados raster em uma única linha de código:</p>
+<div id="de206f1e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;slide&quot;}}" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>geoai.print_raster_info(filepaths[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>===== RASTER INFORMATION: naip_data\m_3508301_nw_17_060_20210403.tif =====
+Driver: GTiff
+Dimensions: 10420 x 12520 pixels
+Number of bands: 4
+Data type: uint8
+Coordinate Reference System: EPSG:26917
+Georeferenced Bounds: BoundingBox(left=229164.0, bottom=3980802.0, right=235416.0, top=3988314.0)
+Pixel Resolution: 0.6, 0.6
+NoData Value: 0.0
+----- Band Statistics -----
+Band 1:
+  Min: 10.00
+  Max: 232.00
+  Mean: 114.93
+  Std Dev: 46.55
+Band 2:
+  Min: 20.00
+  Max: 229.00
+  Mean: 123.00
+  Std Dev: 38.65
+Band 3:
+  Min: 28.00
+  Max: 228.00
+  Mean: 101.23
+  Std Dev: 42.91
+Band 4:
+  Min: 1.00
+  Max: 241.00
+  Mean: 156.04
+  Std Dev: 52.85</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">The Kernel crashed while executing code in the current cell or a previous cell. 
+
+</span><span class="ansi-red-fg ansi-bold">Please review the code in the cell(s) to identify a possible cause of the failure. 
+
+</span><span class="ansi-red-fg ansi-bold">Click &lt;a href='https://aka.ms/vscodeJupyterKernelCrash'&gt;here&lt;/a&gt; for more info. 
+
+</span><span class="ansi-red-fg ansi-bold">View Jupyter &lt;a href='command:jupyter.viewOutput'&gt;log&lt;/a&gt; for further details.</span></pre>
+</div>
+</div>
+</div>
+<div id="75e2f6ca" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># para solucionar problemas de DLLs no Windows, especialmente com GDAL e PROJ, é importante configurar corretamente as variáveis de ambiente e garantir que o diretório bin do Conda seja priorizado na busca por DLLs. O código acima faz exatamente isso, garantindo que a execução do script seja mais estável e evitando conflitos entre diferentes versões de bibliotecas.</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Impede crash por múltiplas instâncias da runtime OpenMP (PyTorch + GDAL)</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"KMP_DUPLICATE_LIB_OK"</span>] <span class="op">=</span> <span class="st">"TRUE"</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Garante isolamento estrito das DLLs e dados do Conda</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>conda_prefix <span class="op">=</span> sys.prefix</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>proj_dir <span class="op">=</span> os.path.join(conda_prefix, <span class="st">"Library"</span>, <span class="st">"share"</span>, <span class="st">"proj"</span>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>gdal_dir <span class="op">=</span> os.path.join(conda_prefix, <span class="st">"Library"</span>, <span class="st">"share"</span>, <span class="st">"gdal"</span>)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"PROJ_DATA"</span>] <span class="op">=</span> proj_dir</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"GDAL_DATA"</span>] <span class="op">=</span> gdal_dir</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Força prioridade do diretório bin do Conda para busca de DLLs no Windows</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">hasattr</span>(os, <span class="st">"add_dll_directory"</span>):</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    dll_dir <span class="op">=</span> os.path.join(conda_prefix, <span class="st">"Library"</span>, <span class="st">"bin"</span>)</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> os.path.exists(dll_dir):</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>        os.add_dll_directory(dll_dir)</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geoai</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>bbox <span class="op">=</span> [<span class="op">-</span><span class="fl">83.94</span>, <span class="fl">35.96</span>, <span class="op">-</span><span class="fl">83.92</span>, <span class="fl">35.98</span>]  <span class="co"># Small area near Knoxville, TN</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>output_dir <span class="op">=</span> <span class="st">"naip_data"</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>filepaths <span class="op">=</span> geoai.download_naip(</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>    bbox<span class="op">=</span>bbox,</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    output_dir<span class="op">=</span>output_dir,</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    year<span class="op">=</span><span class="dv">2021</span>,</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>    max_items<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Além do Planetary Computer, o USDA Natural Resources Conservation Service (NRCS) hospeda imagens NAIP em uma pasta pública do Box em https://nrcs.app.box.com/v/naip. A pasta é organizada por ano e estado, facilitando a navegação e o download de imagens para regiões específi cas. Isso pode ser uma alternativa conveniente quando você deseja explorar visualmente a cobertura disponível ou baixar imagens para um estado ou condado inteiro sem escrever código.</p>
+</section>
+<section id="download-de-dados-sentinel-2" class="level2">
+<h2 class="anchored" data-anchor-id="download-de-dados-sentinel-2">4.6. Download de Dados Sentinel-2</h2>
+<p>Para dados Sentinel-2, o fl uxo de trabalho tem duas etapas: primeiro pesquisar itens usando pystac_client , depois baixar bandas específi cas usando geoai.download_pc_stac_item() . Isso lhe dá controle preciso sobre quais bandas e resoluções recuperar.</p>
+<section id="pesquisando-itens-sentinel-2" class="level3">
+<h3 class="anchored" data-anchor-id="pesquisando-itens-sentinel-2">4.6.1. Pesquisando Itens Sentinel-2</h3>
+<div id="782ae153" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pystac_client <span class="im">import</span> Client</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>catalog <span class="op">=</span> Client.<span class="bu">open</span>(<span class="st">"https://planetarycomputer.microsoft.com/api/stac/v1"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>bbox <span class="op">=</span> [<span class="op">-</span><span class="fl">83.94</span>, <span class="fl">35.96</span>, <span class="op">-</span><span class="fl">83.92</span>, <span class="fl">35.98</span>]</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>search <span class="op">=</span> catalog.search(</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    collections<span class="op">=</span>[<span class="st">"sentinel-2-l2a"</span>],</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    bbox<span class="op">=</span>bbox,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    datetime<span class="op">=</span><span class="st">"2025-06-01/2025-08-31"</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    query<span class="op">=</span>{<span class="st">"eo:cloud_cover"</span>: {<span class="st">"lt"</span>: <span class="dv">10</span>}},</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    max_items<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>items <span class="op">=</span> search.item_collection()</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> items:</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    item <span class="op">=</span> items[<span class="dv">0</span>]</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    cloud_cover <span class="op">=</span> item.properties.get(<span class="st">"eo:cloud_cover"</span>)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    cloud_cover_text <span class="op">=</span> (</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"</span><span class="sc">{</span>cloud_cover<span class="sc">}</span><span class="ss">%"</span> <span class="cf">if</span> cloud_cover <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="cf">else</span> <span class="st">"N/A"</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Selected item: </span><span class="sc">{</span>item<span class="sc">.</span><span class="bu">id</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Date: </span><span class="sc">{</span>item<span class="sc">.</span>datetime<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Cloud cover: </span><span class="sc">{</span>cloud_cover_text<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    item_url <span class="op">=</span> item.self_href</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Item URL: </span><span class="sc">{</span>item_url<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Selected item: S2B_MSIL2A_20250816T161829_R040_T16SGE_20250816T201128
+Date: 2025-08-16 16:18:29.024000+00:00
+Cloud cover: 9.708405%
+Item URL: https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-2-l2a/items/S2B_MSIL2A_20250816T161829_R040_T16SGE_20250816T201128</code></pre>
+</div>
+</div>
+</section>
+<section id="download-e-mesclagem-de-bandas" class="level3">
+<h3 class="anchored" data-anchor-id="download-e-mesclagem-de-bandas">4.6.2. Download e Mesclagem de Bandas</h3>
+<p>Com a URL do item em mãos, use geoai.download_pc_stac_item() para baixar bandas específicas e opcionalmente mesclá-las em um único GeoTIFF multibanda:</p>
+<div id="a797379c" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> items:</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> geoai.download_pc_stac_item(</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        item_url<span class="op">=</span>item_url,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        bands<span class="op">=</span>[<span class="st">"B02"</span>, <span class="st">"B03"</span>, <span class="st">"B04"</span>, <span class="st">"B08"</span>],  <span class="co"># Blue, Green, Red, NIR</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>        output_dir<span class="op">=</span><span class="st">"sentinel2_data"</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        merge_bands<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>        merged_filename<span class="op">=</span><span class="st">"knoxville_s2_rgbn.tif"</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>        overwrite<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> band_name, path <span class="kw">in</span> result.items():</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>band_name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>path<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>c:\Users\mauro\.conda\envs\geoai\Lib\site-packages\pystac_client\item_search.py:925: FutureWarning: get_items() is deprecated, use items() instead
+  warnings.warn(</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"adba3b2f5c264571a808b3de532ff81f","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  B02: sentinel2_data\S2B_MSIL2A_20250816T161829_R040_T16SGE_20250816T201128_B02.tif
+  B03: sentinel2_data\S2B_MSIL2A_20250816T161829_R040_T16SGE_20250816T201128_B03.tif
+  B04: sentinel2_data\S2B_MSIL2A_20250816T161829_R040_T16SGE_20250816T201128_B04.tif
+  B08: sentinel2_data\S2B_MSIL2A_20250816T161829_R040_T16SGE_20250816T201128_B08.tif
+  merged: sentinel2_data\knoxville_s2_rgbn.tif</code></pre>
+</div>
+</div>
+<p>O parâmetro merge_bands=True reamostra todas as bandas solicitadas para uma resolução comum (padrão para a resolução da primeira banda) e as empilha em um único GeoTIFF. Isso é particularmente útil ao combinar bandas em diferentes resoluções nativas, como as bandas visíveis de 10 m com as bandas de borda vermelha de 20 m. Você pode controlar a resolução de saída explicitamente com o parâmetro cell_size .</p>
+</section>
+</section>
+<section id="download-de-dados-landsat" class="level2">
+<h2 class="anchored" data-anchor-id="download-de-dados-landsat">4.7. Download de Dados Landsat</h2>
+<p>Os dados Landsat seguem o mesmo padrão de busca e download. O Planetary Computer hospeda dados tanto do Landsat 8 quanto do Landsat 9 na coleção landsat-c2-l2 (Collection 2, Level 2 reflectância de superfície).</p>
+<div id="36420dff" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pystac_client <span class="im">import</span> Client</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>catalog <span class="op">=</span> Client.<span class="bu">open</span>(<span class="st">"https://planetarycomputer.microsoft.com/api/stac/v1"</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>bbox <span class="op">=</span> [<span class="op">-</span><span class="fl">83.94</span>, <span class="fl">35.96</span>, <span class="op">-</span><span class="fl">83.92</span>, <span class="fl">35.98</span>]</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>search <span class="op">=</span> catalog.search(</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    collections<span class="op">=</span>[<span class="st">"landsat-c2-l2"</span>],</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    bbox<span class="op">=</span>bbox,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    datetime<span class="op">=</span><span class="st">"2025-06-01/2025-08-31"</span>,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    query<span class="op">=</span>{<span class="st">"eo:cloud_cover"</span>: {<span class="st">"lt"</span>: <span class="dv">10</span>}},</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    max_items<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>items <span class="op">=</span> search.item_collection()</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> items:</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    item <span class="op">=</span> items[<span class="dv">0</span>]</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    cloud_cover <span class="op">=</span> item.properties.get(<span class="st">"eo:cloud_cover"</span>)</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    cloud_cover_text <span class="op">=</span> (</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"</span><span class="sc">{</span>cloud_cover<span class="sc">}</span><span class="ss">%"</span> <span class="cf">if</span> cloud_cover <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="cf">else</span> <span class="st">"N/A"</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Selected item: </span><span class="sc">{</span>item<span class="sc">.</span><span class="bu">id</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Date: </span><span class="sc">{</span>item<span class="sc">.</span>datetime<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Cloud cover: </span><span class="sc">{</span>cloud_cover_text<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Available assets:"</span>)</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key <span class="kw">in</span> <span class="bu">list</span>(item.assets.keys())[:<span class="dv">10</span>]:</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Selected item: LC09_L2SP_019035_20250816_02_T1
+Date: 2025-08-16 16:12:03.296497+00:00
+Cloud cover: 8.2%
+
+Available assets:
+  qa
+  ang
+  red
+  blue
+  drad
+  emis
+  emsd
+  trad
+  urad
+  atran</code></pre>
+</div>
+</div>
+<p>Para baixar bandas específicas do Landsat, use a mesma função geoai.download_pc_stac_item() . As bandas do Landsat usam convenções de nomenclatura diferentes do Sentinel-2 (por exemplo, “blue”, “green”, “red”, “nir08” para Landsat vs.&nbsp;“B02”, “B03”, “B04”, “B08” para Sentinel-2):</p>
+<div id="2a8f34aa" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> items:</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    landsat_url <span class="op">=</span> items[<span class="dv">0</span>].self_href</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> geoai.download_pc_stac_item(</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        item_url<span class="op">=</span>landsat_url,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>        bands<span class="op">=</span>[<span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"nir08"</span>],</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>        output_dir<span class="op">=</span><span class="st">"landsat_data"</span>,</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>        merge_bands<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>        merged_filename<span class="op">=</span><span class="st">"knoxville_landsat_rgbn.tif"</span>,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        overwrite<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> band_name, path <span class="kw">in</span> result.items():</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>band_name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>path<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>c:\Users\mauro\.conda\envs\geoai\Lib\site-packages\pystac_client\item_search.py:925: FutureWarning: get_items() is deprecated, use items() instead
+  warnings.warn(</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"8a6c1fc7da0b47a78ff129be252a9863","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  blue: landsat_data\LC09_L2SP_019035_20250816_02_T1_blue.tif
+  green: landsat_data\LC09_L2SP_019035_20250816_02_T1_green.tif
+  red: landsat_data\LC09_L2SP_019035_20250816_02_T1_red.tif
+  nir08: landsat_data\LC09_L2SP_019035_20250816_02_T1_nir08.tif
+  merged: landsat_data\knoxville_landsat_rgbn.tif</code></pre>
+</div>
+</div>
+<p>Alternativamente, você pode usar geoai.pc_stac_download() quando já tem objetos de itens STAC e deseja baixar ativos específi cos com múltiplos workers:</p>
+<div id="2bf7df7f" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> items:</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    downloaded <span class="op">=</span> geoai.pc_stac_download(</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>        items<span class="op">=</span>items[<span class="dv">0</span>],</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        output_dir<span class="op">=</span><span class="st">"landsat_data_raw"</span>,</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        assets<span class="op">=</span>[<span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>, <span class="st">"nir08"</span>],</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>        max_workers<span class="op">=</span><span class="dv">4</span>,</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> item_id, assets <span class="kw">in</span> downloaded.items():</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Item: </span><span class="sc">{</span>item_id<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> asset_key, fpath <span class="kw">in</span> assets.items():</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>asset_key<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>fpath<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="download-de-dados-abertos-vantor" class="level2">
+<h2 class="anchored" data-anchor-id="download-de-dados-abertos-vantor">4.8. Download de Dados Abertos Vantor</h2>
+<p>Como introduzido anteriormente neste capítulo, o Programa de Dados Abertos da Vantor fornece imagens de satélite gratuitas pré-evento e pós-evento para grandes desastres naturais. Como os dados são publicados como um catálogo STAC, você pode pesquisar e acessá-los usando o mesmo fluxo de trabalho pystac_client usado nas seções anteriores.</p>
+<p>O exemplo a seguir se conecta ao catálogo STAC de Dados Abertos da Vantor e lista as coleções de eventos de desastre disponíveis:</p>
+<div id="32dfec88" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pystac_client <span class="im">import</span> Client</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>vantor_catalog_url <span class="op">=</span> (</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://vantor-opendata.s3.amazonaws.com/events/catalog.json"</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>vantor_catalog <span class="op">=</span> Client.<span class="bu">open</span>(vantor_catalog_url)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>collections <span class="op">=</span> <span class="bu">list</span>(vantor_catalog.get_collections())</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of event collections: </span><span class="sc">{</span><span class="bu">len</span>(collections)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> collection <span class="kw">in</span> collections:</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>collection<span class="sc">.</span><span class="bu">id</span><span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>collection<span class="sc">.</span>title<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Você pode então inspecionar uma coleção de evento específica para revisar seus metadados:</p>
+<div id="dac5f243" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> collections:</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    event <span class="op">=</span> collections[<span class="dv">0</span>]</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Event: </span><span class="sc">{</span>event<span class="sc">.</span>title<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Description: </span><span class="sc">{</span>event<span class="sc">.</span>description<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"License: </span><span class="sc">{</span>event<span class="sc">.</span>license<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Temporal extent: </span><span class="sc">{</span>event<span class="sc">.</span>extent<span class="sc">.</span>temporal<span class="sc">.</span>intervals<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Spatial extent: </span><span class="sc">{</span>event<span class="sc">.</span>extent<span class="sc">.</span>spatial<span class="sc">.</span>bboxes<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="acesso-a-dados-vetoriais" class="level2">
+<h2 class="anchored" data-anchor-id="acesso-a-dados-vetoriais">4.9. Acesso a Dados Vetoriais</h2>
+<p>Muitos fluxos de trabalho de GeoAI requerem dados vetoriais junto com imagens de satélite. Pegadas de edificações servem como rótulos de treinamento para modelos de segmentação, redes viárias definem feições de interesse e polígonos de uso do solo fornecem alvos de classificação. O pacote geoai fornece funções convenientes para acessar grandes datasets vetoriais.</p>
+<section id="edificações-do-overture-maps" class="level3">
+<h3 class="anchored" data-anchor-id="edificações-do-overture-maps">4.9.1. Edificações do Overture Maps</h3>
+<p>A Overture Maps Foundation produz dados de mapa abertos, incluindo um dataset global de pegadas de edificações derivado de múltiplas fontes como OpenStreetMap, Microsoft ML Buildings e Google Open Buildings. O pacote geoai oferece duas maneiras convenientes de acessar esses dados.</p>
+<p>A função download_overture_buildings() usa a CLI do Overture Maps para baixar dados de edificações para uma caixa delimitadora e salvá-los em um arquivo:</p>
+<div id="848f2ed7" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geoai</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>bbox <span class="op">=</span> (<span class="op">-</span><span class="fl">83.94</span>, <span class="fl">35.96</span>, <span class="op">-</span><span class="fl">83.92</span>, <span class="fl">35.98</span>)  <span class="co"># Knoxville area</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>output_path <span class="op">=</span> <span class="st">"buildings.geojson"</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>geoai.download_overture_buildings(</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    bbox<span class="op">=</span>bbox,</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    output<span class="op">=</span>output_path,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    overture_type<span class="op">=</span><span class="st">"building"</span>,</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Buildings saved to </span><span class="sc">{</span>output_path<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Para mais flexibilidade, get_overture_data() retorna dados diretamente como um GeoDataFrame, permitindo filtrar por colunas e explorar interativamente. Ela suporta múltiplos tipos de dados além de edificações, incluindo places, roads, land cover e water features:</p>
+<div id="e5e09615" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>gdf <span class="op">=</span> geoai.get_overture_data(</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    overture_type<span class="op">=</span><span class="st">"building"</span>,</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    bbox<span class="op">=</span>(<span class="op">-</span><span class="fl">83.94</span>, <span class="fl">35.96</span>, <span class="op">-</span><span class="fl">83.92</span>, <span class="fl">35.98</span>),</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    output<span class="op">=</span><span class="st">"buildings.parquet"</span>,</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Downloaded </span><span class="sc">{</span><span class="bu">len</span>(gdf)<span class="sc">}</span><span class="ss"> buildings"</span>)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>gdf.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>As funções do Overture Maps requerem o pacote overturemaps . Instale-o com pip install overturemaps se ainda não estiver disponível em seu ambiente. Os downloads podem levar alguns minutos, dependendo do tamanho da área e da velocidade da sua rede. ### 4.9.2. Dados OpenStreetMap O OpenStreetMap (OSM) é um mapa colaborativo e open-source do mundo mantido por uma comunidade global de voluntários. Embora o Overture Maps esteja cada vez mais popular para pegadas de edificações, o OSM continua sendo uma fonte valiosa para estradas, pontos de interesse, polígonos de uso do solo e muitas outras feições. Bibliotecas como osmnx e ohsome fornecem interfaces Python para consultar dados do OSM. Para projetos de GeoAI, os dados do OSM são comumente usados para gerar rótulos de treinamento para extração de estradas, detecção de edificações e classificação de uso do solo.</p>
+<p>A biblioteca quackosm usa DuckDB para extrair dados do OSM efi cientemente de arquivos PBF, oferecendo alto desempenho para grandes datasets. O pacote leafmap fornece funções wrapper convenientes em seu módulo leafmap.osm que facilitam a consulta de dados do OSM por caixa delimitadora, nome de lugar ou geometria personalizada.</p>
+<p>Para baixar pegadas de edificações do OSM para uma caixa delimitadora, use quackosm_gdf_from_bbox() com um filtro de tags do OSM:</p>
+<div id="17abaa67" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> leafmap.osm <span class="im">as</span> osm</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>bbox <span class="op">=</span> (<span class="op">-</span><span class="fl">83.94</span>, <span class="fl">35.96</span>, <span class="op">-</span><span class="fl">83.92</span>, <span class="fl">35.98</span>)  <span class="co"># Knoxville area</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>buildings <span class="op">=</span> osm.quackosm_gdf_from_bbox(bbox, tags<span class="op">=</span>{<span class="st">"building"</span>: <span class="va">True</span>})</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Downloaded </span><span class="sc">{</span><span class="bu">len</span>(buildings)<span class="sc">}</span><span class="ss"> buildings"</span>)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>buildings.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Você também pode consultar dados do OSM por nome de lugar. O exemplo a seguir baixa a rede viária de Knoxville, Tennessee:</p>
+<div id="d961a81f" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>roads <span class="op">=</span> osm.quackosm_gdf_from_place(<span class="st">"Knoxville, Tennessee"</span>, tags<span class="op">=</span>{<span class="st">"highway"</span>:</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="va">True</span>})</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Downloaded </span><span class="sc">{</span><span class="bu">len</span>(roads)<span class="sc">}</span><span class="ss"> road segments"</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>roads.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Para controle mais preciso sobre a área de consulta, passe uma geometria Shapely ou string WKT para quackosm_gdf_from_geometry() :</p>
+<div id="1d2776ff" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shapely.geometry <span class="im">import</span> Polygon</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>polygon <span class="op">=</span> Polygon([</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    (<span class="op">-</span><span class="fl">83.94</span>, <span class="fl">35.96</span>),</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    (<span class="op">-</span><span class="fl">83.92</span>, <span class="fl">35.96</span>),</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    (<span class="op">-</span><span class="fl">83.92</span>, <span class="fl">35.98</span>),</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    (<span class="op">-</span><span class="fl">83.94</span>, <span class="fl">35.98</span>),</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>natural <span class="op">=</span> osm.quackosm_gdf_from_geometry(polygon, tags<span class="op">=</span>{<span class="st">"natural"</span>: <span class="va">True</span>})</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Downloaded </span><span class="sc">{</span><span class="bu">len</span>(natural)<span class="sc">}</span><span class="ss"> natural features"</span>)</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>natural.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>As funções quackosm aceitam qualquer tag OSM válida para fi ltragem. Tags comuns úteis para GeoAI incluem building , highway , landuse , natural , waterway e amenity . O primeiro download para uma região pode demorar mais porque o quackosm precisa buscar e armazenar em cache o arquivo PBF regional. Consultas subsequentes na mesma região reutilizam o arquivo em cache e executam muito mais rápido.</p>
+</section>
+</section>
+<section id="organizando-seus-dados" class="level2">
+<h2 class="anchored" data-anchor-id="organizando-seus-dados">4.10. Organizando Seus Dados</h2>
+<p>O gerenciamento de dados pode parecer mundano comparado ao treinamento de redes neurais, mas tem um impacto desproporcional no sucesso do projeto. Datasets mal organizados levam a tempo desperdiçado procurando arquivos, uso acidental de dados desatualizados e resultados que não podem ser reproduzidos.</p>
+<p>À medida que seu projeto cresce de algumas imagens de teste para centenas de cenas de satélite com rótulos e saídas de modelo correspondentes, uma estrutura de diretórios limpa previne confusão e mantém os fl uxos de trabalho reproduzíveis. Um layout recomendado para projetos de GeoAI é: <br></p>
+<p>project/ <br> ├── data/ <br> │ ├── raw/………………# Arquivos originais baixados (never modified)<br> │ │ ├── naip/<br> │ │ ├── sentinel2/<br> │ │ ├── landsat/<br> │ │ └── vectors/<br> │ ├── processed/…..# Arquivos recortados, reprojetados ou mosaicos<br> │ └── training/……….# Tiles and labels prontos para treinar o modelo<br> ├── models/……………# Configurações e pesos dos modelos salvos<br> ├── notebooks/……..# Jupyter notebooks para explicações<br> ├── scripts/……………..# Escripts Python reutilizaveis<br> └── results/……………..# Saídas com predições, mapas e avaliações<br></p>
+<p>Siga estas convenções de nomenclatura para manter os arquivos identificáveis: * <strong>Inclua a fonte</strong>: naip_2021_knoxville.tif , s2_20240615_B04.tif * <strong>Inclua a data</strong>: Use o formato ISO (YYYY-MM-DD ou YYYYMMDD) para que os arquivos sejam classificados cronologicamente. * <strong>Inclua a área</strong>: Adicione um identifi cador curto de localização como o nome de uma cidade ou ID do tile. * <strong>Preserve os dados brutos</strong>: Nunca modifi que os downloads originais. Crie cópias processadas em um diretório separado. * <strong>Use CRS consistente</strong>: Reprojete todos os datasets para um CRS comum no início do seu fl uxo de trabalho para evitar desalinhamento posterior.</p>
+<p>Essas práticas podem parecer menores no início, mas se pagam rapidamente quando você precisa reproduzir resultados, compartilhar dados com colaboradores ou escalar para áreas de estudo maiores.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -14,3 +14,9 @@ Aula introdutória que descreve principais assuntos a serem debatidos durante o 
 Introdução ao Python e instalação de bibliotécas e recursos importantes para execussão de tarefas de GeoAI.
 
 [![](Slides/aula2.jpg)](Slides/Aula_2.pdf)
+
+# Aulas 3 - Aquisição de dados
+
+Introdução ao Python e instalação de bibliotécas e recursos importantes para execussão de tarefas de GeoAI.
+
+[![](Slides/aula3.jpg)](Slides/Aula_3.pdf)
