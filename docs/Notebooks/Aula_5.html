@@ -254,59 +254,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="gerando-chips-de-imagem-a-partir-de-uma-única-imagem">Gerando Chips de Imagem a Partir de uma Única Imagem</h2>
 <p>Cenas de imagens de satélite e aéreas são grandes demais para alimentar diretamente uma rede neural.</p>
 <p>Uma única cena NAIP pode ter dezenas de milhares de pixels em cada lado, enquanto a maioria dos modelos de deep learning espera entradas de 256 x 256 ou 512 x 512 pixels. Tiling (ou “chipping”) é o processo de fatiar essas grandes cenas em pedaços gerenciáveis. ### Download de Dados de Exemplo Começamos baixando uma imagem NAIP de exemplo e suas anotações de pegadas de edifi cações correspondentes. A imagem NAIP cobre uma pequena área e o arquivo vetorial contém polígonos de edificações digitalizados a partir das imagens.</p>
-<div id="fd4af716" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geoai</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>raster_url <span class="op">=</span> <span class="st">"https://data.source.coop/opengeos/geoai/naip-train.tif"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>vector_url <span class="op">=</span> <span class="st">"https://data.source.coop/opengeos/geoai/naip-train-buildings.geojson"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>raster_path <span class="op">=</span> geoai.download_file(raster_url)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>vector_path <span class="op">=</span> geoai.download_file(vector_url)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="9592db52" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># no colab retire o "#" dessa linha de comando para instalação da biblioteca geoai</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install geoai-py</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="fd4af716" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geoai</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>raster_url <span class="op">=</span> <span class="st">"https://github.com/Alixandrini/PPEC083/raw/refs/heads/main/Dados_Raster/Ilheus_CBERS4a.tif"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>vector_url <span class="op">=</span> <span class="st">"https://github.com/Alixandrini/PPEC083/raw/refs/heads/main/Dados%20OSM/Ilheus_CBERS4a.geojson"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>raster_path <span class="op">=</span> geoai.download_file(raster_url)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>vector_path <span class="op">=</span> geoai.download_file(vector_url)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"2a39854c723c4a60a4d55443005f18eb","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"32376890a4d24fbe8b5aa14300072650","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"1685a285694c4f1c9e642efdf7158b34","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+{"model_id":"07094faf9c1644a9805c06ab8b87417a","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 </div>
 <section id="pré-visualizar-dados" class="level3">
 <h3 class="anchored" data-anchor-id="pré-visualizar-dados">Pré-visualizar Dados</h3>
 <p>Antes de gerar chips, sempre inspecione as imagens de origem e anotações visualmente. Esta etapa detecta problemas como rótulos desalinhados, configurações de CRS incorretas ou artefatos inesperados na imagem antes que se propaguem para o dataset de treinamento.</p>
-<div id="f2cd4c25" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>geoai.view_image(raster_path, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">10</span>))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>geoai.view_vector(vector_path, raster_path<span class="op">=</span>raster_path, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="f2cd4c25" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>geoai.view_image(raster_path, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">10</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>geoai.view_vector(vector_path, raster_path<span class="op">=</span>raster_path, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Aula_5_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="Aula_5_files/figure-html/cell-4-output-1.png" width="626" height="789" class="figure-img"></p>
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Aula_5_files/figure-html/cell-3-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="Aula_5_files/figure-html/cell-4-output-2.png" width="744" height="989" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <div id="fcb5763a" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>geoai.view_vector_interactive(vector_path, tiles<span class="op">=</span>raster_path)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>geoai.view_vector_interactive(vector_path, tiles<span class="op">=</span>raster_path)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="converter-vetor-em-raster" class="level3">
 <h3 class="anchored" data-anchor-id="converter-vetor-em-raster">Converter Vetor em Raster</h3>
 <p>Modelos de segmentação semântica requerem rótulos no nível de pixel, onde cada pixel na imagem de rótulo recebe um valor de classe. A função <code>vector_to_raster()</code> rasteriza polígonos vetoriais em uma grade que corresponde à resolução, extensão e CRS do raster de referência. Isso produz uma máscara binária onde pixels de edificação têm valor 1 e pixels de fundo têm valor 0</p>
-<div id="05b28bee" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>output_path <span class="op">=</span> vector_path.replace(<span class="st">".geojson"</span>, <span class="st">".tif"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>geoai.vector_to_raster(vector_path, output_path, reference_raster<span class="op">=</span>raster_path)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>geoai.view_image(output_path, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="05b28bee" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>output_path <span class="op">=</span> vector_path.replace(<span class="st">".geojson"</span>, <span class="st">".tif"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>geoai.vector_to_raster(vector_path, output_path, reference_raster<span class="op">=</span>raster_path)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>geoai.view_image(output_path, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Aula_5_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="Aula_5_files/figure-html/cell-6-output-1.png" width="626" height="789" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -369,38 +373,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="gerar-tiles">Gerar Tiles</h3>
 <p>A função <code>export_geotiff_tiles()</code> lida com o fluxo de trabalho completo de geração de chips: divisão de imagens em tiles, rasterização de rótulos vetoriais em máscaras e salvamento de pares de tiles imagem-máscara. O parâmetro <code>create_overview</code> gera uma única imagem de visão geral mostrando todos os limites dos tiles, o que é útil para verificar a cobertura espacial.</p>
 <div id="1da39dae" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tiles <span class="op">=</span> geoai.export_geotiff_tiles(</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    in_raster<span class="op">=</span>raster_path,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    out_folder<span class="op">=</span><span class="st">"output"</span>,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    in_class_data<span class="op">=</span>vector_path,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    tile_size<span class="op">=</span><span class="dv">512</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">384</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    buffer_radius<span class="op">=</span><span class="dv">0</span>,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>     create_overview<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    quiet<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tiles <span class="op">=</span> geoai.export_geotiff_tiles(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    in_raster<span class="op">=</span>raster_path,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    out_folder<span class="op">=</span><span class="st">"output"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    in_class_data<span class="op">=</span>vector_path,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    tile_size<span class="op">=</span><span class="dv">512</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">384</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    buffer_radius<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>     create_overview<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    quiet<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="pré-visualizar-chips-de-imagem" class="level3">
 <h3 class="anchored" data-anchor-id="pré-visualizar-chips-de-imagem">Pré-visualizar Chips de Imagem</h3>
 <p>Após gerar tiles, inspecione a visão geral e pares individuais de imagem-máscara para verificar se os rótulos estão corretamente alinhados com as feições nas imagens. Cada tile de imagem deve ter um tile de máscara correspondente com extensão espacial correspondente.</p>
 <div id="143e9118" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>geoai.view_image(<span class="st">"output/overview.png"</span>, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>geoai.view_image(<span class="st">"output/overview.png"</span>, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Aula_5_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="Aula_5_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Para visualizar os tiles gerados, use a função <code>display_training_tiles()</code></p>
 <div id="be31b060" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> geoai.display_training_tiles(output_dir<span class="op">=</span><span class="st">"output"</span>, num_tiles<span class="op">=</span><span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">18</span>,<span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> geoai.display_training_tiles(output_dir<span class="op">=</span><span class="st">"output"</span>, num_tiles<span class="op">=</span><span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">18</span>,<span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Aula_5_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="Aula_5_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -414,9 +418,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="download-de-dados-de-exemplo-em-lote">Download de Dados de Exemplo em Lote</h3>
 <p>O dataset de exemplo contém dois tiles de imagem NAIP junto com anotações de edifi cações em dois formatos: um único arquivo GeoJSON cobrindo ambos os tiles e arquivos GeoJSON separados para cada</p>
 <div id="9044fccf" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://data.source.coop/opengeos/geoai/naip-rgb-train-tiles.zip"</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>data_dir <span class="op">=</span> geoai.download_file(url)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://data.source.coop/opengeos/geoai/naip-rgb-train-tiles.zip"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>data_dir <span class="op">=</span> geoai.download_file(url)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"2e3c8b7386b4453080cda02eae5f4ef9","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -428,15 +432,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="explorar-dados-de-exemplo">Explorar Dados de Exemplo</h3>
 <p>Vamos listar os arquivos no diretório de dados de exemplo para ver o que está incluído:</p>
 <div id="646d61de" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Images:"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> <span class="bu">sorted</span>(os.listdir(<span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/images"</span>)):</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  - </span><span class="sc">{</span>f<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Annotations (single file):"</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> <span class="bu">sorted</span>(os.listdir(<span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks1"</span>)):</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  - </span><span class="sc">{</span>f<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Annotations (multiple files):"</span>)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> <span class="bu">sorted</span>(os.listdir(<span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks2"</span>)):</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  - </span><span class="sc">{</span>f<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Images:"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> <span class="bu">sorted</span>(os.listdir(<span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/images"</span>)):</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  - </span><span class="sc">{</span>f<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Annotations (single file):"</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> <span class="bu">sorted</span>(os.listdir(<span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks1"</span>)):</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  - </span><span class="sc">{</span>f<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Annotations (multiple files):"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> <span class="bu">sorted</span>(os.listdir(<span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks2"</span>)):</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  - </span><span class="sc">{</span>f<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Images:
   - naip_rgb_train_tile1.tif
@@ -455,14 +459,14 @@ Annotations (multiple files):
 <h3 class="anchored" data-anchor-id="visualizar-imagem-e-anotações">Visualizar Imagem e Anotações</h3>
 <p>A função <code>display_image_with_vector()</code> sobrepõe anotações vetoriais na imagem de origem, fornecendo uma verificação visual rápida do alinhamento dos rótulos.</p>
 <div id="088f6ed8" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>image_path <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/images/naip_rgb_train_tile1.tif"</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mask_path <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks2/naip_rgb_train_tile1.geojson"</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>fig, axes, info <span class="op">=</span> geoai.display_image_with_vector(image_path, mask_path)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of buildings: </span><span class="sc">{</span>info[<span class="st">'num_features'</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>image_path <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/images/naip_rgb_train_tile1.tif"</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>mask_path <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks2/naip_rgb_train_tile1.geojson"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>fig, axes, info <span class="op">=</span> geoai.display_image_with_vector(image_path, mask_path)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of buildings: </span><span class="sc">{</span>info[<span class="st">'num_features'</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Aula_5_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="Aula_5_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -475,23 +479,23 @@ Annotations (multiple files):
 <h3 class="anchored" data-anchor-id="método-1-arquivo-vetorial-único-cobrindo-todas-as-imagens">Método 1: Arquivo Vetorial Único Cobrindo Todas as Imagens</h3>
 <p>Este é o método mais eficiente quando você tem um grande arquivo de anotação cobrindo múltiplos tiles de imagem. A função carrega o arquivo vetorial uma vez, filtra espacialmente as feições para cada imagem com base em seus limites e, com <code>skip_empty_tiles=True</code> , gera tiles apenas onde feições existem.</p>
 <div id="10486cb6" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> geoai.export_geotiff_tiles_batch(</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    images_folder<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/images"</span>,</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    masks_file<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks1/naip_train_buildings.geojson"</span>,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    output_folder<span class="op">=</span><span class="st">"output/method1_single_mask"</span>,</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    tile_size<span class="op">=</span><span class="dv">256</span>,</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">128</span>,</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    class_value_field<span class="op">=</span><span class="st">"class"</span>,</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    skip_empty_tiles<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    quiet<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span><span class="st">'='</span><span class="op">*</span><span class="dv">60</span><span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Results:"</span>)</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Images processed: </span><span class="sc">{</span>stats[<span class="st">'processed_pairs'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Total tiles generated: </span><span class="sc">{</span>stats[<span class="st">'total_tiles'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Tiles with features: </span><span class="sc">{</span>stats[<span class="st">'tiles_with_features'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Feature percentage: </span><span class="sc">{</span>stats[<span class="st">'tiles_with_features'</span>]<span class="op">/</span></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>stats[<span class="st">'total_tiles'</span>]<span class="op">*</span><span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">%"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> geoai.export_geotiff_tiles_batch(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    images_folder<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/images"</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    masks_file<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks1/naip_train_buildings.geojson"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    output_folder<span class="op">=</span><span class="st">"output/method1_single_mask"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    tile_size<span class="op">=</span><span class="dv">256</span>,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">128</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    class_value_field<span class="op">=</span><span class="st">"class"</span>,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    skip_empty_tiles<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    quiet<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span><span class="st">'='</span><span class="op">*</span><span class="dv">60</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Results:"</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Images processed: </span><span class="sc">{</span>stats[<span class="st">'processed_pairs'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Total tiles generated: </span><span class="sc">{</span>stats[<span class="st">'total_tiles'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Tiles with features: </span><span class="sc">{</span>stats[<span class="st">'tiles_with_features'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Feature percentage: </span><span class="sc">{</span>stats[<span class="st">'tiles_with_features'</span>]<span class="op">/</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>stats[<span class="st">'total_tiles'</span>]<span class="op">*</span><span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">%"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"96ca8b0ad1ea476ba85f12d266776cde","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -512,21 +516,21 @@ Results:
 <h3 class="anchored" data-anchor-id="método-2-múltiplos-arquivos-vetoriais-emparelhados-por-ordem-de-classificação">Método 2: Múltiplos Arquivos Vetoriais Emparelhados por Ordem de Classificação</h3>
 <p>Este método emparelha imagens e máscaras alfabeticamente por ordem de classificação. A primeira imagem é emparelhada com a primeira máscara, a segunda com a segunda, e assim por diante. Isso é útil quando seus arquivos seguem uma convenção de ordenação consistente, mas os nomes base não correspondem exatamente. Use este modo apenas quando estiver confi ante de que as listas de arquivos classificadas se alinham corretamente.</p>
 <div id="8f562214" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> geoai.export_geotiff_tiles_batch(</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    images_folder<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/images"</span>,</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    masks_folder<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks2"</span>,</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    output_folder<span class="op">=</span><span class="st">"output/method2_sorted_order"</span>,</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    tile_size<span class="op">=</span><span class="dv">256</span>,</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">128</span>,</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    class_value_field<span class="op">=</span><span class="st">"class"</span>,</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    skip_empty_tiles<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    match_by_name<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span><span class="st">'='</span><span class="op">*</span><span class="dv">60</span><span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Results:"</span>)</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Images processed: </span><span class="sc">{</span>stats[<span class="st">'processed_pairs'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Total tiles generated: </span><span class="sc">{</span>stats[<span class="st">'total_tiles'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Tiles with features: </span><span class="sc">{</span>stats[<span class="st">'tiles_with_features'</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> geoai.export_geotiff_tiles_batch(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    images_folder<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/images"</span>,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    masks_folder<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks2"</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    output_folder<span class="op">=</span><span class="st">"output/method2_sorted_order"</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    tile_size<span class="op">=</span><span class="dv">256</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">128</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    class_value_field<span class="op">=</span><span class="st">"class"</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    skip_empty_tiles<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    match_by_name<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span><span class="st">'='</span><span class="op">*</span><span class="dv">60</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Results:"</span>)</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Images processed: </span><span class="sc">{</span>stats[<span class="st">'processed_pairs'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Total tiles generated: </span><span class="sc">{</span>stats[<span class="st">'total_tiles'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Tiles with features: </span><span class="sc">{</span>stats[<span class="st">'tiles_with_features'</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"e2260fd4652549a28b40ec6739391454","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -546,21 +550,21 @@ Results:
 <h3 class="anchored" data-anchor-id="método-3-múltiplos-arquivos-vetoriais-emparelhados-por-nome-de-arquivo">Método 3: Múltiplos Arquivos Vetoriais Emparelhados por Nome de Arquivo</h3>
 <p>Este método emparelha imagens e máscaras correspondendo seus nomes base de arquivo (por exemplo, <code>tile1.tif</code> é emparelhado com <code>tile1.geojson</code> ). É a opção mais segura quando imagens e máscaras compartilham o mesmo nome base, mas usam extensões diferentes.</p>
 <div id="53b979ba" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> geoai.export_geotiff_tiles_batch(</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    images_folder<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/images"</span>,</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    masks_folder<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks2"</span>,</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    output_folder<span class="op">=</span><span class="st">"output/method3_matched_name"</span>,</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    tile_size<span class="op">=</span><span class="dv">256</span>,</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">128</span>,</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    class_value_field<span class="op">=</span><span class="st">"class"</span>,</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    skip_empty_tiles<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    match_by_name<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span><span class="st">'='</span><span class="op">*</span><span class="dv">60</span><span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Results:"</span>)</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Images processed: </span><span class="sc">{</span>stats[<span class="st">'processed_pairs'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Total tiles generated: </span><span class="sc">{</span>stats[<span class="st">'total_tiles'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Tiles with features: </span><span class="sc">{</span>stats[<span class="st">'tiles_with_features'</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> geoai.export_geotiff_tiles_batch(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    images_folder<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/images"</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    masks_folder<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks2"</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    output_folder<span class="op">=</span><span class="st">"output/method3_matched_name"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    tile_size<span class="op">=</span><span class="dv">256</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">128</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    class_value_field<span class="op">=</span><span class="st">"class"</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    skip_empty_tiles<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    match_by_name<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span><span class="st">'='</span><span class="op">*</span><span class="dv">60</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Results:"</span>)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Images processed: </span><span class="sc">{</span>stats[<span class="st">'processed_pairs'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Total tiles generated: </span><span class="sc">{</span>stats[<span class="st">'total_tiles'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Tiles with features: </span><span class="sc">{</span>stats[<span class="st">'tiles_with_features'</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"19995a453a30437786682fed9c0c2fc7","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -580,12 +584,12 @@ Results:
 <h3 class="anchored" data-anchor-id="visualizar-tiles-gerados">Visualizar Tiles Gerados</h3>
 <p>A função <code>display_training_tiles()</code> mostra uma grade de pares imagem-máscara de um diretório de saída, fornecendo uma visão geral rápida dos dados de treinamento gerados.</p>
 <div id="2a195e11" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>output_dir <span class="op">=</span> <span class="st">"output/method1_single_mask"</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> geoai.display_training_tiles(output_dir, num_tiles<span class="op">=</span><span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>output_dir <span class="op">=</span> <span class="st">"output/method1_single_mask"</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> geoai.display_training_tiles(output_dir, num_tiles<span class="op">=</span><span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">18</span>, <span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Aula_5_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="Aula_5_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -595,23 +599,23 @@ Results:
 <h3 class="anchored" data-anchor-id="uso-avançado-parâmetros-personalizados">Uso Avançado: Parâmetros Personalizados</h3>
 <p>A função <code>export_geotiff_tiles_batch()</code> suporta muitos parâmetros para personalização, incluindo tamanho do tile, stride (sobreposição), raio de buffer ao redor de feições, filtragem de tiles vazios e mais.</p>
 <div id="0e1043c2" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> geoai.export_geotiff_tiles_batch(</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    images_folder<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/images"</span>,</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    masks_file<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks1/naip_train_buildings.geojson"</span>,</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    output_folder<span class="op">=</span><span class="st">"output/advanced_example"</span>,</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    tile_size<span class="op">=</span><span class="dv">512</span>,</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">256</span>,</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    class_value_field<span class="op">=</span><span class="st">"class"</span>,</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    buffer_radius<span class="op">=</span><span class="fl">0.5</span>,</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    skip_empty_tiles<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    all_touched<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>    max_tiles<span class="op">=</span><span class="dv">10</span>,</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>    quiet<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Generated </span><span class="sc">{</span>stats[<span class="st">'total_tiles'</span>]<span class="sc">}</span><span class="ss"> tiles with 50% overlap"</span>)</span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Output structure:"</span>)</span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  - output/advanced_example/images/  (image tiles)"</span>)</span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  - output/advanced_example/masks/   (mask tiles)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> geoai.export_geotiff_tiles_batch(</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    images_folder<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/images"</span>,</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    masks_file<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">/masks1/naip_train_buildings.geojson"</span>,</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    output_folder<span class="op">=</span><span class="st">"output/advanced_example"</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    tile_size<span class="op">=</span><span class="dv">512</span>,</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">256</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    class_value_field<span class="op">=</span><span class="st">"class"</span>,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    buffer_radius<span class="op">=</span><span class="fl">0.5</span>,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    skip_empty_tiles<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    all_touched<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    max_tiles<span class="op">=</span><span class="dv">10</span>,</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    quiet<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Generated </span><span class="sc">{</span>stats[<span class="st">'total_tiles'</span>]<span class="sc">}</span><span class="ss"> tiles with 50% overlap"</span>)</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Output structure:"</span>)</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  - output/advanced_example/images/  (image tiles)"</span>)</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  - output/advanced_example/masks/   (mask tiles)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"fdc7e0a84e59475c86b99c82e8250efa","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -630,19 +634,19 @@ Output structure:
 <h3 class="anchored" data-anchor-id="processamento-em-lote-com-máscaras-raster">Processamento em Lote com Máscaras Raster</h3>
 <p>Quando suas anotações já estão rasterizadas, como mapas de classificação de cobertura do solo, você pode passar uma pasta de máscaras raster diretamente em vez de arquivos vetoriais. Esse fluxo de trabalho é comum em tarefas de segmentação de cobertura do solo onde os rótulos já estão armazenados como imagens raster classificadas. O exemplo a seguir baixa um dataset de cobertura do solo de exemplo e o processa com export_<code>geotiff_tiles_batch()</code> .</p>
 <div id="bfcee3ba" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://data.source.coop/opengeos/geoai/landcover-sample-data.zip"</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>data_dir2 <span class="op">=</span> geoai.download_file(url)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>images_dir <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>data_dir2<span class="sc">}</span><span class="ss">/images"</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>masks_dir <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>data_dir2<span class="sc">}</span><span class="ss">/masks"</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>tiles_dir <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>data_dir2<span class="sc">}</span><span class="ss">/tiles"</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> geoai.export_geotiff_tiles_batch(</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    images_folder<span class="op">=</span>images_dir,</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    masks_folder<span class="op">=</span>masks_dir,</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    output_folder<span class="op">=</span>tiles_dir,</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    tile_size<span class="op">=</span><span class="dv">512</span>,</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">384</span>,</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    quiet<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://data.source.coop/opengeos/geoai/landcover-sample-data.zip"</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>data_dir2 <span class="op">=</span> geoai.download_file(url)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>images_dir <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>data_dir2<span class="sc">}</span><span class="ss">/images"</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>masks_dir <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>data_dir2<span class="sc">}</span><span class="ss">/masks"</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>tiles_dir <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>data_dir2<span class="sc">}</span><span class="ss">/tiles"</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> geoai.export_geotiff_tiles_batch(</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    images_folder<span class="op">=</span>images_dir,</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    masks_folder<span class="op">=</span>masks_dir,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    output_folder<span class="op">=</span>tiles_dir,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    tile_size<span class="op">=</span><span class="dv">512</span>,</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    stride<span class="op">=</span><span class="dv">384</span>,</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    quiet<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"457cec68dff64627bec9b01c5ef1da77","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
