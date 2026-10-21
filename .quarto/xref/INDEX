@@ -43,5 +43,35 @@
   },
   "Dados OSM/Ilheus_CBERS4a.qmd": {
     "Ilheus_CBERS4a.html": "5fc179d3"
+  },
+  "Notebooks/Aula_6.ipynb": {
+    "Aula_6.html": "0d6d1355"
+  },
+  "Notebooks/change_detection.ipynb": {
+    "change_detection.html": "92b26ad1"
+  },
+  "Notebooks/foundation_models.ipynb": {
+    "foundation_models.html": "eec600fb"
+  },
+  "Notebooks/image_translation.ipynb": {
+    "image_translation.html": "7fe5f653"
+  },
+  "Notebooks/instance_segmentation.ipynb": {
+    "instance_segmentation.html": "199a9d99"
+  },
+  "Notebooks/object_detection.ipynb": {
+    "object_detection.html": "5216c133"
+  },
+  "Notebooks/pixel_regression.ipynb": {
+    "pixel_regression.html": "6c895416"
+  },
+  "Notebooks/sam_geospatial.ipynb": {
+    "sam_geospatial.html": "b184c2a8"
+  },
+  "Notebooks/semantic_segmentation.ipynb": {
+    "semantic_segmentation.html": "671618c1"
+  },
+  "Notebooks/vision_language_models.ipynb": {
+    "vision_language_models.html": "5f86de0b"
   }
 }

@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mauro Alixandrini">
+<meta name="dcterms.date" content="2027-06-10">
+
+<title>Aula 6 – PPEC083</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">PPEC083</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Apresentação</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../notebooks.html"> 
+<span class="menu-text">Notebooks das Aulas</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../slides.html"> 
+<span class="menu-text">Folhas de apresentação</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">Sobre o Curso</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#reconhecimento-de-imagens" id="toc-reconhecimento-de-imagens" class="nav-link active" data-scroll-target="#reconhecimento-de-imagens">Reconhecimento de Imagens</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-de-aprendizagem" id="toc-objetivos-de-aprendizagem" class="nav-link" data-scroll-target="#objetivos-de-aprendizagem">Objetivos de Aprendizagem</a>
+  <ul class="collapse">
+  <li><a href="#compreender-os-fundamentos-da-classificação-de-cenas-scene-classification" id="toc-compreender-os-fundamentos-da-classificação-de-cenas-scene-classification" class="nav-link" data-scroll-target="#compreender-os-fundamentos-da-classificação-de-cenas-scene-classification">1. Compreender os Fundamentos da Classificação de Cenas (<em>Scene Classification</em>)</a></li>
+  <li><a href="#dominar-a-preparação-e-estruturação-de-dados-para-visão-computacional" id="toc-dominar-a-preparação-e-estruturação-de-dados-para-visão-computacional" class="nav-link" data-scroll-target="#dominar-a-preparação-e-estruturação-de-dados-para-visão-computacional">2. Dominar a Preparação e Estruturação de Dados para Visão Computacional</a></li>
+  <li><a href="#comparar-arquiteturas-modernas-de-redes-neurais-e-aplicar-transfer-learning" id="toc-comparar-arquiteturas-modernas-de-redes-neurais-e-aplicar-transfer-learning" class="nav-link" data-scroll-target="#comparar-arquiteturas-modernas-de-redes-neurais-e-aplicar-transfer-learning">3. Comparar Arquiteturas Modernas de Redes Neurais e Aplicar <em>Transfer Learning</em></a></li>
+  <li><a href="#avaliar-o-desempenho-e-diagnosticar-confusões-espectro-espaciais" id="toc-avaliar-o-desempenho-e-diagnosticar-confusões-espectro-espaciais" class="nav-link" data-scroll-target="#avaliar-o-desempenho-e-diagnosticar-confusões-espectro-espaciais">4. Avaliar o Desempenho e Diagnosticar Confusões Espectro-Espaciais</a></li>
+  <li><a href="#praticar-mlops-e-compartilhamento-de-modelos-em-nuvem" id="toc-praticar-mlops-e-compartilhamento-de-modelos-em-nuvem" class="nav-link" data-scroll-target="#praticar-mlops-e-compartilhamento-de-modelos-em-nuvem">5. Praticar MLOps e Compartilhamento de Modelos em Nuvem</a></li>
+  <li><a href="#aprendizado-por-transferência-transfer-learning" id="toc-aprendizado-por-transferência-transfer-learning" class="nav-link" data-scroll-target="#aprendizado-por-transferência-transfer-learning">1. Aprendizado por Transferência (<em>Transfer Learning</em>)</a></li>
+  <li><a href="#resnet-residual-networks" id="toc-resnet-residual-networks" class="nav-link" data-scroll-target="#resnet-residual-networks">2. ResNet (<em>Residual Networks</em>)</a></li>
+  <li><a href="#efficientnet" id="toc-efficientnet" class="nav-link" data-scroll-target="#efficientnet">3. EfficientNet</a></li>
+  <li><a href="#comparativo-direto-entre-as-duas-abordagens-no-notebook" id="toc-comparativo-direto-entre-as-duas-abordagens-no-notebook" class="nav-link" data-scroll-target="#comparativo-direto-entre-as-duas-abordagens-no-notebook">Comparativo Direto entre as Duas Abordagens no Notebook</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#download-the-eurosat-rgb-dataset" id="toc-download-the-eurosat-rgb-dataset" class="nav-link" data-scroll-target="#download-the-eurosat-rgb-dataset">Download the EuroSAT RGB Dataset</a></li>
+  <li><a href="#explorar-o-conjunto-de-dados" id="toc-explorar-o-conjunto-de-dados" class="nav-link" data-scroll-target="#explorar-o-conjunto-de-dados">Explorar o Conjunto de Dados</a></li>
+  <li><a href="#treinar-um-classificador-resnet-50" id="toc-treinar-um-classificador-resnet-50" class="nav-link" data-scroll-target="#treinar-um-classificador-resnet-50">Treinar um Classificador ResNet-50</a></li>
+  <li><a href="#plotar-o-histórico-de-treinamento" id="toc-plotar-o-histórico-de-treinamento" class="nav-link" data-scroll-target="#plotar-o-histórico-de-treinamento">Plotar o Histórico de Treinamento</a></li>
+  <li><a href="#avaliar-no-conjunto-de-teste" id="toc-avaliar-no-conjunto-de-teste" class="nav-link" data-scroll-target="#avaliar-no-conjunto-de-teste">Avaliar no Conjunto de Teste</a></li>
+  <li><a href="#plotar-a-matriz-de-confusão" id="toc-plotar-a-matriz-de-confusão" class="nav-link" data-scroll-target="#plotar-a-matriz-de-confusão">Plotar a Matriz de Confusão</a></li>
+  <li><a href="#visualizar-as-predições" id="toc-visualizar-as-predições" class="nav-link" data-scroll-target="#visualizar-as-predições">Visualizar as Predições</a></li>
+  <li><a href="#treinar-um-classificador-efficientnet-b0" id="toc-treinar-um-classificador-efficientnet-b0" class="nav-link" data-scroll-target="#treinar-um-classificador-efficientnet-b0">Treinar um Classificador EfficientNet-B0</a></li>
+  <li><a href="#comparar-resultados" id="toc-comparar-resultados" class="nav-link" data-scroll-target="#comparar-resultados">Comparar Resultados</a></li>
+  <li><a href="#publicar-e-reutilizar-modelos" id="toc-publicar-e-reutilizar-modelos" class="nav-link" data-scroll-target="#publicar-e-reutilizar-modelos">Publicar e Reutilizar Modelos</a>
+  <ul class="collapse">
+  <li><a href="#autenticar-no-hugging-face" id="toc-autenticar-no-hugging-face" class="nav-link" data-scroll-target="#autenticar-no-hugging-face">Autenticar no Hugging Face</a></li>
+  <li><a href="#enviar-o-modelo-treinado-para-o-hub" id="toc-enviar-o-modelo-treinado-para-o-hub" class="nav-link" data-scroll-target="#enviar-o-modelo-treinado-para-o-hub">Enviar o Modelo Treinado para o Hub</a></li>
+  <li><a href="#executar-inferência-a-partir-do-hub" id="toc-executar-inferência-a-partir-do-hub" class="nav-link" data-scroll-target="#executar-inferência-a-partir-do-hub">Executar Inferência a partir do Hub</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Aula 6</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">GeoAI</div>
+    <div class="quarto-category">technology</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mauro Alixandrini </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 10, 2027</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://colab.research.google.com/github/Alixandrini/PPEC083/blob/main/Notebooks/Aula_6.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid"></a></p>
+<section id="reconhecimento-de-imagens" class="level1">
+<h1>Reconhecimento de Imagens</h1>
+<p>O reconhecimento de imagens, frequentemente chamado de classificação de imagens ou classificação de cenas na literatura de visão computacional, é a tarefa de atribuir um único rótulo categórico a uma imagem inteira. Dado um tile de imagem de satélite ou aérea, um classificador pode rotulá-lo como “floresta”, “residencial”, “industrial” ou “agrícola”. Diferentemente da segmentação, que produz um rótulo para cada pixel, a classifi cação de imagens trata o tile inteiro como uma unidade e pergunta: “Qual é o uso ou cobertura do solo dominante ou mais representativo nesta cena?”</p>
+<p>Essa classificação no nível de tile é uma das tarefas mais fundamentais em IA geoespacial e serve como base para tarefas mais complexas abordadas em capítulos posteriores.</p>
+<p>Abaixo estão os principais exemplos de aplicação prática dessa abordagem em sensoriamento remoto e gestão territorial:</p>
+<ol type="1">
+<li><strong>Monitoramento e Triagem Rápida de Desmatamento e Degradação</strong></li>
+</ol>
+<ul>
+<li><strong>Como funciona</strong>: Grandes faixas de imagens orbitais (como CBERS-4A ou Sentinel-2) são particionadas em uma grade de recortes regulares (ex.: <span class="math inline">\(64 \times 64\)</span> ou <span class="math inline">\(128 \times 128\)</span> pixels).</li>
+<li><strong>Mecanismo Convolucional</strong>: O modelo não olha apenas se o pixel é verde ou marrom; ele reconhece a transição textural de bordas retas (clareiras de corte raso) ou cicatrizes lineares (estradas vicinais para extração de madeira) em meio à cobertura contínua de floresta.</li>
+<li><strong>Aplicação Prática</strong>: Geração de alertas rápidos de mudança de uso do solo para direcionar a fiscalização de órgãos ambientais sem a necessidade de processar segmentações vetorizadas completas em tempo real.</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Identificação e Mapeamento de Sistemas Agrícolas Específicos</strong></li>
+</ol>
+<ul>
+<li><strong>Como funciona</strong>: Diferenciação entre padrões agrícolas com respostas espectrais semelhantes em nível de pixel isolado, mas estruturas espaciais distintas.</li>
+<li><strong>Mecanismo Convolucional</strong>:Pivôs Centrais de Irrigação: A convolução extrai as feições circulares e o contraste das bordas em relação ao relevo circundante.Culturas Perenes vs.&nbsp;Pastagem: Talhões de citros ou cafezais exibem espaçamentos regulares em linha e texturas rugosas que uma camada convolucional captura facilmente, distinguindo-os de uma pastagem homogênea ou lavoura temporária.</li>
+<li><strong>Aplicação Prática</strong>: Inventário automatizado de infraestrutura de irrigação para outorga de recursos hídricos e estimativas de safra por cooperativas agropecuárias.</li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Delimitação e Tipificação de Zonas Urbanas</strong></li>
+</ol>
+<ul>
+<li><strong>Como funciona</strong>: Caracterização do tecido urbano a partir do padrão de ocupação do solo.</li>
+<li><strong>Mecanismo Convolucional</strong>: A rede aprende filtros que detectam alta densidade de bordas (telhados, arruamento ortogonal) vs.&nbsp;grandes estruturas contínuas (galpões logísticos) ou áreas com arruamento irregular e alta densidade de edificações sem recuo (assentamentos precários/favelas).</li>
+<li><strong>Aplicação Prática</strong>:Atualização de planos diretores municipais.Mapeamento de vazios urbanos e identificação de frentes de expansão urbana informal para planejamento de infraestrutura e saneamento.</li>
+</ul>
+<ol start="4" type="1">
+<li><strong>Triagem e Avaliação de Danos em Desastres Naturais</strong></li>
+</ol>
+<ul>
+<li><strong>Como funciona</strong>: Classificação do status de células territoriais antes e depois de eventos extremos (inundações, deslizamentos de terra ou rompimento de barragens).</li>
+<li><strong>Mecanismo Convolucional</strong>: Comparação de recortes para rotulá-los entre classes como Área Intacta, Área Inundada ou Estrutura Danificada. A rede identifica a ruptura de padrões conhecidos (vias interrompidas por sedimentos, deposição lamacenta sobre malha urbana)</li>
+<li><strong>Aplicação Prática</strong>: Suporte à Defesa Civil nas primeiras horas após o desastre, priorizando setores geográficos críticos para resgate e envio de suprimentos.</li>
+</ul>
+<ol start="5" type="1">
+<li><strong>Mineração e Extração Mineral (Legal e Ilegal)</strong></li>
+</ol>
+<ul>
+<li><strong>Como funciona</strong>: Varredura sistemática de bacias hidrográficas e áreas florestais para detecção de cavas de garimpo ou pilhas de rejeito.</li>
+<li><strong>Mecanismo Convolucional</strong>: A convolução detecta a quebra súbita da textura florestal associada a padrões de solo revolvido, presença de tanques de sedimentação com coloração turva e maquinário.</li>
+<li><strong>Aplicação Prática</strong>: Apoio a auditorias de regularidade ambiental e fiscalização de garimpos clandestinos em terras indígenas e unidades de conservação.</li>
+</ul>
+<section id="objetivos-de-aprendizagem" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-de-aprendizagem">Objetivos de Aprendizagem</h2>
+<p>No arquivo do notebook fornecido, a seção correspondente na célula Markdown 1 traz apenas o cabeçalho:</p>
+<section id="compreender-os-fundamentos-da-classificação-de-cenas-scene-classification" class="level3">
+<h3 class="anchored" data-anchor-id="compreender-os-fundamentos-da-classificação-de-cenas-scene-classification">1. Compreender os Fundamentos da Classificação de Cenas (<em>Scene Classification</em>)</h3>
+<ul>
+<li><p><strong>Do Pixel ao Rótulo (<em>From Pixels to Labels</em>):</strong> Entender a transição entre a classificação tradicional de sensoriamento remoto (pixel a pixel) e a atribuição de uma classe semântica global a um recorte/patch de imagem.</p></li>
+<li><p><strong>Mecanismos de Convolução:</strong> Compreender o papel das camadas convolucionais, pooling e campos receptivos na extração hierárquica de padrões espaciais, texturas e feições contextuais em imagens orbitais.</p></li>
+</ul>
+</section>
+<section id="dominar-a-preparação-e-estruturação-de-dados-para-visão-computacional" class="level3">
+<h3 class="anchored" data-anchor-id="dominar-a-preparação-e-estruturação-de-dados-para-visão-computacional">2. Dominar a Preparação e Estruturação de Dados para Visão Computacional</h3>
+<ul>
+<li><p><strong>Padrão <code>ImageFolder</code>:</strong> Aprender a organizar diretórios onde os nomes das subpastas definem os rótulos das classes (padrão nativo do PyTorch/Torchvision).</p></li>
+<li><p><strong>Benchmark EuroSAT:</strong> Conhecer a estrutura, resolução espacial (10 m), bandas visuais (RGB) e as 10 classes de cobertura da terra que compõem o dataset padrão da comunidade.</p></li>
+</ul>
+</section>
+<section id="comparar-arquiteturas-modernas-de-redes-neurais-e-aplicar-transfer-learning" class="level3">
+<h3 class="anchored" data-anchor-id="comparar-arquiteturas-modernas-de-redes-neurais-e-aplicar-transfer-learning">3. Comparar Arquiteturas Modernas de Redes Neurais e Aplicar <em>Transfer Learning</em></h3>
+<ul>
+<li><p><strong>Diferenciação de Arquiteturas:</strong> Identificar as vantagens e desvantagens de modelos convolucionais consolidados (como <strong>ResNet-50</strong>, com conexões residuais) frente a arquiteturas eficientes e otimizadas por busca neural (como <strong>EfficientNet-B0</strong>) e tendências contemporâneas (Vision Transformers e ConvNeXt).</p></li>
+<li><p><strong>Ajuste Fino (<em>Fine-Tuning</em>):</strong> Utilizar pesos pré-treinados no ImageNet (<code>pretrained=True</code>) para acelerar a convergência e reduzir a necessidade de volumes massivos de dados no treinamento em sensoriamento remoto.</p></li>
+</ul>
+</section>
+<section id="avaliar-o-desempenho-e-diagnosticar-confusões-espectro-espaciais" class="level3">
+<h3 class="anchored" data-anchor-id="avaliar-o-desempenho-e-diagnosticar-confusões-espectro-espaciais">4. Avaliar o Desempenho e Diagnosticar Confusões Espectro-Espaciais</h3>
+<ul>
+<li><strong>Diagnóstico de Treinamento:</strong> Interpretar curvas de perda (<em>loss</em>) e acurácia ao longo das épocas para detectar <em>overfitting</em> ou <em>underfitting</em>.</li>
+<li><strong>Métricas Globais e por Classe:</strong> Calcular acurácia global e examinar matrizes de confusão (brutas e normalizadas) para identificar classes de cobertura da terra propensas a confusão espectral mista.</li>
+<li><strong>Inspeção Visual de Inferência:</strong> Visualizar predições individuais com probabilidades associadas (<em>Softmax</em>), confrontando o rótulo verdadeiro com a certeza do modelo.</li>
+</ul>
+</section>
+<section id="praticar-mlops-e-compartilhamento-de-modelos-em-nuvem" class="level3">
+<h3 class="anchored" data-anchor-id="praticar-mlops-e-compartilhamento-de-modelos-em-nuvem">5. Praticar MLOps e Compartilhamento de Modelos em Nuvem</h3>
+<ul>
+<li><strong>Publicação no Hugging Face Hub:</strong> Autenticar e publicar checkpoints de modelos com metadados e nomes de classes.</li>
+<li><strong>Reuso e Inferência Remota:</strong> Carregar modelos diretamente do repositório em nuvem para executar predições sem precisar reter o ambiente de treinamento local.</li>
+</ul>
+</section>
+<section id="aprendizado-por-transferência-transfer-learning" class="level3">
+<h3 class="anchored" data-anchor-id="aprendizado-por-transferência-transfer-learning">1. Aprendizado por Transferência (<em>Transfer Learning</em>)</h3>
+<ul>
+<li><p><strong>Tradução Conceitual:</strong> Transferência de Aprendizado / Aprendizado por Transferência.</p></li>
+<li><p><strong>O Conceito:</strong> Redes Neurais Convolucionais profundas exigem centenas de milhares (ou milhões) de imagens para aprender representações visuais robustas a partir do zero (<em>from scratch</em>). No <em>Transfer Learning</em>, utiliza-se uma rede previamente treinada em uma base massiva de imagens (frequentemente o ImageNet, com mais de 1 milhão de fotos) e reaproveitam-se esses pesos para uma nova tarefa — no caso, a classificação de imagens de satélite.</p></li>
+<li><p><strong>Como Funciona na Prática:</strong></p></li>
+<li><p><strong>Extrator de Feições Congelado (<em>Feature Extractor</em>):</strong> As camadas iniciais de uma CNN aprendem feições universais de baixo nível (arestas, gradientes de cor, texturas e linhas ortogonais). Essas camadas podem ser mantidas congeladas.</p></li>
+<li><p><strong>Ajuste Fino (<em>Fine-Tuning</em>):</strong> Substitui-se apenas a última camada densa/linear (a cabeça de classificação, <em>head</em>) para coincidir com o número de classes de interesse (por exemplo, as 10 classes do EuroSAT). Os pesos da rede são então ajustados suavemente com uma taxa de aprendizado menor.</p></li>
+<li><p><strong>Vantagem em Sensoriamento Remoto:</strong> Reduz drasticamente o tempo de treinamento e viabiliza modelos de alta acurácia mesmo com amostragens reduzidas de imagens orbitais.</p></li>
+</ul>
+</section>
+<section id="resnet-residual-networks" class="level3">
+<h3 class="anchored" data-anchor-id="resnet-residual-networks">2. ResNet (<em>Residual Networks</em>)</h3>
+<ul>
+<li><strong>Tradução Conceitual:</strong> Redes Residuais.</li>
+<li><strong>O Problema Resolvido:</strong> Historicamente, ao empilhar dezenas de camadas convolucionais, as redes sofriam com a degradação de desempenho e o desaparecimento do gradiente (<em>vanishing gradient</em>), onde os sinais de correção calculados pelo <em>backpropagation</em> se tornavam próximos de zero antes de alcançar as camadas iniciais.</li>
+<li><strong>A Solução das Conexões Residuais (<em>Skip Connections / Shortcut</em>):</strong></li>
+<li>Em vez de forçar as camadas a aprenderem um mapeamento direto <span class="math inline">\(H(x)\)</span>, a ResNet formula o bloco para aprender um resíduo:</li>
+</ul>
+<p><span class="math display">\[F(x) = H(x) - x \implies H(x) = F(x) + x\]</span></p>
+<ul>
+<li><p>O termo <span class="math inline">\(+ x\)</span> representa uma ligação direta que pula uma ou mais camadas convolucionais. Se uma camada não acrescentar ganho preditivo, ela pode simplesmente convergir seus pesos para zero, mantendo a identidade intacta (<span class="math inline">\(H(x) = x\)</span>).</p></li>
+<li><p><strong>No Notebook (<code>resnet50</code>):</strong> Utiliza uma variante de 50 camadas profundas dividida em blocos residuais do tipo <em>bottleneck</em>. É uma arquitetura de referência robusta e estável para benchmarks de cobertura do solo.</p></li>
+</ul>
+</section>
+<section id="efficientnet" class="level3">
+<h3 class="anchored" data-anchor-id="efficientnet">3. EfficientNet</h3>
+<ul>
+<li><strong>Tradução Conceitual:</strong> Redes Convolucionais Eficientes por Escalonamento Composto.</li>
+<li><strong>O Problema Resolvido:</strong> Tradicionalmente, para melhorar o desempenho de uma rede, ampliava-se apenas uma dimensão: ou a profundidade (número de camadas, como na ResNet), ou a largura (quantidade de canais/filtros), ou a resolução espacial de entrada. O aumento desordenado de qualquer uma dessas variáveis de forma isolada causa saturação rápida de ganho e eleva os custos computacionais.</li>
+<li><strong>A Abordagem do Escalonamento Composto (<em>Compound Scaling</em>):</strong></li>
+<li>A EfficientNet balanceia uniformemente profundidade (<span class="math inline">\(d\)</span>), largura (<span class="math inline">\(w\)</span>) e resolução de entrada (<span class="math inline">\(r\)</span>) sob uma restrição de recursos computacionais fixos, utilizando um coeficiente composto <span class="math inline">\(\phi\)</span>:</li>
+</ul>
+<p><span class="math display">\[\text{Profundidade: } d = \alpha^\phi, \quad \text{Largura: } w = \beta^\phi, \quad \text{Resolução: } r = \gamma^\phi\]</span></p>
+<ul>
+<li><p>A arquitetura base (B0) emprega blocos convolucionais invertidos com conexões residuais (<em>MBConv</em> — <em>Mobile Inverted Bottleneck Convolution</em>), combinados com mecanismos de atenção leves (<em>Squeeze-and-Excitation</em>).</p></li>
+<li><p><strong>No Notebook (<code>efficientnet_b0</code>):</strong> Representa a versão de entrada da família EfficientNet. Entrega níveis de acurácia comparáveis ou superiores aos da ResNet-50 com significativamente menos parâmetros treináveis e menor pegada de memória.</p></li>
+</ul>
+<hr>
+</section>
+<section id="comparativo-direto-entre-as-duas-abordagens-no-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="comparativo-direto-entre-as-duas-abordagens-no-notebook">Comparativo Direto entre as Duas Abordagens no Notebook</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Característica</th>
+<th>ResNet-50</th>
+<th>EfficientNet-B0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Mecanismo Central</strong></td>
+<td>Conexões de salto residuais (<em>Skip Connections</em>)</td>
+<td>Escalonamento composto balanceado + Blocos <em>MBConv</em><br></td>
+</tr>
+<tr class="even">
+<td><strong>Volume de Parâmetros</strong></td>
+<td>Elevado (~25 milhões de parâmetros)</td>
+<td>Reduzido (~5.3 milhões de parâmetros)</td>
+</tr>
+<tr class="odd">
+<td><strong>Custo Computacional / Memória</strong></td>
+<td>Maior consumo de GPU por época</td>
+<td>Muito leve, ideal para execuções ágeis e inferência rápida</td>
+</tr>
+<tr class="even">
+<td><strong>Comportamento em Imagens Menores (64×64)</strong></td>
+<td>Mantém boa capacidade de generalização espacial</td>
+<td>Altamente eficiente, mas pode exigir atenção na resolução mínima aceita pelas reduções de escala sucessivas</td>
+</tr>
+</tbody>
+</table>
+<div id="6b2a0caf" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install geoai<span class="op">-</span>py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="5a16204e" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> geoai.utils <span class="im">import</span> download_file</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> geoai.recognize <span class="im">import</span> (</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    load_image_dataset,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    train_image_classifier,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    predict_images,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    evaluate_classifier,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    plot_training_history,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    plot_confusion_matrix,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    plot_predictions,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    push_classifier_to_hub,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    predict_images_from_hub,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[2]</span><span class="ansi-green-fg">, line 2</span>
+<span class="ansi-green-fg">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span> os
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span style="font-weight:bold;color:rgb(0,135,0)">from</span> geoai.utils <span style="font-weight:bold;color:rgb(0,135,0)">import</span> download_file
+<span class="ansi-green-fg">      3</span> from geoai.recognize import (
+<span class="ansi-green-fg">      4</span>     load_image_dataset,
+<span class="ansi-green-fg">      5</span>     train_image_classifier,
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'geoai.utils'</pre>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="download-the-eurosat-rgb-dataset" class="level1">
+<h1>Download the EuroSAT RGB Dataset</h1>
+<div id="6fe5e768" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://data.source.coop/opengeos/geoai/EuroSAT-RGB.zip"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data_dir <span class="op">=</span> download_file(url)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="057fabea" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Dataset directory: </span><span class="sc">{</span>data_dir<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Files: </span><span class="sc">{</span><span class="bu">sorted</span>(os.listdir(data_dir))<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Dataset directory: .\EuroSAT-RGB
+Files: ['AnnualCrop', 'Forest', 'HerbaceousVegetation', 'Highway', 'Industrial', 'Pasture', 'PermanentCrop', 'README.md', 'Residential', 'River', 'SeaLake', 'label_map.json', 'push_to_hf.py', 'test.csv', 'train.csv', 'validation.csv']</code></pre>
+</div>
+</div>
+</section>
+<section id="explorar-o-conjunto-de-dados" class="level1">
+<h1>Explorar o Conjunto de Dados</h1>
+<p>Desempacota os metadados do dicionário: listas de nomes de classes, caminhos, rótulos numéricos e o mapa de classe para índice. plt.subplots(2, 5, …): Cria uma grade com 2 linhas e 5 colunas para acomodar exatamente as 10 classes do EuroSAT. O loop varre cada classe, recupera a primeira ocorrência visual (labels.index(…)), abre a imagem, desativa os eixos cartesianos (ax.axis(“off”)) e atribui o nome da classe ao título. Renderiza a figura consolidada</p>
+<div id="01a92cd2" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dataset_info <span class="op">=</span> load_image_dataset(data_dir)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Classes (</span><span class="sc">{</span><span class="bu">len</span>(dataset_info[<span class="st">'class_names'</span>])<span class="sc">}</span><span class="ss">): </span><span class="sc">{</span>dataset_info[<span class="st">'class_names'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total images: </span><span class="sc">{</span><span class="bu">len</span>(dataset_info[<span class="st">'image_paths'</span>])<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Classes (10): ['AnnualCrop', 'Forest', 'HerbaceousVegetation', 'Highway', 'Industrial', 'Pasture', 'PermanentCrop', 'Residential', 'River', 'SeaLake']
+Total images: 27000</code></pre>
+</div>
+</div>
+<div id="4a2f876d" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>class_names <span class="op">=</span> dataset_info[<span class="st">"class_names"</span>]</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>image_paths <span class="op">=</span> dataset_info[<span class="st">"image_paths"</span>]</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> dataset_info[<span class="st">"labels"</span>]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>class_to_idx <span class="op">=</span> dataset_info[<span class="st">"class_to_idx"</span>]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">5</span>, figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">8</span>))</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, class_name <span class="kw">in</span> <span class="bu">enumerate</span>(class_names):</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> axes[idx <span class="op">//</span> <span class="dv">5</span>, idx <span class="op">%</span> <span class="dv">5</span>]</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find first image of this class</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    img_idx <span class="op">=</span> labels.index(class_to_idx[class_name])</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    img <span class="op">=</span> Image.<span class="bu">open</span>(image_paths[img_idx])</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    ax.imshow(img)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    ax.set_title(class_name, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    ax.axis(<span class="st">"off"</span>)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"Sample Image from Each Class"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">The Kernel crashed while executing code in the current cell or a previous cell. 
+
+</span><span class="ansi-red-fg ansi-bold">Please review the code in the cell(s) to identify a possible cause of the failure. 
+
+</span><span class="ansi-red-fg ansi-bold">Click &lt;a href='https://aka.ms/vscodeJupyterKernelCrash'&gt;here&lt;/a&gt; for more info. 
+
+</span><span class="ansi-red-fg ansi-bold">View Jupyter &lt;a href='command:jupyter.viewOutput'&gt;log&lt;/a&gt; for further details.</span></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="treinar-um-classificador-resnet-50" class="level1">
+<h1>Treinar um Classificador ResNet-50</h1>
+<p>Executa o fine-tuning da arquitetura ResNet-50:<br>
+* <code>data_dir</code>: Diretório base das imagens.<br>
+* <code>model_name="resnet50"</code>: Seleciona o backbone convolucional residual.<br>
+* <code>num_epochs=5</code>: Número de ciclos completos de treinamento sobre os dados.<br>
+* <code>batch_size=32</code>: Tamanho do lote de imagens processado a cada iteração do gradiente.<br>
+<em><code>learning_rate=1e-3</code>: Taxa de aprendizado inicial do otimizador.<br>
+</em> <code>image_size=64</code>: Dimensão de redimensionamento dos patches (<span class="math inline">\(64 \times 64\)</span> pixels).<br>
+* <code>in_channels=3</code>: Especifica 3 canais de entrada (RGB).<br>
+* <code>pretrained=True</code>: Inicializa o modelo com pesos pré-treinados do ImageNet (transfer learning).<br>
+* <code>output_dir</code>: Pasta onde checkpoints e métricas serão persistidos.<br>
+* <code>num_workers=4 e seed=42</code>: Define threads paralelas para carregar dados e fixa a semente de números aleatórios para reprodutibilidade.</p>
+<div id="80c5ec7d" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> train_image_classifier(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    data_dir<span class="op">=</span>data_dir,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    model_name<span class="op">=</span><span class="st">"resnet50"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    num_epochs<span class="op">=</span><span class="dv">5</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    batch_size<span class="op">=</span><span class="dv">32</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    learning_rate<span class="op">=</span><span class="fl">1e-3</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    image_size<span class="op">=</span><span class="dv">64</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    in_channels<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    pretrained<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    output_dir<span class="op">=</span><span class="st">"image_recognition_output/resnet50"</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    num_workers<span class="op">=</span><span class="dv">4</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    seed<span class="op">=</span><span class="dv">42</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"1d1ed80ab485495fa3eda913f9a84232","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"d5b28b15c0d5477497b4dca4694d0491","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┓
+┃<span style="color: #800080; text-decoration-color: #800080; font-weight: bold">   </span>┃<span style="color: #800080; text-decoration-color: #800080; font-weight: bold"> Name    </span>┃<span style="color: #800080; text-decoration-color: #800080; font-weight: bold"> Type             </span>┃<span style="color: #800080; text-decoration-color: #800080; font-weight: bold"> Params </span>┃<span style="color: #800080; text-decoration-color: #800080; font-weight: bold"> Mode  </span>┃<span style="color: #800080; text-decoration-color: #800080; font-weight: bold"> FLOPs </span>┃
+┡━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━┩
+│<span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 0 </span>│ model   │ ResNet           │ 23.5 M │ train │     0 │
+│<span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 1 </span>│ loss_fn │ CrossEntropyLoss │      0 │ train │     0 │
+└───┴─────────┴──────────────────┴────────┴───────┴───────┘
+</pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">Trainable params</span>: 23.5 M                                                                                           
+<span style="font-weight: bold">Non-trainable params</span>: 0                                                                                            
+<span style="font-weight: bold">Total params</span>: 23.5 M                                                                                               
+<span style="font-weight: bold">Total estimated model params size (MB)</span>: 94.114                                                                     
+<span style="font-weight: bold">Modules in train mode</span>: 218                                                                                         
+<span style="font-weight: bold">Modules in eval mode</span>: 0                                                                                            
+<span style="font-weight: bold">Total FLOPs</span>: 0                                                                                                     
+</pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"a606d7c243764d80bd74f4d15a92154c","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Detected KeyboardInterrupt, attempting graceful shutdown ...</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+</div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\trainer\call.py:49</span>, in <span class="ansi-cyan-fg">_call_and_handle_interrupt</span><span class="ansi-blue-fg">(trainer, trainer_fn, *args, **kwargs)</span>
+<span class="ansi-green-fg">     48</span>         <span style="font-weight:bold;color:rgb(0,135,0)">return</span> trainer.strategy.launcher.launch(trainer_fn, *args, trainer=trainer, **kwargs)
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">49</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">trainer_fn</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">     51</span> <span style="font-weight:bold;color:rgb(0,135,0)">except</span> _TunerExitException:
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\trainer\trainer.py:630</span>, in <span class="ansi-cyan-fg">Trainer._fit_impl</span><span class="ansi-blue-fg">(self, model, train_dataloaders, val_dataloaders, datamodule, ckpt_path, weights_only)</span>
+<span class="ansi-green-fg">    624</span> ckpt_path = <span style="color:rgb(0,135,0)">self</span>._checkpoint_connector._select_ckpt_path(
+<span class="ansi-green-fg">    625</span>     <span style="color:rgb(0,135,0)">self</span>.state.fn,
+<span class="ansi-green-fg">    626</span>     ckpt_path,
+<span class="ansi-green-fg">    627</span>     model_provided=<span style="font-weight:bold;color:rgb(0,135,0)">True</span>,
+<span class="ansi-green-fg">    628</span>     model_connected=<span style="color:rgb(0,135,0)">self</span>.lightning_module <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>,
+<span class="ansi-green-fg">    629</span> )
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">630</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_run</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">model</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">ckpt_path</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">ckpt_path</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">weights_only</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">weights_only</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    632</span> <span style="font-weight:bold;color:rgb(0,135,0)">assert</span> <span style="color:rgb(0,135,0)">self</span>.state.stopped
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\trainer\trainer.py:1079</span>, in <span class="ansi-cyan-fg">Trainer._run</span><span class="ansi-blue-fg">(self, model, ckpt_path, weights_only)</span>
+<span class="ansi-green-fg">   1076</span> <span style="font-style:italic;color:rgb(95,135,135)"># ----------------------------</span>
+<span class="ansi-green-fg">   1077</span> <span style="font-style:italic;color:rgb(95,135,135)"># RUN THE TRAINER</span>
+<span class="ansi-green-fg">   1078</span> <span style="font-style:italic;color:rgb(95,135,135)"># ----------------------------</span>
+<span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1079</span> results = <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_run_stage</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">   1081</span> <span style="font-style:italic;color:rgb(95,135,135)"># ----------------------------</span>
+<span class="ansi-green-fg">   1082</span> <span style="font-style:italic;color:rgb(95,135,135)"># POST-Training CLEAN UP</span>
+<span class="ansi-green-fg">   1083</span> <span style="font-style:italic;color:rgb(95,135,135)"># ----------------------------</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\trainer\trainer.py:1123</span>, in <span class="ansi-cyan-fg">Trainer._run_stage</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">   1122</span> <span style="font-weight:bold;color:rgb(0,135,0)">with</span> torch.autograd.set_detect_anomaly(<span style="color:rgb(0,135,0)">self</span>._detect_anomaly):
+<span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1123</span>     <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">fit_loop</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">run</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">   1124</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\loops\fit_loop.py:209</span>, in <span class="ansi-cyan-fg">_FitLoop.run</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">    208</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">run</span>(<span style="color:rgb(0,135,0)">self</span>) -&gt; <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">209</span>     <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">setup_data</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    210</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(0,135,0)">self</span>.skip:
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\loops\fit_loop.py:276</span>, in <span class="ansi-cyan-fg">_FitLoop.setup_data</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">    275</span> <span style="color:rgb(0,135,0)">self</span>._data_fetcher.setup(combined_loader)
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">276</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">iter</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_data_fetcher</span><span class="ansi-yellow-bg">)</span>  <span style="font-style:italic;color:rgb(95,135,135)"># creates the iterator inside the fetcher</span>
+<span class="ansi-green-fg">    277</span> max_batches = sized_len(combined_loader)
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\loops\fetchers.py:105</span>, in <span class="ansi-cyan-fg">_PrefetchDataFetcher.__iter__</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">    103</span> <span style="color:rgb(175,0,255)">@override</span>
+<span class="ansi-green-fg">    104</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">__iter__</span>(<span style="color:rgb(0,135,0)">self</span>) -&gt; <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">_PrefetchDataFetcher</span><span class="ansi-yellow-fg">"</span>:
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">105</span>     <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">super</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">.</span><span class="ansi-blue-fg ansi-yellow-bg">__iter__</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    106</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(0,135,0)">self</span>.length <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">    107</span>         <span style="font-style:italic;color:rgb(95,135,135)"># ignore pre-fetching, it's not necessary</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\loops\fetchers.py:52</span>, in <span class="ansi-cyan-fg">_DataFetcher.__iter__</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">     50</span> <span style="color:rgb(175,0,255)">@override</span>
+<span class="ansi-green-fg">     51</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">__iter__</span>(<span style="color:rgb(0,135,0)">self</span>) -&gt; <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">_DataFetcher</span><span class="ansi-yellow-fg">"</span>:
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">52</span>     <span style="color:rgb(0,135,0)">self</span>.iterator = <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">iter</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">combined_loader</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">     53</span>     <span style="color:rgb(0,135,0)">self</span>.reset()
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\utilities\combined_loader.py:351</span>, in <span class="ansi-cyan-fg">CombinedLoader.__iter__</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">    350</span> iterator = <span style="color:rgb(0,135,0)">cls</span>(<span style="color:rgb(0,135,0)">self</span>.flattened, <span style="color:rgb(0,135,0)">self</span>._limits)
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">351</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">iter</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">iterator</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    352</span> <span style="color:rgb(0,135,0)">self</span>._iterator = iterator
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\utilities\combined_loader.py:92</span>, in <span class="ansi-cyan-fg">_MaxSizeCycle.__iter__</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">     90</span> <span style="color:rgb(175,0,255)">@override</span>
+<span class="ansi-green-fg">     91</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">__iter__</span>(<span style="color:rgb(0,135,0)">self</span>) -&gt; Self:
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">92</span>     <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">super</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">.</span><span class="ansi-blue-fg ansi-yellow-bg">__iter__</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">     93</span>     <span style="color:rgb(0,135,0)">self</span>._consumed = [<span style="font-weight:bold;color:rgb(0,135,0)">False</span>] * <span style="color:rgb(0,135,0)">len</span>(<span style="color:rgb(0,135,0)">self</span>.iterables)
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\utilities\combined_loader.py:43</span>, in <span class="ansi-cyan-fg">_ModeIterator.__iter__</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">     41</span> <span style="color:rgb(175,0,255)">@override</span>
+<span class="ansi-green-fg">     42</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">__iter__</span>(<span style="color:rgb(0,135,0)">self</span>) -&gt; Self:
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">43</span>     <span style="color:rgb(0,135,0)">self</span>.iterators = <span class="ansi-yellow-bg">[</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">iter</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">iterable</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg"> </span><span style="font-weight:bold;color:rgb(0,135,0)" class="ansi-yellow-bg">for</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">iterable</span><span class="ansi-yellow-bg"> </span><span style="font-weight:bold;color:rgb(175,0,255)" class="ansi-yellow-bg">in</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">iterables</span><span class="ansi-yellow-bg">]</span>
+<span class="ansi-green-fg">     44</span>     <span style="color:rgb(0,135,0)">self</span>._idx = <span class="ansi-green-fg">0</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\utilities\combined_loader.py:43</span>, in <span class="ansi-cyan-fg">&lt;listcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
+<span class="ansi-green-fg">     41</span> <span style="color:rgb(175,0,255)">@override</span>
+<span class="ansi-green-fg">     42</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">__iter__</span>(<span style="color:rgb(0,135,0)">self</span>) -&gt; Self:
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">43</span>     <span style="color:rgb(0,135,0)">self</span>.iterators = [<span style="color:rgb(0,135,0)" class="ansi-yellow-bg">iter</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">iterable</span><span class="ansi-yellow-bg">)</span> <span style="font-weight:bold;color:rgb(0,135,0)">for</span> iterable <span style="font-weight:bold;color:rgb(175,0,255)">in</span> <span style="color:rgb(0,135,0)">self</span>.iterables]
+<span class="ansi-green-fg">     44</span>     <span style="color:rgb(0,135,0)">self</span>._idx = <span class="ansi-green-fg">0</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\torch\utils\data\dataloader.py:505</span>, in <span class="ansi-cyan-fg">DataLoader.__iter__</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">    504</span> <span style="font-weight:bold;color:rgb(0,135,0)">else</span>:
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">505</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_get_iterator</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\torch\utils\data\dataloader.py:438</span>, in <span class="ansi-cyan-fg">DataLoader._get_iterator</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">    437</span> <span style="color:rgb(0,135,0)">self</span>.check_worker_number_rationality()
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">438</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">_MultiProcessingDataLoaderIter</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\torch\utils\data\dataloader.py:1178</span>, in <span class="ansi-cyan-fg">_MultiProcessingDataLoaderIter.__init__</span><span class="ansi-blue-fg">(self, loader)</span>
+<span class="ansi-green-fg">   1177</span> <span style="font-weight:bold;color:rgb(0,135,0)">try</span>:
+<span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1178</span>     <span class="ansi-yellow-bg">w</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">start</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">   1179</span> <span style="font-weight:bold;color:rgb(0,135,0)">except</span> (<span style="font-weight:bold;color:rgb(215,95,95)">TypeError</span>, <span style="font-weight:bold;color:rgb(215,95,95)">AttributeError</span>, PicklingError):
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\multiprocessing\process.py:121</span>, in <span class="ansi-cyan-fg">BaseProcess.start</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">    120</span> _cleanup()
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">121</span> <span style="color:rgb(0,135,0)">self</span>._popen = <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_Popen</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    122</span> <span style="color:rgb(0,135,0)">self</span>._sentinel = <span style="color:rgb(0,135,0)">self</span>._popen.sentinel
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\multiprocessing\context.py:224</span>, in <span class="ansi-cyan-fg">Process._Popen</span><span class="ansi-blue-fg">(process_obj)</span>
+<span class="ansi-green-fg">    222</span> <span style="color:rgb(175,0,255)">@staticmethod</span>
+<span class="ansi-green-fg">    223</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">_Popen</span>(process_obj):
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">224</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">_default_context</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">get_context</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">Process</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_Popen</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">process_obj</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\multiprocessing\context.py:336</span>, in <span class="ansi-cyan-fg">SpawnProcess._Popen</span><span class="ansi-blue-fg">(process_obj)</span>
+<span class="ansi-green-fg">    335</span> <span style="font-weight:bold;color:rgb(0,135,0)">from</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg ansi-bold">.</span><span class="ansi-blue-fg ansi-bold">popen_spawn_win32</span><span style="color:rgb(188,188,188)"> </span><span style="font-weight:bold;color:rgb(0,135,0)">import</span> Popen
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">336</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">Popen</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">process_obj</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\multiprocessing\popen_spawn_win32.py:95</span>, in <span class="ansi-cyan-fg">Popen.__init__</span><span class="ansi-blue-fg">(self, process_obj)</span>
+<span class="ansi-green-fg">     94</span>     reduction.dump(prep_data, to_child)
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">95</span>     <span class="ansi-yellow-bg">reduction</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">dump</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">process_obj</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">to_child</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">     96</span> <span style="font-weight:bold;color:rgb(0,135,0)">finally</span>:
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\multiprocessing\reduction.py:60</span>, in <span class="ansi-cyan-fg">dump</span><span class="ansi-blue-fg">(obj, file, protocol)</span>
+<span class="ansi-green-fg">     59</span> <span style="font-style:italic" class="ansi-yellow-fg">'''Replacement for pickle.dump() using ForkingPickler.'''</span>
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">60</span> <span class="ansi-yellow-bg">ForkingPickler</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">file</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">protocol</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">dump</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">obj</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-red-fg">KeyboardInterrupt</span>: 
+
+During handling of the above exception, another exception occurred:
+
+<span class="ansi-red-fg">RuntimeError</span>                              Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[7]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> result = <span class="ansi-yellow-bg">train_image_classifier</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-fg">      2</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">data_dir</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">data_dir</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">      3</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">model_name</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">resnet50</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">      4</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">num_epochs</span><span class="ansi-yellow-bg">=</span><span class="ansi-green-fg ansi-yellow-bg">5</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">      5</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">batch_size</span><span class="ansi-yellow-bg">=</span><span class="ansi-green-fg ansi-yellow-bg">32</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">      6</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">learning_rate</span><span class="ansi-yellow-bg">=</span><span class="ansi-green-fg ansi-yellow-bg">1e-3</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">      7</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">image_size</span><span class="ansi-yellow-bg">=</span><span class="ansi-green-fg ansi-yellow-bg">64</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">      8</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">in_channels</span><span class="ansi-yellow-bg">=</span><span class="ansi-green-fg ansi-yellow-bg">3</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">      9</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">pretrained</span><span class="ansi-yellow-bg">=</span><span style="font-weight:bold;color:rgb(0,135,0)" class="ansi-yellow-bg">True</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">     10</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">output_dir</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-fg ansi-yellow-bg">image_recognition_output/resnet50</span><span class="ansi-yellow-fg ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">     11</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">num_workers</span><span class="ansi-yellow-bg">=</span><span class="ansi-green-fg ansi-yellow-bg">4</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">     12</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">seed</span><span class="ansi-yellow-bg">=</span><span class="ansi-green-fg ansi-yellow-bg">42</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">     13</span> <span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\geoai\recognize.py:521</span>, in <span class="ansi-cyan-fg">train_image_classifier</span><span class="ansi-blue-fg">(data_dir, model_name, num_epochs, batch_size, learning_rate, weight_decay, image_size, in_channels, test_size, val_size, pretrained, freeze_backbone, output_dir, num_workers, seed, accelerator, devices, patience, extensions, **kwargs)</span>
+<span class="ansi-green-fg">    519</span> <span style="font-style:italic;color:rgb(95,135,135)"># Train</span>
+<span class="ansi-green-fg">    520</span> logger.info(<span class="ansi-yellow-fg">f</span><span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">Training </span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>model_name<span style="font-weight:bold;color:rgb(175,95,135)">}</span><span class="ansi-yellow-fg"> for up to </span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>num_epochs<span style="font-weight:bold;color:rgb(175,95,135)">}</span><span class="ansi-yellow-fg"> epochs...</span><span class="ansi-yellow-fg">"</span>)
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">521</span> <span class="ansi-yellow-bg">trainer</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">fit</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">model</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">train_dataloaders</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">train_loader</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">val_dataloaders</span><span class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">val_loader</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    523</span> <span style="font-style:italic;color:rgb(95,135,135)"># Test</span>
+<span class="ansi-green-fg">    524</span> test_loader = DataLoader(
+<span class="ansi-green-fg">    525</span>     test_dataset,
+<span class="ansi-green-fg">    526</span>     batch_size=batch_size,
+<span class="ansi-green-fg">   (...)</span><span class="ansi-green-fg">    529</span>     pin_memory=<span style="font-weight:bold;color:rgb(0,135,0)">True</span>,
+<span class="ansi-green-fg">    530</span> )
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\trainer\trainer.py:584</span>, in <span class="ansi-cyan-fg">Trainer.fit</span><span class="ansi-blue-fg">(self, model, train_dataloaders, val_dataloaders, datamodule, ckpt_path, weights_only)</span>
+<span class="ansi-green-fg">    582</span> <span style="color:rgb(0,135,0)">self</span>.training = <span style="font-weight:bold;color:rgb(0,135,0)">True</span>
+<span class="ansi-green-fg">    583</span> <span style="color:rgb(0,135,0)">self</span>.should_stop = <span style="font-weight:bold;color:rgb(0,135,0)">False</span>
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">584</span> <span class="ansi-yellow-bg">call</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_call_and_handle_interrupt</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-fg">    585</span> <span class="ansi-yellow-bg">    </span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    586</span> <span class="ansi-yellow-bg">    </span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_fit_impl</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    587</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">model</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    588</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">train_dataloaders</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    589</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">val_dataloaders</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    590</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">datamodule</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    591</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">ckpt_path</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    592</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">weights_only</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    593</span> <span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\trainer\call.py:62</span>, in <span class="ansi-cyan-fg">_call_and_handle_interrupt</span><span class="ansi-blue-fg">(trainer, trainer_fn, *args, **kwargs)</span>
+<span class="ansi-green-fg">     60</span> signal.signal(signal.SIGINT, signal.SIG_IGN)
+<span class="ansi-green-fg">     61</span> _interrupt(trainer, exception)
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">62</span> <span class="ansi-yellow-bg">trainer</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_teardown</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">     63</span> launcher = trainer.strategy.launcher
+<span class="ansi-green-fg">     64</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(0,135,0)">isinstance</span>(launcher, _SubprocessScriptLauncher):
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\trainer\trainer.py:1106</span>, in <span class="ansi-cyan-fg">Trainer._teardown</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">   1104</span> <span style="font-style:italic;color:rgb(95,135,135)"># loop should never be `None` here but it can because we don't know the trainer stage with `ddp_spawn`</span>
+<span class="ansi-green-fg">   1105</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> loop <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1106</span>     <span class="ansi-yellow-bg">loop</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">teardown</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">   1107</span> <span style="color:rgb(0,135,0)">self</span>._logger_connector.teardown()
+<span class="ansi-green-fg">   1108</span> <span style="color:rgb(0,135,0)">self</span>._signal_connector.teardown()
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\loops\fit_loop.py:516</span>, in <span class="ansi-cyan-fg">_FitLoop.teardown</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">    514</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">teardown</span>(<span style="color:rgb(0,135,0)">self</span>) -&gt; <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">    515</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(0,135,0)">self</span>._data_fetcher <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">516</span>         <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_data_fetcher</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">teardown</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    517</span>         <span style="color:rgb(0,135,0)">self</span>._data_fetcher = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>
+<span class="ansi-green-fg">    518</span>     <span style="color:rgb(0,135,0)">self</span>.epoch_loop.teardown()
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\loops\fetchers.py:80</span>, in <span class="ansi-cyan-fg">_DataFetcher.teardown</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">     79</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">teardown</span>(<span style="color:rgb(0,135,0)">self</span>) -&gt; <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">80</span>     <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">reset</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">     81</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(0,135,0)">self</span>._combined_loader <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">     82</span>         <span style="color:rgb(0,135,0)">self</span>._combined_loader.reset()
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\loops\fetchers.py:142</span>, in <span class="ansi-cyan-fg">_PrefetchDataFetcher.reset</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">    140</span> <span style="color:rgb(175,0,255)">@override</span>
+<span class="ansi-green-fg">    141</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">reset</span>(<span style="color:rgb(0,135,0)">self</span>) -&gt; <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">142</span>     <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">super</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">reset</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    143</span>     <span style="color:rgb(0,135,0)">self</span>.batches = []
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\loops\fetchers.py:76</span>, in <span class="ansi-cyan-fg">_DataFetcher.reset</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">     74</span> <span style="font-style:italic;color:rgb(95,135,135)"># teardown calls `reset()`, and if it happens early, `combined_loader` can still be None</span>
+<span class="ansi-green-fg">     75</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(0,135,0)">self</span>._combined_loader <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">76</span>     <span style="color:rgb(0,135,0)">self</span>.length = <span class="ansi-yellow-bg">sized_len</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">combined_loader</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">     77</span>     <span style="color:rgb(0,135,0)">self</span>.done = <span style="color:rgb(0,135,0)">self</span>.length == <span class="ansi-green-fg">0</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\fabric\utilities\data.py:52</span>, in <span class="ansi-cyan-fg">sized_len</span><span class="ansi-blue-fg">(dataloader)</span>
+<span class="ansi-green-fg">     49</span> <span style="font-style:italic" class="ansi-yellow-fg">"""Try to get the length of an object, return ``None`` otherwise."""</span>
+<span class="ansi-green-fg">     50</span> <span style="font-weight:bold;color:rgb(0,135,0)">try</span>:
+<span class="ansi-green-fg">     51</span>     <span style="font-style:italic;color:rgb(95,135,135)"># try getting the length</span>
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">52</span>     length = <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">len</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">dataloader</span><span class="ansi-yellow-bg">)</span>  <span style="font-style:italic;color:rgb(95,135,135)"># type: ignore [arg-type]</span>
+<span class="ansi-green-fg">     53</span> <span style="font-weight:bold;color:rgb(0,135,0)">except</span> (<span style="font-weight:bold;color:rgb(215,95,95)">TypeError</span>, <span style="font-weight:bold;color:rgb(215,95,95)">NotImplementedError</span>):
+<span class="ansi-green-fg">     54</span>     length = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">c:\Users\mauro\.conda\envs\geoai_clean\Lib\site-packages\lightning\pytorch\utilities\combined_loader.py:358</span>, in <span class="ansi-cyan-fg">CombinedLoader.__len__</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">    356</span> <span style="font-style:italic" class="ansi-yellow-fg">"""Compute the number of batches."""</span>
+<span class="ansi-green-fg">    357</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="color:rgb(0,135,0)">self</span>._iterator <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">358</span>     <span style="font-weight:bold;color:rgb(0,135,0)">raise</span> <span style="font-weight:bold;color:rgb(215,95,95)">RuntimeError</span>(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">Please call `iter(combined_loader)` first.</span><span class="ansi-yellow-fg">"</span>)
+<span class="ansi-green-fg">    359</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="color:rgb(0,135,0)">len</span>(<span style="color:rgb(0,135,0)">self</span>._iterator)
+
+<span class="ansi-red-fg">RuntimeError</span>: Please call `iter(combined_loader)` first.</pre>
+</div>
+</div>
+</div>
+</section>
+<section id="plotar-o-histórico-de-treinamento" class="level1">
+<h1>Plotar o Histórico de Treinamento</h1>
+<div id="39898e19" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plot_training_history(<span class="st">"image_recognition_output/resnet50/models"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="avaliar-no-conjunto-de-teste" class="level1">
+<h1>Avaliar no Conjunto de Teste</h1>
+<p>Lê os registros de log da pasta de saída e plota as curvas de perda (loss) e acurácia ao longo das 5 épocas.</p>
+<div id="b53259df" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>eval_result <span class="op">=</span> evaluate_classifier(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span>result[<span class="st">"model"</span>],</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    dataset<span class="op">=</span>result[<span class="st">"test_dataset"</span>],</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    class_names<span class="op">=</span>result[<span class="st">"class_names"</span>],</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="plotar-a-matriz-de-confusão" class="level1">
+<h1>Plotar a Matriz de Confusão</h1>
+<p>Plota a matriz de confusão normalizada por linha (valores entre 0 e 1), permitindo enxergar a taxa de acerto e erro percentual de cada classe independentemente do balanceamento</p>
+<div id="c2f41545" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plot_confusion_matrix(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    eval_result[<span class="st">"confusion_matrix"</span>],</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    result[<span class="st">"class_names"</span>],</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="735b205e" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plot_confusion_matrix(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    eval_result[<span class="st">"confusion_matrix"</span>],</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    result[<span class="st">"class_names"</span>],</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    normalize<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="visualizar-as-predições" class="level1">
+<h1>Visualizar as Predições</h1>
+<p>Sorteia 10 índices pseudoaleatórios (rng.sample) dentro da partição de teste.</p>
+<p><code>predict_images(...)</code>: Executa o forward pass nas imagens selecionadas retornando as classes preditas e o vetor de probabilidades (softmax).</p>
+<p><code>plot_predictions(...)</code>: Gera a visualização gráfica comparando lado a lado a imagem, a classe real (ground truth), a classe predita e a barra de confiança do modelo.</p>
+<div id="154a5d6d" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>test_dataset <span class="op">=</span> result[<span class="st">"test_dataset"</span>]</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>test_paths <span class="op">=</span> test_dataset.image_paths</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>test_labels <span class="op">=</span> test_dataset.labels</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>n_samples <span class="op">=</span> <span class="bu">min</span>(<span class="dv">10</span>, <span class="bu">len</span>(test_paths))</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> random.Random(<span class="dv">42</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>sample_indices <span class="op">=</span> rng.sample(<span class="bu">range</span>(<span class="bu">len</span>(test_paths)), k<span class="op">=</span>n_samples)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>sample_paths <span class="op">=</span> [test_paths[i] <span class="cf">for</span> i <span class="kw">in</span> sample_indices]</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>sample_labels <span class="op">=</span> [test_labels[i] <span class="cf">for</span> i <span class="kw">in</span> sample_indices]</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>pred_result <span class="op">=</span> predict_images(</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span>result[<span class="st">"model"</span>],</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    image_paths<span class="op">=</span>sample_paths,</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    class_names<span class="op">=</span>result[<span class="st">"class_names"</span>],</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    image_size<span class="op">=</span><span class="dv">64</span>,</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    in_channels<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plot_predictions(</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    image_paths<span class="op">=</span>sample_paths,</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    predictions<span class="op">=</span>pred_result[<span class="st">"predictions"</span>],</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    true_labels<span class="op">=</span>sample_labels,</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    class_names<span class="op">=</span>result[<span class="st">"class_names"</span>],</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    probabilities<span class="op">=</span>pred_result[<span class="st">"probabilities"</span>],</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="treinar-um-classificador-efficientnet-b0" class="level1">
+<h1>Treinar um Classificador EfficientNet-B0</h1>
+<p>Treina a EfficientNet-B0 mantendo rigorosamente os mesmos hiperparâmetros anteriores (5 épocas, batch 32, lr 1e-3) para assegurar uma comparação justa de desempenho.</p>
+<div id="09ad6328" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>result_effnet <span class="op">=</span> train_image_classifier(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    data_dir<span class="op">=</span>data_dir,</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    model_name<span class="op">=</span><span class="st">"efficientnet_b0"</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    num_epochs<span class="op">=</span><span class="dv">5</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    batch_size<span class="op">=</span><span class="dv">32</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    learning_rate<span class="op">=</span><span class="fl">1e-3</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    image_size<span class="op">=</span><span class="dv">64</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    in_channels<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    pretrained<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    output_dir<span class="op">=</span><span class="st">"image_recognition_output/efficientnet_b0"</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    num_workers<span class="op">=</span><span class="dv">4</span>,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    seed<span class="op">=</span><span class="dv">42</span>,</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="2bf03370" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plot_training_history(<span class="st">"image_recognition_output/efficientnet_b0/models"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="1f5969f6" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>eval_effnet <span class="op">=</span> evaluate_classifier(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span>result_effnet[<span class="st">"model"</span>],</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    dataset<span class="op">=</span>result_effnet[<span class="st">"test_dataset"</span>],</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    class_names<span class="op">=</span>result_effnet[<span class="st">"class_names"</span>],</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="c0626aa4" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plot_confusion_matrix(</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    eval_effnet[<span class="st">"confusion_matrix"</span>],</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    result_effnet[<span class="st">"class_names"</span>],</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    normalize<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="comparar-resultados" class="level1">
+<h1>Comparar Resultados</h1>
+<div id="c021a4ea" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"ResNet50 accuracy:        </span><span class="sc">{</span>eval_result[<span class="st">'accuracy'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"EfficientNet-B0 accuracy: </span><span class="sc">{</span>eval_effnet[<span class="st">'accuracy'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="publicar-e-reutilizar-modelos" class="level1">
+<h1>Publicar e Reutilizar Modelos</h1>
+<section id="autenticar-no-hugging-face" class="level2">
+<h2 class="anchored" data-anchor-id="autenticar-no-hugging-face">Autenticar no Hugging Face</h2>
+<p>Abre o widget interativo no notebook para inserir o token de acesso do Hugging Face e autenticar a sessão.</p>
+<div id="cd61ee49" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> huggingface_hub <span class="im">import</span> notebook_login</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>notebook_login()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="enviar-o-modelo-treinado-para-o-hub" class="level2">
+<h2 class="anchored" data-anchor-id="enviar-o-modelo-treinado-para-o-hub">Enviar o Modelo Treinado para o Hub</h2>
+<p><code>push_classifier_to_hub(...)</code>: Empacota os pesos do modelo (<code>checkpoint_path</code>), metadados de configuração e a lista de classes, criando o repositório e subindo os artefatos para a nuvem do Hugging Face.</p>
+<div id="b75573aa" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>repo_url <span class="op">=</span> push_classifier_to_hub(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    model_path<span class="op">=</span>result[<span class="st">"checkpoint_path"</span>],</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    repo_id<span class="op">=</span><span class="st">"your-username/eurosat-resnet50"</span>,</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    model_name<span class="op">=</span><span class="st">"resnet50"</span>,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    num_classes<span class="op">=</span><span class="bu">len</span>(result[<span class="st">"class_names"</span>]),</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    in_channels<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    class_names<span class="op">=</span>result[<span class="st">"class_names"</span>],</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    commit_message<span class="op">=</span><span class="st">"EuroSAT ResNet-50 classifier trained for 5 epochs"</span>,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(repo_url)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="executar-inferência-a-partir-do-hub" class="level2">
+<h2 class="anchored" data-anchor-id="executar-inferência-a-partir-do-hub">Executar Inferência a partir do Hub</h2>
+<div id="37e12abf" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>n_samples <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>hub_result <span class="op">=</span> predict_images_from_hub(</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    image_paths<span class="op">=</span>test_paths[:n_samples],</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    repo_id<span class="op">=</span><span class="st">"your-username/eurosat-resnet50"</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    image_size<span class="op">=</span><span class="dv">64</span>,</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plot_predictions(</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    image_paths<span class="op">=</span>test_paths[:n_samples],</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    predictions<span class="op">=</span>hub_result[<span class="st">"predictions"</span>],</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    true_labels<span class="op">=</span>test_labels[:n_samples],</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    class_names<span class="op">=</span>hub_result[<span class="st">"class_names"</span>],</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    probabilities<span class="op">=</span>hub_result[<span class="st">"probabilities"</span>],</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Exercícios:</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

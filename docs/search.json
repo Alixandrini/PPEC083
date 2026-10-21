@@ -11,7 +11,371 @@
     "href": "notebooks.html",
     "title": "Notebooks",
     "section": "",
-    "text": "Aula 3\n\n\n\nGeoAI\n\ntechnology\n\n\n\n\n\n\n\nMauro Alixandrini\n\n\nApr 9, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 4\n\n\n\nGeoAI\n\ntechnology\n\n\n\n\n\n\n\nMauro Alixandrini\n\n\nApr 9, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 5\n\n\n\nGeoAI\n\ntechnology\n\n\n\n\n\n\n\nMauro Alixandrini\n\n\nApr 9, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 2\n\n\n\nGeoAI\n\ntechnology\n\n\n\n\n\n\n\nMauro Alixandrini\n\n\nSep 9, 2026\n\n\n\n\n\n\nNo matching items"
+    "text": "Aula 11 - Change Detection\n\n\n\nGeoAI\n\ntechnology\n\n\n\nNotebook extraído do github do livro do prof. Quisheng Wu\n\n\n\nQiusheng Wu\n\n\nSep 10, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 15 - Satellite Embeddings\n\n\n\nGeoAI\n\ntechnology\n\n\n\nNotebook extraído do github do livro do prof. Quisheng Wu\n\n\n\nQiusheng Wu\n\n\nSep 10, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 10 - Image Tanslation\n\n\n\nGeoAI\n\ntechnology\n\n\n\nNotebook extraído do github do livro do prof. Quisheng Wu\n\n\n\nQiusheng Wu\n\n\nSep 10, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 9 - Instance Segmentation\n\n\n\nGeoAI\n\ntechnology\n\n\n\nNotebook extraído do github do livro do prof. Quisheng Wu\n\n\n\nQiusheng Wu\n\n\nSep 10, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 7 - Object Detection\n\n\n\nGeoAI\n\ntechnology\n\n\n\nNotebook extraído do github do livro do prof. Quisheng Wu\n\n\n\nQiusheng Wu\n\n\nSep 10, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 12 - Pixel-Level Regression\n\n\n\nGeoAI\n\ntechnology\n\n\n\nNotebook extraído do github do livro do prof. Quisheng Wu\n\n\n\nQiusheng Wu\n\n\nSep 10, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 13 - Sam for Geospatial Aplications\n\n\n\nGeoAI\n\ntechnology\n\n\n\nNotebook extraído do github do livro do prof. Quisheng Wu\n\n\n\nQiusheng Wu\n\n\nSep 10, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 8 - Semantic Segmentation\n\n\n\nGeoAI\n\ntechnology\n\n\n\nNotebook extraído do github do livro do prof. Quisheng Wu\n\n\n\nQiusheng Wu\n\n\nSep 10, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 14 - Vision-Language Models\n\n\n\nGeoAI\n\ntechnology\n\n\n\nNotebook extraído do github do livro do prof. Quisheng Wu\n\n\n\nQiusheng Wu\n\n\nSep 10, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 6\n\n\n\nGeoAI\n\ntechnology\n\n\n\n\n\n\n\nMauro Alixandrini\n\n\nJun 10, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 3\n\n\n\nGeoAI\n\ntechnology\n\n\n\n\n\n\n\nMauro Alixandrini\n\n\nApr 9, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 4\n\n\n\nGeoAI\n\ntechnology\n\n\n\n\n\n\n\nMauro Alixandrini\n\n\nApr 9, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 5\n\n\n\nGeoAI\n\ntechnology\n\n\n\n\n\n\n\nMauro Alixandrini\n\n\nApr 9, 2027\n\n\n\n\n\n\n\n\n\n\n\n\n\nAula 2\n\n\n\nGeoAI\n\ntechnology\n\n\n\n\n\n\n\nMauro Alixandrini\n\n\nSep 9, 2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "Notebooks/semantic_segmentation.html#introduction",
+    "href": "Notebooks/semantic_segmentation.html#introduction",
+    "title": "Aula 8 - Semantic Segmentation",
+    "section": "Introduction",
+    "text": "Introduction"
+  },
+  {
+    "objectID": "Notebooks/semantic_segmentation.html#learning-objectives",
+    "href": "Notebooks/semantic_segmentation.html#learning-objectives",
+    "title": "Aula 8 - Semantic Segmentation",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives"
+  },
+  {
+    "objectID": "Notebooks/semantic_segmentation.html#foundations-of-semantic-segmentation",
+    "href": "Notebooks/semantic_segmentation.html#foundations-of-semantic-segmentation",
+    "title": "Aula 8 - Semantic Segmentation",
+    "section": "Foundations of Semantic Segmentation",
+    "text": "Foundations of Semantic Segmentation\n\nSegmentation Architectures\n\n\nEncoders and Transfer Learning\n\n\nPractical Implementation"
+  },
+  {
+    "objectID": "Notebooks/semantic_segmentation.html#import-libraries",
+    "href": "Notebooks/semantic_segmentation.html#import-libraries",
+    "title": "Aula 8 - Semantic Segmentation",
+    "section": "Import Libraries",
+    "text": "Import Libraries\n\nimport geoai"
+  },
+  {
+    "objectID": "Notebooks/semantic_segmentation.html#building-detection-from-aerial-imagery",
+    "href": "Notebooks/semantic_segmentation.html#building-detection-from-aerial-imagery",
+    "title": "Aula 8 - Semantic Segmentation",
+    "section": "Building Detection from Aerial Imagery",
+    "text": "Building Detection from Aerial Imagery\n\nDownload Sample Data\n\ntrain_raster_url = \"https://data.source.coop/opengeos/geoai/naip_rgb_train.tif\"\ntrain_vector_url = (\n    \"https://data.source.coop/opengeos/geoai/naip_train_buildings.geojson\"\n)\ntest_raster_url = \"https://data.source.coop/opengeos/geoai/naip_test.tif\"\n\n\ntrain_raster_path = geoai.download_file(train_raster_url)\ntrain_vector_path = geoai.download_file(train_vector_url)\ntest_raster_path = geoai.download_file(test_raster_url)\n\n\n\nVisualize Sample Data\n\ngeoai.print_raster_info(train_raster_path, show_preview=False)\n\n\ngeoai.view_vector_interactive(train_vector_path, tiles=train_raster_path)\n\n\ngeoai.view_raster(test_raster_path)\n\n\n\nCreate Training Tiles\n\nout_folder = \"buildings\"\ntiles = geoai.export_geotiff_tiles(\n    in_raster=train_raster_path,\n    out_folder=out_folder,\n    in_class_data=train_vector_path,\n    tile_size=512,\n    stride=256,\n    buffer_radius=0,\n)\n\n\n\nTrain the Model\n\ngeoai.train_segmentation_model(\n    images_dir=f\"{out_folder}/images\",\n    labels_dir=f\"{out_folder}/labels\",\n    output_dir=f\"{out_folder}/unet_models\",\n    architecture=\"unet\",\n    encoder_name=\"resnet34\",\n    encoder_weights=\"imagenet\",\n    num_channels=3,\n    num_classes=2,\n    batch_size=8,\n    num_epochs=20,\n    learning_rate=0.001,\n    val_split=0.2,\n)\n\n\n\nEvaluate the Model\n\ngeoai.plot_performance_metrics(\n    history_path=f\"{out_folder}/unet_models/training_history.pth\",\n    figsize=(15, 5),\n)\n\n\n\nRun Inference\n\nmasks_path = \"naip_buildings_prediction.tif\"\nprobability_path = \"naip_test_probability_map.tif\"\nmodel_path = f\"{out_folder}/unet_models/best_model.pth\"\n\n\ngeoai.semantic_segmentation(\n    input_path=test_raster_path,\n    output_path=masks_path,\n    model_path=model_path,\n    architecture=\"unet\",\n    encoder_name=\"resnet34\",\n    num_channels=3,\n    num_classes=2,\n    window_size=512,\n    overlap=256,\n    batch_size=4,\n    probability_path=probability_path,\n)\n\n\n\nVisualize Raster Masks\n\ngeoai.view_raster(\n    masks_path,\n    nodata=0,\n    colormap=\"binary\",\n    basemap=test_raster_path,\n)\n\n\ngeoai.view_raster(probability_path, indexes=[2], basemap=test_raster_path)\n\n\n\nVectorize Predictions\n\noutput_vector_path = \"naip_buildings_prediction.geojson\"\ngdf = geoai.orthogonalize(masks_path, output_vector_path, epsilon=2)\n\n\n\nAdd Geometric Properties\n\ngdf_props = geoai.add_geometric_properties(gdf, area_unit=\"m2\", length_unit=\"m\")\n\n\n\nVisualize Results\n\ngeoai.view_vector_interactive(gdf_props, column=\"area_m2\", tiles=test_raster_path)\n\n\ngdf_filtered = gdf_props[(gdf_props[\"area_m2\"] &gt; 10)]\ngeoai.view_vector_interactive(gdf_filtered, column=\"area_m2\", tiles=test_raster_path)\n\n\ngeoai.create_split_map(\n    left_layer=gdf_filtered,\n    right_layer=test_raster_path,\n    left_args={\"style\": {\"color\": \"red\", \"fillOpacity\": 0.2}},\n    basemap=test_raster_path,\n)\n\n\ngeoai.empty_cache()"
+  },
+  {
+    "objectID": "Notebooks/semantic_segmentation.html#surface-water-mapping",
+    "href": "Notebooks/semantic_segmentation.html#surface-water-mapping",
+    "title": "Aula 8 - Semantic Segmentation",
+    "section": "Surface Water Mapping",
+    "text": "Surface Water Mapping\n\nWater Mapping with Non-Georeferenced Satellite Imagery\n\nDownload Sample Data\n\nurl = \"https://data.source.coop/opengeos/geoai/waterbody-dataset.zip\"\n\n\nout_folder = geoai.download_file(url)\nprint(f\"Downloaded dataset to {out_folder}\")\n\n\n\nTrain the Model\n\ngeoai.train_segmentation_model(\n    images_dir=f\"{out_folder}/images\",\n    labels_dir=f\"{out_folder}/masks\",\n    output_dir=f\"{out_folder}/unet_models\",\n    architecture=\"unet\",\n    encoder_name=\"resnet34\",\n    encoder_weights=\"imagenet\",\n    num_channels=3,\n    num_classes=2,\n    batch_size=16,\n    num_epochs=20,\n    learning_rate=0.001,\n    val_split=0.2,\n    target_size=(512, 512),\n    verbose=True,\n)\n\n\n\nEvaluate the Model\n\ngeoai.plot_performance_metrics(\n    history_path=f\"{out_folder}/unet_models/training_history.pth\",\n    figsize=(15, 5),\n    verbose=True,\n)\n\n\n\nRun Inference on a Single Image\n\nindex = 3\ntest_image_path = f\"{out_folder}/images/water_body_{index}.jpg\"\nground_truth_path = f\"{out_folder}/masks/water_body_{index}.jpg\"\nprediction_path = f\"{out_folder}/prediction/water_body_{index}.png\"\nmodel_path = f\"{out_folder}/unet_models/best_model.pth\"\n\n\ngeoai.semantic_segmentation(\n    input_path=test_image_path,\n    output_path=prediction_path,\n    model_path=model_path,\n    architecture=\"unet\",\n    encoder_name=\"resnet34\",\n    num_channels=3,\n    num_classes=2,\n    window_size=512,\n    overlap=256,\n    batch_size=32,\n)\n\n\nfig = geoai.plot_prediction_comparison(\n    original_image=test_image_path,\n    prediction_image=prediction_path,\n    ground_truth_image=ground_truth_path,\n    titles=[\"Original\", \"Prediction\", \"Ground Truth\"],\n    figsize=(15, 5),\n    save_path=f\"{out_folder}/prediction/water_body_{index}_comparison.png\",\n    show_plot=True,\n)\n\n\n\nRun Inference on Multiple Images\n\nurl = \"https://data.source.coop/opengeos/geoai/waterbody-dataset-sample.zip\"\n\n\ndata_dir = geoai.download_file(url)\nprint(f\"Downloaded dataset to {data_dir}\")\n\n\nimages_dir = f\"{data_dir}/images\"\npredictions_dir = f\"{data_dir}/predictions\"\n\n\ngeoai.semantic_segmentation_batch(\n    input_dir=images_dir,\n    output_dir=predictions_dir,\n    model_path=model_path,\n    architecture=\"unet\",\n    encoder_name=\"resnet34\",\n    num_channels=3,\n    num_classes=2,\n    window_size=512,\n    overlap=256,\n    batch_size=4,\n    quiet=True,\n)\n\n\ngeoai.empty_cache()\n\n\n\n\nWater Mapping with Sentinel-2 Multispectral Imagery\n\nDownload Sample Data\n\nurl = \"https://data.source.coop/opengeos/geoai/dset-s2.zip\"\ndata_dir = geoai.download_file(url, output_path=\"dset-s2.zip\")\n\n\nimages_dir = f\"{data_dir}/tra_scene\"\nmasks_dir = f\"{data_dir}/tra_truth\"\ntiles_dir = f\"{data_dir}/tiles\"\n\n\n\nCreate Training Tiles\n\nresult = geoai.export_geotiff_tiles_batch(\n    images_folder=images_dir,\n    masks_folder=masks_dir,\n    output_folder=tiles_dir,\n    tile_size=512,\n    stride=384,\n    quiet=True,\n)\n\n\n\nTrain the Model\n\ngeoai.train_segmentation_model(\n    images_dir=f\"{tiles_dir}/images\",\n    labels_dir=f\"{tiles_dir}/masks\",\n    output_dir=f\"{tiles_dir}/unet_models\",\n    architecture=\"unet\",\n    encoder_name=\"resnet34\",\n    encoder_weights=\"imagenet\",\n    num_channels=6,\n    num_classes=2,\n    batch_size=32,\n    num_epochs=20,\n    learning_rate=0.001,\n    val_split=0.2,\n)\n\n\n\nEvaluate the Model\n\ngeoai.plot_performance_metrics(\n    history_path=f\"{tiles_dir}/unet_models/training_history.pth\",\n    figsize=(15, 5),\n)\n\n\n\nRun Inference on Validation Data\n\nimages_dir = f\"{data_dir}/val_scene\"\nmasks_dir = f\"{data_dir}/val_truth\"\npredictions_dir = f\"{data_dir}/predictions\"\nmodel_path = f\"{tiles_dir}/unet_models/best_model.pth\"\n\n\ngeoai.semantic_segmentation_batch(\n    input_dir=images_dir,\n    output_dir=predictions_dir,\n    model_path=model_path,\n    architecture=\"unet\",\n    encoder_name=\"resnet34\",\n    num_channels=6,\n    num_classes=2,\n    window_size=512,\n    overlap=256,\n    batch_size=32,\n    quiet=True,\n)\n\n\n\nVisualize Results\n\nimage_id = \"S2A_L2A_20190318_N0211_R061\"\ntest_image_path = f\"{data_dir}/val_scene/{image_id}_6Bands_S2.tif\"\nground_truth_path = f\"{data_dir}/val_truth/{image_id}_S2_Truth.tif\"\nprediction_path = f\"{data_dir}/predictions/{image_id}_6Bands_S2_mask.tif\"\nsave_path = f\"{data_dir}/{image_id}_6Bands_S2_comparison.png\"\n\nfig = geoai.plot_prediction_comparison(\n    original_image=test_image_path,\n    prediction_image=prediction_path,\n    ground_truth_image=ground_truth_path,\n    titles=[\"Original\", \"Prediction\", \"Ground Truth\"],\n    figsize=(15, 5),\n    save_path=save_path,\n    show_plot=True,\n    indexes=[5, 4, 3],\n    divider=5000,\n)\n\n\n\nApply the Model to New Sentinel-2 Imagery\n\ns2_path = \"s2.tif\"\nurl = \"https://data.source.coop/opengeos/geoai/s2-minnesota-2025-08-31-subset.tif\"\ngeoai.download_file(url, output_path=s2_path)\n\n\ngeoai.view_raster(\n    s2_path, indexes=[4, 3, 2], vmin=0, vmax=5000, layer_name=\"Sentinel-2\"\n)\n\n\ns2_mask = \"s2_mask.tif\"\nmodel_path = f\"{tiles_dir}/unet_models/best_model.pth\"\n\n\ngeoai.semantic_segmentation(\n    input_path=s2_path,\n    output_path=s2_mask,\n    model_path=model_path,\n    architecture=\"unet\",\n    encoder_name=\"resnet34\",\n    num_channels=6,\n    num_classes=2,\n    window_size=512,\n    overlap=256,\n    batch_size=32,\n)\n\n\ngeoai.view_raster(\n    s2_mask,\n    nodata=0,\n    colormap=\"binary\",\n    layer_name=\"Water\",\n    basemap=s2_path,\n    basemap_args={\"indexes\": [4, 3, 2], \"vmin\": 0, \"vmax\": 5000},\n)\n\n\n\nVectorize Water Mask\n\noutput_vector_path = \"s2_water_polygons.geojson\"\ngdf = geoai.raster_to_vector(\n    raster_path=s2_mask,\n    output_path=output_vector_path,\n    min_area=100,\n    simplify_tolerance=None,\n)\n\n\n\nSmooth Water Body Polygons\n\nsmoothed_path = \"s2_water_smoothed.geojson\"\ngdf = geoai.smooth_vector(\n    gdf,\n    smooth_iterations=3,\n    output_path=smoothed_path,\n)\n\n\n\nAdd Geometric Properties\n\ngdf_props = geoai.add_geometric_properties(gdf, area_unit=\"m2\", length_unit=\"m\")\ngdf_props.head()\n\n\n\nFilter Small Artifacts\n\ngdf_filtered = gdf_props[gdf_props[\"area_m2\"] &gt; 100]\nprint(f\"Water bodies detected: {len(gdf_filtered)}\")\nprint(f\"Removed {len(gdf_props) - len(gdf_filtered)} small artifacts\")\n\n\n\nVisualize Water Body Polygons\n\ngeoai.view_vector_interactive(\n    gdf_filtered,\n    column=\"area_m2\",\n    opacity=0.5,\n    tiles=s2_path,\n    tiles_args={\"indexes\": [4, 3, 2], \"vmin\": 0, \"vmax\": 5000},\n)\n\n\n\nSplit Map Comparison\n\ngeoai.create_split_map(\n    left_layer=gdf_filtered,\n    right_layer=s2_path,\n    left_args={\"style\": {\"color\": \"blue\", \"fillOpacity\": 0.3}},\n    right_args={\"indexes\": [4, 3, 2], \"vmin\": 0, \"vmax\": 5000},\n    basemap=s2_path,\n)\n\n\n\nWater Body Area Statistics\n\nprint(gdf_filtered[\"area_m2\"].describe())\n\n\n\nSave Results\n\ngdf_filtered.to_file(\"s2_water_bodies_final.geojson\", driver=\"GeoJSON\")\nprint(f\"Saved {len(gdf_filtered)} water body polygons to s2_water_bodies_final.geojson\")\n\n\n\n\nWater Mapping with NAIP Aerial Imagery\n\nDownload Sample Data\n\ntrain_raster_url = \"https://data.source.coop/opengeos/geoai/naip_water_train.tif\"\ntrain_masks_url = \"https://data.source.coop/opengeos/geoai/naip_water_masks.tif\"\ntest_raster_url = \"https://data.source.coop/opengeos/geoai/naip_water_test.tif\"\n\n\ntrain_raster_path = geoai.download_file(train_raster_url)\ntrain_masks_path = geoai.download_file(train_masks_url)\ntest_raster_path = geoai.download_file(test_raster_url)\n\n\ngeoai.print_raster_info(train_raster_path, show_preview=False)\n\n\n\nVisualize Sample Data\n\ngeoai.view_raster(train_masks_path, nodata=0, opacity=0.5, basemap=train_raster_path)\n\n\ngeoai.view_raster(test_raster_path)\n\n\n\nCreate Training Tiles\n\nout_folder = \"naip\"\n\n\ntiles = geoai.export_geotiff_tiles(\n    in_raster=train_raster_path,\n    out_folder=out_folder,\n    in_class_data=train_masks_path,\n    tile_size=512,\n    stride=256,\n    buffer_radius=0,\n)\n\n\n\nTrain the Model\n\ngeoai.train_segmentation_model(\n    images_dir=f\"{out_folder}/images\",\n    labels_dir=f\"{out_folder}/labels\",\n    output_dir=f\"{out_folder}/models\",\n    architecture=\"unet\",\n    encoder_name=\"resnet34\",\n    encoder_weights=\"imagenet\",\n    num_channels=4,\n    num_classes=2,\n    batch_size=8,\n    num_epochs=20,\n    learning_rate=0.005,\n    val_split=0.2,\n)\n\n\n\nEvaluate the Model\n\ngeoai.plot_performance_metrics(\n    history_path=f\"{out_folder}/models/training_history.pth\",\n    figsize=(15, 5),\n    verbose=True,\n)\n\n\n\nRun Inference\n\nmasks_path = \"naip_water_prediction.tif\"\nmodel_path = f\"{out_folder}/models/best_model.pth\"\n\n\ngeoai.semantic_segmentation(\n    input_path=test_raster_path,\n    output_path=masks_path,\n    model_path=model_path,\n    architecture=\"unet\",\n    encoder_name=\"resnet34\",\n    num_channels=4,\n    num_classes=2,\n    window_size=512,\n    overlap=128,\n    batch_size=32,\n)\n\n\ngeoai.view_raster(\n    masks_path,\n    nodata=0,\n    layer_name=\"Water\",\n    basemap=test_raster_path,\n)\n\n\n\nVectorize and Analyze Predictions\n\noutput_path = \"naip_water_prediction.geojson\"\ngdf = geoai.raster_to_vector(\n    masks_path, output_path, min_area=1000, simplify_tolerance=1\n)\n\n\ngdf = geoai.add_geometric_properties(gdf)\nlen(gdf)\n\n\ngeoai.view_vector_interactive(gdf, tiles=test_raster_path)\n\n\ngdf[\"elongation\"].hist()\n\n\ngdf_filtered = gdf[gdf[\"elongation\"] &lt; 10]\n\n\nlen(gdf_filtered)\n\n\n\nVisualize Results\n\ngeoai.view_vector_interactive(gdf_filtered, tiles=test_raster_path)\n\n\ngeoai.create_split_map(\n    left_layer=gdf_filtered,\n    right_layer=test_raster_path,\n    left_args={\"style\": {\"color\": \"red\", \"fillOpacity\": 0.2}},\n    basemap=test_raster_path,\n)\n\n\n\n\nSensor-Agnostic Water Segmentation\n\nSentinel-2 Water Segmentation\n\nDownload Sentinel-2 Data\n\ns2_url = (\n    \"https://data.source.coop/opengeos/geoai/S2A-L2A-20190318-N0211-R061-6Bands-S2.tif\"\n)\ns2_path = geoai.download_file(s2_url)\n\n\n\nVisualize Input Data\n\ngeoai.view_raster(s2_path, indexes=[4, 3, 2], vmax=3000)\n\n\n\nRun Water Segmentation\n\ns2_mask_path = geoai.segment_water(\n    s2_path,\n    band_order=\"sentinel2\",\n    output_raster=\"s2_owm_water_mask.tif\",\n)\n\n\n\nVisualize Raster Mask\n\ngeoai.view_raster(\n    s2_mask_path,\n    nodata=0,\n    basemap=s2_path,\n    opacity=0.5,\n    backend=\"ipyleaflet\",\n)\n\n\n\nVectorize and Smooth Water Bodies\n\ns2_gdf = geoai.segment_water(\n    s2_path,\n    band_order=\"sentinel2\",\n    output_raster=\"s2_owm_water_mask.tif\",\n    output_vector=\"s2_owm_water_bodies.geojson\",\n    smooth=True,\n    smooth_iterations=3,\n    min_size=100,\n)\n\n\n\nFilter Small Artifacts\n\ns2_filtered = s2_gdf[s2_gdf[\"area_m2\"] &gt; 100]\nprint(f\"Water bodies detected: {len(s2_filtered)}\")\nprint(f\"Removed {len(s2_gdf) - len(s2_filtered)} small artifacts\")\n\n\n\nVisualize Water Body Polygons\n\ngeoai.view_vector_interactive(\n    s2_filtered,\n    column=\"area_m2\",\n    tiles=s2_path,\n    tiles_args={\"indexes\": [4, 3, 2], \"vmax\": 3000},\n)\n\n\n\nSplit Map Comparison\n\ngeoai.create_split_map(\n    left_layer=s2_filtered,\n    right_layer=s2_path,\n    left_args={\"style\": {\"color\": \"blue\", \"fillOpacity\": 0.3}},\n    right_args={\"indexes\": [4, 3, 2], \"vmax\": 3000},\n    basemap=s2_path,\n)\n\n\n\n\nNAIP Water Segmentation\n\nDownload NAIP Data\n\nnaip_url = \"https://data.source.coop/opengeos/geoai/naip_water_test_subset.tif\"\nnaip_path = geoai.download_file(naip_url)\n\n\n\nVisualize NAIP Imagery\n\ngeoai.view_raster(naip_path, indexes=[4, 1, 2])\n\n\n\nRun Water Segmentation\n\nnaip_gdf = geoai.segment_water(\n    naip_path,\n    band_order=\"naip\",\n    output_raster=\"naip_owm_water_mask.tif\",\n    output_vector=\"naip_owm_water_bodies.geojson\",\n    smooth=True,\n    smooth_iterations=3,\n    min_size=100,\n)\n\n\n\nVisualize Raster Mask\n\ngeoai.view_raster(\n    \"naip_owm_water_mask.tif\",\n    nodata=0,\n    basemap=naip_path,\n    opacity=0.5,\n    backend=\"ipyleaflet\",\n)\n\n\n\nFilter Small Artifacts\n\nnaip_filtered = naip_gdf[naip_gdf[\"area_m2\"] &gt; 100]\nprint(f\"Water bodies detected: {len(naip_filtered)}\")\nprint(f\"Removed {len(naip_gdf) - len(naip_filtered)} small artifacts\")\n\n\n\nVisualize Water Body Polygons\n\ngeoai.view_vector_interactive(\n    naip_filtered,\n    column=\"area_m2\",\n    tiles=naip_path,\n)\n\n\n\nSplit Map Comparison\n\ngeoai.create_split_map(\n    left_layer=naip_filtered,\n    right_layer=naip_path,\n    left_args={\"style\": {\"color\": \"blue\", \"fillOpacity\": 0.3}},\n    basemap=naip_path,\n)\n\n\ngeoai.empty_cache()"
+  },
+  {
+    "objectID": "Notebooks/semantic_segmentation.html#cloud-and-cloud-shadow-detection",
+    "href": "Notebooks/semantic_segmentation.html#cloud-and-cloud-shadow-detection",
+    "title": "Aula 8 - Semantic Segmentation",
+    "section": "Cloud and Cloud Shadow Detection",
+    "text": "Cloud and Cloud Shadow Detection\n\nDownload Sample Data\n\nurl = \"https://data.source.coop/opengeos/geoai/S2C-MSIL2A-20250920T162001-subset.tif\"\ns2_path = geoai.download_file(url)\n\n\n\nPredict Cloud Mask\n\npred_path = \"cloud_mask.tif\"\ngeoai.predict_cloud_mask_from_raster(\n    input_path=s2_path,\n    output_path=pred_path,\n    red_band=1,\n    green_band=2,\n    nir_band=4,\n    batch_size=4,\n    inference_dtype=\"bf16\",\n)\n\n\n\nCloud Statistics\n\nimport rasterio as rio\nimport numpy as np\n\nwith rio.open(pred_path) as src:\n    pred_array = src.read(1)\n\nstats = geoai.calculate_cloud_statistics(pred_array)\nfor key, value in stats.items():\n    if \"percent\" in key:\n        print(f\"{key}: {value:.2f}%\")\n    else:\n        print(f\"{key}: {value:,}\")\n\n\n\nVisualize Results\n\nfrom matplotlib import pyplot as plt\nfrom matplotlib.colors import ListedColormap\nfrom matplotlib.patches import Patch\n\nwith rio.open(s2_path) as src:\n    scene_fc = src.read([4, 1, 2]).astype(np.float32)\n\n# Percentile-based contrast stretch per band\nfor i in range(3):\n    band = scene_fc[i]\n    p2, p98 = np.percentile(band, (2, 98))\n    scene_fc[i] = (band - p2) / (p98 - p2)\nscene_fc = np.clip(scene_fc, 0, 1)\n\ncmap = ListedColormap([\"green\", \"white\", \"gray\", \"black\"])\nlabels = [\"Clear\", \"Thick Cloud\", \"Thin Cloud\", \"Cloud Shadow\"]\npatches = [\n    Patch(facecolor=cmap(i), edgecolor=\"black\", label=labels[i]) for i in range(4)\n]\n\nfig, ax = plt.subplots(1, 2, figsize=(20, 10))\nax[0].imshow(scene_fc.transpose(1, 2, 0))\nax[0].set_title(\"False Color (NIR/R/G)\")\nax[0].set_axis_off()\nax[1].imshow(pred_array, cmap=cmap, vmin=0, vmax=3)\nax[1].set_title(\"Cloud Mask\")\nax[1].legend(handles=patches, loc=\"upper left\", fontsize=12)\nax[1].set_axis_off()\nplt.tight_layout()\nplt.show()\n\n\nfrom scipy import ndimage\n\ncloud_binary = (pred_array == 1) | (pred_array == 2)\nlabeled, _ = ndimage.label(cloud_binary)\nif labeled.max() &gt; 0:\n    sizes = ndimage.sum(cloud_binary, labeled, range(1, labeled.max() + 1))\n    largest_label = np.argmax(sizes) + 1\n    cy, cx = ndimage.center_of_mass(cloud_binary, labeled, largest_label)\n    cy, cx = int(cy), int(cx)\nelse:\n    cy, cx = pred_array.shape[0] // 2, pred_array.shape[1] // 2\n\n# Crop a 1000x1000 window around the center\nh, w = pred_array.shape\nhalf = 500\nr0, r1 = max(0, cy - half), min(h, cy + half)\nc0, c1 = max(0, cx - half), min(w, cx + half)\n\nfig, ax = plt.subplots(1, 2, figsize=(20, 10))\nax[0].imshow(scene_fc[:, r0:r1, c0:c1].transpose(1, 2, 0))\nax[0].contour(pred_array[r0:r1, c0:c1], levels=[0.5, 1.5, 2.5], colors=\"cyan\")\nax[0].set_title(\"False Color with Cloud Contours\")\nax[0].set_axis_off()\nax[1].imshow(pred_array[r0:r1, c0:c1], cmap=cmap, vmin=0, vmax=3)\nax[1].set_title(\"Cloud Mask (Zoomed)\")\nax[1].legend(handles=patches, loc=\"upper left\", fontsize=12)\nax[1].set_axis_off()\nplt.tight_layout()\nplt.show()\n\n\n\nPost-Processing\n\ncleaned_mask_path = \"cleaned_mask.tif\"\ngeoai.clean_raster(pred_path, cleaned_mask_path)\n\n\ncloud_vector = \"cloud_vector.geojson\"\ncloud_gdf = geoai.raster_to_vector(cleaned_mask_path, cloud_vector)\n\n\nsmoothed_cloud_gdf = geoai.smooth_vector(\n    cloud_gdf, smooth_iterations=3, output_path=\"smoothed_cloud_vector.geojson\"\n)\n\n\n\nInteractive Visualization\n\ngeoai.view_vector_interactive(\n    smoothed_cloud_gdf, tiles=s2_path, tiles_args={\"indexes\": [4, 1, 2], \"vmax\": 4000}\n)\n\n\ngeoai.create_split_map(\n    left_layer=smoothed_cloud_gdf,\n    right_layer=s2_path,\n    left_args={\"style\": {\"color\": \"cyan\", \"fillOpacity\": 0.2}},\n    right_args={\"indexes\": [4, 1, 2], \"vmax\": 4000},\n    basemap=s2_path,\n)\n\n\n\nGeometric Properties\n\nprops_gdf = geoai.add_geometric_properties(cloud_gdf)\nprops_gdf.describe()\n\n\n\nCloud-Free Mask\n\ncloud_free = geoai.create_cloud_free_mask(pred_array)\nusable_pct = cloud_free.sum() / cloud_free.size * 100\nprint(f\"Usable (cloud-free) pixels: {usable_pct:.2f}%\")\n\nfig, ax = plt.subplots(1, 2, figsize=(20, 10))\nax[0].imshow(scene_fc.transpose(1, 2, 0))\nax[0].set_title(\"False Color (NIR/R/G)\")\nax[0].set_axis_off()\nax[1].imshow(cloud_free, cmap=\"RdYlGn\", vmin=0, vmax=1)\nax[1].set_title(\"Cloud-Free Mask (green = usable)\")\nax[1].set_axis_off()\nplt.tight_layout()\nplt.show()\n\n\ngeoai.empty_cache()"
+  },
+  {
+    "objectID": "Notebooks/semantic_segmentation.html#land-cover-classification",
+    "href": "Notebooks/semantic_segmentation.html#land-cover-classification",
+    "title": "Aula 8 - Semantic Segmentation",
+    "section": "Land Cover Classification",
+    "text": "Land Cover Classification\n\nDownload Sample Data\n\ntrain_raster_url = (\n    \"https://data.source.coop/opengeos/geoai/m_3807511_ne_18_060_20181104.tif\"\n)\ntrain_landcover_url = (\n    \"https://data.source.coop/opengeos/geoai/m_3807511_ne_18_060_20181104_landcover.tif\"\n)\ntest_raster_url = (\n    \"https://data.source.coop/opengeos/geoai/m_3807511_se_18_060_20181104.tif\"\n)\n\n\ntrain_raster_path = geoai.download_file(train_raster_url)\ntrain_landcover_path = geoai.download_file(train_landcover_url)\ntest_raster_path = geoai.download_file(test_raster_url)\n\n\n\nVisualize Sample Data\n\nlegend_args = {\"builtin_legend\": \"Chesapeake\", \"title\": \"Land Cover Type\"}\ngeoai.view_raster(\n    train_landcover_path, basemap=train_raster_path, legend_args=legend_args\n)\n\n\ngeoai.create_split_map(\n    left_layer=train_landcover_path,\n    right_layer=train_raster_path,\n)\n\n\ngeoai.view_raster(test_raster_path)\n\n\n\nCreate Training Tiles\n\nout_folder = \"landcover\"\n\n\ntiles = geoai.export_geotiff_tiles(\n    in_raster=train_raster_path,\n    out_folder=out_folder,\n    in_class_data=train_landcover_path,\n    tile_size=512,\n    stride=256,\n    buffer_radius=0,\n)\n\n\n\nTrain the Model\n\ngeoai.train_segmentation_model(\n    images_dir=f\"{out_folder}/images\",\n    labels_dir=f\"{out_folder}/labels\",\n    output_dir=f\"{out_folder}/unet_models\",\n    architecture=\"unet\",\n    encoder_name=\"resnet34\",\n    encoder_weights=\"imagenet\",\n    num_channels=4,\n    num_classes=13,\n    batch_size=8,\n    num_epochs=20,\n    learning_rate=0.001,\n    val_split=0.2,\n    verbose=True,\n    plot_curves=True,\n)\n\n\n\nEvaluate the Model\n\ngeoai.plot_performance_metrics(\n    history_path=f\"{out_folder}/unet_models/training_history.pth\",\n    figsize=(15, 5),\n    verbose=True,\n)\n\n\n\nRun Inference\n\nmasks_path = \"landcover_prediction.tif\"\nmodel_path = f\"{out_folder}/unet_models/best_model.pth\"\n\n\ngeoai.semantic_segmentation(\n    input_path=test_raster_path,\n    output_path=masks_path,\n    model_path=model_path,\n    architecture=\"unet\",\n    encoder_name=\"resnet34\",\n    num_channels=4,\n    num_classes=13,\n    window_size=512,\n    overlap=128,\n    batch_size=4,\n)\n\n\n\nVisualize Results\n\ngeoai.write_colormap(masks_path, train_landcover_path, output=masks_path)\n\n\ngeoai.view_raster(masks_path, basemap=test_raster_path, legend_args=legend_args)"
+  },
+  {
+    "objectID": "Notebooks/semantic_segmentation.html#publish-and-reuse-models",
+    "href": "Notebooks/semantic_segmentation.html#publish-and-reuse-models",
+    "title": "Aula 8 - Semantic Segmentation",
+    "section": "Publish and Reuse Models",
+    "text": "Publish and Reuse Models\n\nPush to Hugging Face Hub\n\nfrom huggingface_hub import notebook_login\n\nnotebook_login()\n\n\nrepo_url = geoai.push_timm_model_to_hub(\n    model_path=model_path,\n    repo_id=\"your-username/chesapeake-landcover-unet-resnet34\",\n    encoder_name=\"resnet34\",\n    architecture=\"unet\",\n    num_channels=4,\n    num_classes=13,\n)\nprint(repo_url)\n\n\n\nRun Inference from Hub\n\nhub_output = \"landcover_hub_prediction.tif\"\ngeoai.timm_segmentation_from_hub(\n    input_path=test_raster_path,\n    output_path=hub_output,\n    repo_id=\"your-username/chesapeake-landcover-unet-resnet34\",\n    window_size=512,\n    overlap=128,\n    batch_size=4,\n)\n\n\ngeoai.write_colormap(hub_output, train_landcover_path, output=hub_output)\ngeoai.view_raster(hub_output, basemap=test_raster_path, legend_args=legend_args)\n\n\ngeoai.empty_cache()"
+  },
+  {
+    "objectID": "Notebooks/semantic_segmentation.html#key-takeaways",
+    "href": "Notebooks/semantic_segmentation.html#key-takeaways",
+    "title": "Aula 8 - Semantic Segmentation",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways"
+  },
+  {
+    "objectID": "Notebooks/semantic_segmentation.html#exercises",
+    "href": "Notebooks/semantic_segmentation.html#exercises",
+    "title": "Aula 8 - Semantic Segmentation",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1: Training with a Different Architecture\n\n\nExercise 2: Evaluating the Effect of Additional Spectral Bands\n\n\nExercise 3: Tile Size and Overlap Sensitivity\n\n\nExercise 4: Multi-Class Post-Processing"
+  },
+  {
+    "objectID": "Notebooks/pixel_regression.html#introduction",
+    "href": "Notebooks/pixel_regression.html#introduction",
+    "title": "Aula 12 - Pixel-Level Regression",
+    "section": "Introduction",
+    "text": "Introduction"
+  },
+  {
+    "objectID": "Notebooks/pixel_regression.html#learning-objectives",
+    "href": "Notebooks/pixel_regression.html#learning-objectives",
+    "title": "Aula 12 - Pixel-Level Regression",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives"
+  },
+  {
+    "objectID": "Notebooks/pixel_regression.html#understanding-pixel-regression",
+    "href": "Notebooks/pixel_regression.html#understanding-pixel-regression",
+    "title": "Aula 12 - Pixel-Level Regression",
+    "section": "Understanding Pixel Regression",
+    "text": "Understanding Pixel Regression\n\nClassification vs. Regression\n\n\nApplications"
+  },
+  {
+    "objectID": "Notebooks/pixel_regression.html#regression-architectures",
+    "href": "Notebooks/pixel_regression.html#regression-architectures",
+    "title": "Aula 12 - Pixel-Level Regression",
+    "section": "Regression Architectures",
+    "text": "Regression Architectures\n\nAdapting Segmentation Models for Regression\n\n\nLoss Functions for Regression\n\n\nOutput Activation and Scaling"
+  },
+  {
+    "objectID": "Notebooks/pixel_regression.html#case-study-ndvi-prediction-from-landsat-imagery",
+    "href": "Notebooks/pixel_regression.html#case-study-ndvi-prediction-from-landsat-imagery",
+    "title": "Aula 12 - Pixel-Level Regression",
+    "section": "Case Study: NDVI Prediction from Landsat Imagery",
+    "text": "Case Study: NDVI Prediction from Landsat Imagery\n\nEnvironment Setup\n\nimport geoai\nfrom sklearn.model_selection import train_test_split\n\n\n\nDownload Data\n\ntrain_raster = geoai.download_file(\n    \"https://data.source.coop/opengeos/geoai/tn_landsat_2022.tif\"\n)\ntrain_target = geoai.download_file(\n    \"https://data.source.coop/opengeos/geoai/tn_ndvi_2022.tif\"\n)\ntest_raster = geoai.download_file(\n    \"https://data.source.coop/opengeos/geoai/tn_landsat_2023.tif\"\n)\n\n\n\nInspect the Data\n\nimport rasterio\n\nwith rasterio.open(train_raster) as src:\n    in_channels = src.count\n    print(f\"Input shape: {src.height} x {src.width}, {src.count} bands\")\n    print(f\"Input CRS: {src.crs}\")\n    print(f\"Input resolution: {src.res}\")\n\nwith rasterio.open(train_target) as src:\n    print(f\"Target shape: {src.height} x {src.width}, {src.count} band(s)\")\n    target_data = src.read(1)\n    print(f\"Target value range: [{target_data.min():.2f}, {target_data.max():.2f}]\")\n\n\n\nCreate Training Tiles\n\nimage_paths, target_paths = geoai.create_regression_tiles(\n    input_raster=train_raster,\n    target_raster=train_target,\n    output_dir=\"ndvi_tiles\",\n    tile_size=256,\n    stride=128,\n    target_band=1,\n    min_valid_ratio=0.9,\n    target_min=-1.0,\n    target_max=1.0,\n)\nprint(f\"Created {len(image_paths)} tiles\")\n\n\n\nSplit Data\n\ntrain_imgs, val_imgs, train_tgts, val_tgts = train_test_split(\n    image_paths, target_paths, test_size=0.2, random_state=42\n)\nprint(f\"Training: {len(train_imgs)}, Validation: {len(val_imgs)}\")\n\n\n\nTrain the Model\n\nmodel = geoai.train_pixel_regressor(\n    train_image_paths=train_imgs,\n    train_target_paths=train_tgts,\n    val_image_paths=val_imgs,\n    val_target_paths=val_tgts,\n    encoder_name=\"resnet34\",\n    architecture=\"unet\",\n    in_channels=in_channels,\n    output_dir=\"ndvi_model\",\n    batch_size=8,\n    num_epochs=100,\n    learning_rate=1e-3,\n    num_workers=0,\n    loss_type=\"mse\",\n    patience=20,\n    devices=1,\n    verbose=False,\n)\n\n\n\nMonitor Training History\n\nfig, history_df = geoai.plot_training_history(\n    log_dir=\"ndvi_model\",\n    metrics=[\"loss\", \"r2\"],\n)\n\n\n\nRun Inference on Training Area\n\ngeoai.predict_raster(\n    model=model,\n    input_raster=train_raster,\n    output_raster=\"ndvi_model/predicted_ndvi_2022.tif\",\n    tile_size=256,\n    overlap=64,\n    batch_size=8,\n    clip_range=(-1.0, 1.0),\n)\n\n\n\nEvaluate Results\n\nfig, metrics = geoai.plot_regression_comparison(\n    true_raster=train_target,\n    pred_raster=\"ndvi_model/predicted_ndvi_2022.tif\",\n    title=\"NDVI Prediction Results\",\n    cmap=\"RdYlGn\",\n    vmin=-0.2,\n    vmax=0.8,\n    valid_range=(-1.0, 1.0),\n)\n\n\nfig, metrics = geoai.plot_scatter(\n    true_raster=train_target,\n    pred_raster=\"ndvi_model/predicted_ndvi_2022.tif\",\n    sample_size=50000,\n    valid_range=(-1.0, 1.0),\n    fit_line=True,\n)\n\n\n\nPredict on New Data (2023)\n\ngeoai.predict_raster(\n    model=model,\n    input_raster=test_raster,\n    output_raster=\"ndvi_model/predicted_ndvi_2023.tif\",\n    tile_size=256,\n    overlap=64,\n    batch_size=8,\n    clip_range=(-1.0, 1.0),\n)\n\n\ngeoai.visualize_prediction(\n    input_raster=test_raster,\n    pred_raster=\"ndvi_model/predicted_ndvi_2023.tif\",\n    cmap=\"RdYlGn\",\n    vmin=-0.2,\n    vmax=0.8,\n)"
+  },
+  {
+    "objectID": "Notebooks/pixel_regression.html#evaluation-metrics",
+    "href": "Notebooks/pixel_regression.html#evaluation-metrics",
+    "title": "Aula 12 - Pixel-Level Regression",
+    "section": "Evaluation Metrics",
+    "text": "Evaluation Metrics"
+  },
+  {
+    "objectID": "Notebooks/pixel_regression.html#key-takeaways",
+    "href": "Notebooks/pixel_regression.html#key-takeaways",
+    "title": "Aula 12 - Pixel-Level Regression",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways"
+  },
+  {
+    "objectID": "Notebooks/pixel_regression.html#exercises",
+    "href": "Notebooks/pixel_regression.html#exercises",
+    "title": "Aula 12 - Pixel-Level Regression",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1: Comparing Loss Functions\n\n\nExercise 2: Encoder Architecture Comparison\n\n\nExercise 3: The Effect of Tile Size and Stride\n\n\nExercise 4: Residual Analysis and Error Mapping"
+  },
+  {
+    "objectID": "Notebooks/instance_segmentation.html#introduction",
+    "href": "Notebooks/instance_segmentation.html#introduction",
+    "title": "Aula 9 - Instance Segmentation",
+    "section": "Introduction",
+    "text": "Introduction"
+  },
+  {
+    "objectID": "Notebooks/instance_segmentation.html#learning-objectives",
+    "href": "Notebooks/instance_segmentation.html#learning-objectives",
+    "title": "Aula 9 - Instance Segmentation",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives"
+  },
+  {
+    "objectID": "Notebooks/instance_segmentation.html#instance-segmentation-vs.-semantic-segmentation",
+    "href": "Notebooks/instance_segmentation.html#instance-segmentation-vs.-semantic-segmentation",
+    "title": "Aula 9 - Instance Segmentation",
+    "section": "Instance Segmentation vs. Semantic Segmentation",
+    "text": "Instance Segmentation vs. Semantic Segmentation"
+  },
+  {
+    "objectID": "Notebooks/instance_segmentation.html#mask-r-cnn-architecture",
+    "href": "Notebooks/instance_segmentation.html#mask-r-cnn-architecture",
+    "title": "Aula 9 - Instance Segmentation",
+    "section": "Mask R-CNN Architecture",
+    "text": "Mask R-CNN Architecture\n\nBackbone Encoder\n\n\nRegion Proposal Network\n\n\nDetection Head\n\n\nMask Head\n\n\nRoI Align: Preserving Spatial Precision\n\n\nThe Complete Pipeline"
+  },
+  {
+    "objectID": "Notebooks/instance_segmentation.html#downloading-the-ftw-dataset",
+    "href": "Notebooks/instance_segmentation.html#downloading-the-ftw-dataset",
+    "title": "Aula 9 - Instance Segmentation",
+    "section": "Downloading the FTW Dataset",
+    "text": "Downloading the FTW Dataset\n\nfrom pathlib import Path\n\nimport geopandas as gpd\nimport geoai\n\n\ngeoai.download_ftw(countries=[\"luxembourg\"], output_dir=\"ftw_data\")\n\n\nExploring the Dataset\n\ncountry_dir = Path(\"ftw_data\") / \"luxembourg\"\nchips_gdf = gpd.read_parquet(country_dir / \"chips_luxembourg.parquet\")\n\nprint(f\"Total chips: {len(chips_gdf)}\")\nprint(f\"\\nSplit distribution:\")\nprint(chips_gdf[\"split\"].value_counts())\n\n\ngeoai.view_vector_interactive(chips_gdf, column=\"split\")\n\n\ngeoai.display_ftw_samples(\"ftw_data\", country=\"luxembourg\", num_samples=4)"
+  },
+  {
+    "objectID": "Notebooks/instance_segmentation.html#preparing-training-data",
+    "href": "Notebooks/instance_segmentation.html#preparing-training-data",
+    "title": "Aula 9 - Instance Segmentation",
+    "section": "Preparing Training Data",
+    "text": "Preparing Training Data\n\ndata = geoai.prepare_ftw(\"ftw_data\", country=\"luxembourg\")\ndata\n\n\ngeoai.display_training_tiles(\n    output_dir=\"field_boundaries\",\n    num_tiles=4,\n    figsize=(12, 6),\n    cmap=\"tab20\",\n)"
+  },
+  {
+    "objectID": "Notebooks/instance_segmentation.html#training-a-mask-r-cnn-model",
+    "href": "Notebooks/instance_segmentation.html#training-a-mask-r-cnn-model",
+    "title": "Aula 9 - Instance Segmentation",
+    "section": "Training a Mask R-CNN Model",
+    "text": "Training a Mask R-CNN Model\n\ngeoai.train_instance_segmentation_model(\n    images_dir=data[\"images_dir\"],\n    labels_dir=data[\"labels_dir\"],\n    output_dir=\"field_boundaries/models\",\n    num_classes=2,\n    num_channels=4,\n    batch_size=4,\n    num_epochs=20,\n    learning_rate=0.005,\n    val_split=0.2,\n    instance_labels=True,\n    visualize=True,\n    verbose=True,\n)\n\n\ngeoai.plot_performance_metrics(\n    history_path=\"field_boundaries/models/training_history.pth\",\n    figsize=(15, 5),\n    verbose=True,\n)"
+  },
+  {
+    "objectID": "Notebooks/instance_segmentation.html#running-inference",
+    "href": "Notebooks/instance_segmentation.html#running-inference",
+    "title": "Aula 9 - Instance Segmentation",
+    "section": "Running Inference",
+    "text": "Running Inference\n\ntest_images = sorted(Path(data[\"test_dir\"]).glob(\"*.tif\"))\ntest_image_path = str(test_images[0])\nmasks_path = \"field_boundary_prediction.tif\"\nmodel_path = \"field_boundaries/models/best_model.pth\"\n\nresult = geoai.instance_segmentation(\n    input_path=test_image_path,\n    output_path=masks_path,\n    model_path=model_path,\n    num_classes=2,\n    num_channels=4,\n    window_size=256,\n    overlap=128,\n    confidence_threshold=0.5,\n    batch_size=4,\n    vectorize=True,\n    class_names=[\"background\", \"building\"],\n)\nresult\n\n\nVisualizing Raw Predictions\n\ngeoai.view_raster(\n    result[\"instance\"],\n    nodata=0,\n    cmap=\"tab20\",\n    basemap=test_image_path,\n    backend=\"ipyleaflet\",\n)\n\n\ngeoai.view_raster(\n    result[\"class_label\"],\n    nodata=0,\n    cmap=\"binary\",\n    basemap=test_image_path,\n    backend=\"ipyleaflet\",\n)\n\n\ngeoai.view_raster(\n    result[\"score\"], nodata=0, basemap=test_image_path, backend=\"ipyleaflet\"\n)\n\n\ngeoai.view_vector_interactive(result[\"vector\"], tiles=test_image_path, column=\"score\")"
+  },
+  {
+    "objectID": "Notebooks/instance_segmentation.html#post-processing-predictions",
+    "href": "Notebooks/instance_segmentation.html#post-processing-predictions",
+    "title": "Aula 9 - Instance Segmentation",
+    "section": "Post-Processing Predictions",
+    "text": "Post-Processing Predictions\n\ncleaned_masks_path = \"field_boundary_prediction_cleaned.tif\"\ngeoai.clean_instance_mask(\n    result[\"instance\"], cleaned_masks_path, min_area=100, max_hole_area=100\n)\n\n\ngeoai.view_raster(\n    cleaned_masks_path,\n    nodata=0,\n    cmap=\"tab20\",\n    basemap=test_image_path,\n    backend=\"ipyleaflet\",\n)\n\n\nVectorizing Predictions\n\noutput_vector_path = \"field_boundary_prediction.geojson\"\ngdf = geoai.raster_to_vector(cleaned_masks_path, output_vector_path)\n\n\n\nComparing Predictions with Imagery\n\ngeoai.create_split_map(\n    left_layer=gdf,\n    right_layer=test_image_path,\n    left_args={\"style\": {\"color\": \"red\", \"fillOpacity\": 0.2}},\n    basemap=test_image_path,\n)"
+  },
+  {
+    "objectID": "Notebooks/instance_segmentation.html#extracting-geometric-properties",
+    "href": "Notebooks/instance_segmentation.html#extracting-geometric-properties",
+    "title": "Aula 9 - Instance Segmentation",
+    "section": "Extracting Geometric Properties",
+    "text": "Extracting Geometric Properties\n\ngdf_props = geoai.add_geometric_properties(gdf, area_unit=\"ha\", length_unit=\"m\")\ngdf_props.head()\n\n\ngdf_props.describe()\n\n\nVisualizing Fields by Property\n\ngeoai.view_vector_interactive(gdf_props, column=\"area_ha\", tiles=test_image_path)\n\n\ngeoai.view_vector_interactive(gdf_props, column=\"elongation\", tiles=test_image_path)"
+  },
+  {
+    "objectID": "Notebooks/instance_segmentation.html#batch-processing",
+    "href": "Notebooks/instance_segmentation.html#batch-processing",
+    "title": "Aula 9 - Instance Segmentation",
+    "section": "Batch Processing",
+    "text": "Batch Processing\n\ngeoai.instance_segmentation_batch(\n    input_dir=data[\"test_dir\"],\n    output_dir=\"field_boundaries/predictions\",\n    model_path=model_path,\n    num_classes=2,\n    num_channels=4,\n    window_size=256,\n    overlap=128,\n    confidence_threshold=0.5,\n    batch_size=4,\n)"
+  },
+  {
+    "objectID": "Notebooks/instance_segmentation.html#key-takeaways",
+    "href": "Notebooks/instance_segmentation.html#key-takeaways",
+    "title": "Aula 9 - Instance Segmentation",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways"
+  },
+  {
+    "objectID": "Notebooks/instance_segmentation.html#exercises",
+    "href": "Notebooks/instance_segmentation.html#exercises",
+    "title": "Aula 9 - Instance Segmentation",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1: Confidence Threshold Analysis\n\n\nExercise 2: Multi-Country Comparison\n\n\nExercise 3: Field Size Classification\n\n\nExercise 4: Post-Processing Parameter Sensitivity\n\n\nExercise 5: End-to-End Field Boundary Pipeline"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#introduction",
+    "href": "Notebooks/foundation_models.html#introduction",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Introduction",
+    "text": "Introduction"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#learning-objectives",
+    "href": "Notebooks/foundation_models.html#learning-objectives",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#what-are-satellite-embeddings",
+    "href": "Notebooks/foundation_models.html#what-are-satellite-embeddings",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "What Are Satellite Embeddings?",
+    "text": "What Are Satellite Embeddings?"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#setting-up-the-environment",
+    "href": "Notebooks/foundation_models.html#setting-up-the-environment",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Setting Up the Environment",
+    "text": "Setting Up the Environment\n\n# %pip install geoai-py\n\n\nimport geoai\nimport geopandas as gpd\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nfrom huggingface_hub import HfApi, hf_hub_download"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#browsing-available-embedding-datasets",
+    "href": "Notebooks/foundation_models.html#browsing-available-embedding-datasets",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Browsing Available Embedding Datasets",
+    "text": "Browsing Available Embedding Datasets\n\ndf = geoai.list_embedding_datasets(verbose=False)\ndf\n\n\ngeoai.list_embedding_datasets(kind=\"patch\", verbose=False)\n\n\ngeoai.list_embedding_datasets(kind=\"pixel\", verbose=False)\n\n\ninfo = geoai.get_embedding_info(\"clay\")\nfor key, value in info.items():\n    print(f\"{key}: {value}\")"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#exploring-patch-based-embeddings",
+    "href": "Notebooks/foundation_models.html#exploring-patch-based-embeddings",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Exploring Patch-Based Embeddings",
+    "text": "Exploring Patch-Based Embeddings\n\nDownloading Clay Embeddings\n\nrepo_id = \"made-with-clay/classify-embeddings-sf-baseball-marinas\"\n\napi = HfApi()\nembedding_files = [\n    f.path\n    for f in api.list_repo_tree(repo_id, repo_type=\"dataset\")\n    if f.path.endswith(\".gpq\")\n]\nprint(f\"Found {len(embedding_files)} embedding tiles\")\n\n\nall_gdfs = []\nfor f in embedding_files:\n    path = hf_hub_download(repo_id, f, repo_type=\"dataset\")\n    gdf = gpd.read_parquet(path)\n    all_gdfs.append(gdf)\n\nembeddings_gdf = pd.concat(all_gdfs, ignore_index=True)\nembeddings_gdf = gpd.GeoDataFrame(\n    embeddings_gdf, geometry=\"geometry\", crs=all_gdfs[0].crs\n)\nprint(f\"Combined: {len(embeddings_gdf)} patches\")\nprint(f\"Bounds: {embeddings_gdf.total_bounds}\")\nprint(f\"Embedding dimension: {len(embeddings_gdf.iloc[0]['embeddings'])}\")\n\n\nlabels_file = hf_hub_download(repo_id, \"baseball.geojson\", repo_type=\"dataset\")\nlabels_gdf = gpd.read_file(labels_file)\nprint(f\"Labeled locations: {len(labels_gdf)}\")\nprint(f\"Class distribution:\")\nprint(labels_gdf[\"class\"].value_counts())\n\n\n\nExtracting Embedding Vectors\n\nembeddings = np.stack(embeddings_gdf[\"embeddings\"].values)\ncentroids = embeddings_gdf.geometry.centroid\ncoords_x = centroids.x.values\ncoords_y = centroids.y.values\n\nprint(f\"Embeddings shape: {embeddings.shape}\")\nprint(f\"X range: [{coords_x.min():.4f}, {coords_x.max():.4f}]\")\nprint(f\"Y range: [{coords_y.min():.4f}, {coords_y.max():.4f}]\")"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#visualizing-embeddings",
+    "href": "Notebooks/foundation_models.html#visualizing-embeddings",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Visualizing Embeddings",
+    "text": "Visualizing Embeddings\n\nfig, axes = plt.subplots(1, 3, figsize=(15, 3))\nfor i, ax in enumerate(axes):\n    idx = i * (len(embeddings) // 3)\n    ax.plot(embeddings[idx], linewidth=0.5)\n    ax.set_title(f\"Patch {idx}\")\n    ax.set_xlabel(\"Dimension\")\n    ax.set_ylabel(\"Value\")\nplt.tight_layout()\nplt.show()\n\n\nfig = geoai.visualize_embeddings(\n    embeddings,\n    method=\"pca\",\n    figsize=(10, 8),\n    s=3,\n    alpha=0.4,\n    title=\"PCA of Clay Embeddings (SF Bay Area)\",\n)\nplt.show()"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#clustering-embeddings",
+    "href": "Notebooks/foundation_models.html#clustering-embeddings",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Clustering Embeddings",
+    "text": "Clustering Embeddings\n\nresult = geoai.cluster_embeddings(embeddings, n_clusters=8, method=\"kmeans\")\ncluster_labels = result[\"labels\"]\nprint(f\"Number of clusters: {result['n_clusters']}\")\nprint(f\"Cluster sizes: {np.bincount(cluster_labels)}\")\n\n\nfig = geoai.visualize_embeddings(\n    embeddings,\n    labels=cluster_labels,\n    method=\"pca\",\n    figsize=(10, 8),\n    s=5,\n    alpha=0.5,\n    title=\"K-Means Clusters of Clay Embeddings\",\n)\nplt.show()\n\n\nfig, ax = plt.subplots(figsize=(10, 8))\nn_clusters = len(set(cluster_labels))\nscatter = ax.scatter(\n    coords_x,\n    coords_y,\n    c=cluster_labels,\n    cmap=plt.colormaps[\"tab10\"].resampled(n_clusters),\n    vmin=-0.5,\n    vmax=n_clusters - 0.5,\n    s=3,\n    alpha=0.6,\n)\nplt.colorbar(scatter, ax=ax, label=\"Cluster\", ticks=range(n_clusters))\nax.set_xlabel(\"Longitude\")\nax.set_ylabel(\"Latitude\")\nax.set_title(\"Geographic Distribution of Embedding Clusters\")\nax.set_aspect(\"equal\")\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#similarity-search",
+    "href": "Notebooks/foundation_models.html#similarity-search",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Similarity Search",
+    "text": "Similarity Search\n\nquery_idx = 0\nquery = embeddings[query_idx]\nprint(\n    f\"Query location (lat, lon): ({coords_y[query_idx]:.4f}, {coords_x[query_idx]:.4f})\"\n)\n\nresults = geoai.embedding_similarity(\n    query=query, embeddings=embeddings, metric=\"cosine\", top_k=10\n)\n\nprint(\"\\nTop 10 most similar locations:\")\nfor rank, (idx, score) in enumerate(\n    zip(results[\"indices\"], results[\"scores\"]), start=1\n):\n    print(\n        f\"  {rank}. Index {idx}: similarity={score:.4f}, \"\n        f\"location=({coords_y[idx]:.4f}, {coords_x[idx]:.4f})\"\n    )\n\n\nfig, ax = plt.subplots(figsize=(10, 8))\n\n# Background: all embeddings in gray\nax.scatter(coords_x, coords_y, c=\"lightgray\", s=1, alpha=0.3)\n\n# Highlight nearest neighbors\nnn_indices = results[\"indices\"]\nax.scatter(\n    coords_x[nn_indices],\n    coords_y[nn_indices],\n    c=\"blue\",\n    s=50,\n    marker=\"o\",\n    label=\"Nearest Neighbors\",\n    edgecolors=\"black\",\n    linewidths=0.5,\n)\n\n# Highlight the query point\nax.scatter(\n    coords_x[query_idx],\n    coords_y[query_idx],\n    c=\"red\",\n    s=100,\n    marker=\"*\",\n    label=\"Query\",\n    edgecolors=\"black\",\n    linewidths=0.5,\n    zorder=5,\n)\n\nax.set_xlabel(\"Longitude\")\nax.set_ylabel(\"Latitude\")\nax.set_title(\"Similarity Search: Query and Nearest Neighbors\")\nax.legend()\nax.set_aspect(\"equal\")\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#training-classifiers-on-embeddings",
+    "href": "Notebooks/foundation_models.html#training-classifiers-on-embeddings",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Training Classifiers on Embeddings",
+    "text": "Training Classifiers on Embeddings\n\n# Ensure both GeoDataFrames use the same CRS\nif labels_gdf.crs != embeddings_gdf.crs:\n    labels_gdf = labels_gdf.to_crs(embeddings_gdf.crs)\n\n# Spatial join: find which embedding patch each labeled point falls within\njoined = gpd.sjoin(labels_gdf, embeddings_gdf, how=\"inner\", predicate=\"within\")\nprint(f\"Matched {len(joined)} labeled points to embedding patches\")\nprint(f\"Class distribution: {joined['class'].value_counts().to_dict()}\")\n\n\nlabeled_embeddings = np.stack(\n    [embeddings_gdf.iloc[idx][\"embeddings\"] for idx in joined[\"index_right\"]]\n)\nclass_labels = joined[\"class\"].values\n\nprint(f\"Labeled embeddings shape: {labeled_embeddings.shape}\")\nprint(f\"Labels shape: {class_labels.shape}\")\n\n\nfrom sklearn.model_selection import train_test_split\n\nX_train, X_val, y_train, y_val = train_test_split(\n    labeled_embeddings,\n    class_labels,\n    test_size=0.3,\n    random_state=42,\n    stratify=class_labels,\n)\nprint(f\"Train: {X_train.shape[0]} samples\")\nprint(f\"Val:   {X_val.shape[0]} samples\")\n\n\nlabel_names = [\"Baseball Field\", \"Marina\"]\n\nresult = geoai.train_embedding_classifier(\n    train_embeddings=X_train,\n    train_labels=y_train,\n    val_embeddings=X_val,\n    val_labels=y_val,\n    method=\"knn\",\n    n_neighbors=5,\n    label_names=label_names,\n)\n\nprint(f\"\\nTrain accuracy: {result['train_accuracy']:.2%}\")\nprint(f\"Val accuracy:   {result['val_accuracy']:.2%}\")\n\n\nmethods = [\"knn\", \"random_forest\", \"logistic_regression\"]\nresults_summary = []\n\nfor method in methods:\n    res = geoai.train_embedding_classifier(\n        train_embeddings=X_train,\n        train_labels=y_train,\n        val_embeddings=X_val,\n        val_labels=y_val,\n        method=method,\n        label_names=label_names,\n        verbose=False,\n    )\n    results_summary.append(\n        {\n            \"Method\": method,\n            \"Train Acc\": f\"{res['train_accuracy']:.2%}\",\n            \"Val Acc\": f\"{res['val_accuracy']:.2%}\",\n        }\n    )\n\npd.DataFrame(results_summary)\n\n\nfig = geoai.visualize_embeddings(\n    labeled_embeddings,\n    labels=class_labels,\n    label_names=label_names,\n    method=\"pca\",\n    figsize=(8, 8),\n    s=30,\n    alpha=0.8,\n    title=\"PCA of Labeled Embeddings (Baseball vs Marina)\",\n)\nplt.show()"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#comparing-embeddings-for-change-detection",
+    "href": "Notebooks/foundation_models.html#comparing-embeddings-for-change-detection",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Comparing Embeddings for Change Detection",
+    "text": "Comparing Embeddings for Change Detection\n\nn = len(embeddings)\nhalf = n // 2\nemb_a = embeddings[:half]\nemb_b = embeddings[half : half + half]\n\nsimilarity = geoai.compare_embeddings(emb_a, emb_b, metric=\"cosine\")\n\nfig, ax = plt.subplots(figsize=(10, 4))\nax.hist(similarity, bins=50, edgecolor=\"black\", alpha=0.7)\nax.axvline(\n    similarity.mean(),\n    color=\"red\",\n    linestyle=\"--\",\n    label=f\"Mean: {similarity.mean():.3f}\",\n)\nax.set_xlabel(\"Cosine Similarity\")\nax.set_ylabel(\"Count\")\nax.set_title(\"Embedding Similarity Distribution\")\nax.legend()\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#loading-datasets-with-torchgeo",
+    "href": "Notebooks/foundation_models.html#loading-datasets-with-torchgeo",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Loading Datasets with TorchGeo",
+    "text": "Loading Datasets with TorchGeo\n\nsingle_file = hf_hub_download(repo_id, embedding_files[0], repo_type=\"dataset\")\nds = geoai.load_embedding_dataset(\"clay\", root=single_file)\n\nprint(f\"Dataset length: {len(ds)}\")\nprint(f\"Dataset type: {type(ds).__name__}\")\n\n\ntry:\n    sample = ds[0]\n    print(f\"Sample keys: {list(sample.keys())}\")\n    print(f\"Embedding shape: {sample['embedding'].shape}\")\n\n    fig = ds.plot(sample)\n    plt.show()\nexcept KeyError as e:\n    print(\n        f\"Note: This parquet file is missing the '{e.args[0]}' column \"\n        f\"expected by TorchGeo's ClayEmbeddings class.\"\n    )\n    print(\"For such files, use geopandas directly (as shown above).\")\n    print(\"The TorchGeo class works best with official Clay data products.\")"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#working-with-tessera-temporal-embeddings",
+    "href": "Notebooks/foundation_models.html#working-with-tessera-temporal-embeddings",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Working with TESSERA Temporal Embeddings",
+    "text": "Working with TESSERA Temporal Embeddings\n\n# %pip install geoai-py geotessera\n\n\nChecking Data Availability\n\nyears = geoai.tessera_available_years()\nprint(f\"Available years: {years}\")\n\n\nbbox = (0.05, 52.15, 0.25, 52.25)\ncount = geoai.tessera_tile_count(bbox=bbox, year=2024)\nprint(f\"{count} tiles available for the specified region\")\n\n\ngeoai.tessera_coverage(year=2024, output_path=\"tessera_coverage_2024.png\")\n\n\ngeoai.tessera_coverage(\n    year=2024, region_bbox=(-10, 35, 40, 60), output_path=\"tessera_coverage_europe.png\"\n)\n\n\n\nDownloading Embeddings\n\nbbox = (0.05, 52.15, 0.25, 52.25)\n\ncambridge_files = geoai.tessera_download(\n    bbox=bbox, year=2024, output_dir=\"./tessera_cambridge\", output_format=\"tiff\"\n)\nprint(f\"Downloaded {len(cambridge_files)} files\")\nfor f in cambridge_files:\n    print(f\"  {f}\")\n\n\nfiles = geoai.tessera_download(\n    lon=0.15, lat=52.05, year=2024, output_dir=\"./tessera_single_tile\"\n)\nprint(f\"Downloaded {len(files)} file(s)\")\n\n\nfiles = geoai.tessera_download(\n    bbox=bbox, year=2024, bands=[0, 1, 2], output_dir=\"./tessera_rgb_only\"\n)\nprint(f\"Downloaded {len(files)} files with 3 bands each\")\n\n\n\nVisualizing TESSERA Embeddings\n\ngeoai.tessera_visualize_rgb(\n    str(cambridge_files[0]), bands=(0, 1, 2), title=\"Cambridge - TESSERA Bands 0, 1, 2\"\n)\n\n\ngeoai.tessera_visualize_rgb(\n    str(cambridge_files[0]),\n    bands=(30, 60, 90),\n    title=\"Cambridge - TESSERA Bands 30, 60, 90\",\n)\n\n\n\nFetching Embeddings to Memory\n\ntiles = geoai.tessera_fetch_embeddings(bbox=(0.05, 52.15, 0.25, 52.25), year=2024)\n\nfor tile in tiles:\n    print(f\"Tile ({tile['lon']:.2f}, {tile['lat']:.2f}):\")\n    print(f\"  Shape: {tile['embedding'].shape}\")\n    print(f\"  CRS: {tile['crs']}\")\n    print(f\"  Mean: {tile['embedding'].mean():.4f}\")\n    print(f\"  Std: {tile['embedding'].std():.4f}\")\n\n\n\nSampling Embeddings at Point Locations\n\nfrom shapely.geometry import Point\n\npoints = gpd.GeoDataFrame(\n    {\"name\": [\"Point A\", \"Point B\", \"Point C\"]},\n    geometry=[Point(0.12, 52.20), Point(0.15, 52.18), Point(0.20, 52.22)],\n    crs=\"EPSG:4326\",\n)\n\nresult = geoai.tessera_sample_points(points, year=2024)\n\nprint(f\"Result shape: {result.shape}\")\nprint(\n    f\"\\nOriginal columns: {[c for c in result.columns if not c.startswith('tessera_')]}\"\n)\nprint(f\"Embedding columns: tessera_0 through tessera_127\")\nprint(f\"\\nFirst few embedding values for Point A:\")\nprint(result.iloc[0][[f\"tessera_{i}\" for i in range(5)]])\n\n\n\nAlternative Download Formats\n\nimport json\n\nfiles = geoai.tessera_download(\n    bbox=bbox, year=2024, output_dir=\"./tessera_numpy\", output_format=\"npy\"\n)\n\nwith open(\"./tessera_numpy/metadata.json\") as f:\n    meta = json.load(f)\n\nprint(f\"Year: {meta['year']}\")\nprint(f\"Number of tiles: {len(meta['tiles'])}\")\nfor tile_info in meta[\"tiles\"]:\n    arr = np.load(f\"./tessera_numpy/{tile_info['file']}\")\n    print(f\"  {tile_info['file']}: shape={arr.shape}, dtype={arr.dtype}\")\n\n\nfrom shapely.geometry import box\n\nregion = gpd.GeoDataFrame(geometry=[box(0.05, 52.15, 0.25, 52.25)], crs=\"EPSG:4326\")\nregion.to_file(\"cambridge_region.geojson\", driver=\"GeoJSON\")\n\nfiles = geoai.tessera_download(\n    region_file=\"cambridge_region.geojson\",\n    year=2024,\n    output_dir=\"./tessera_from_region\",\n)\nprint(f\"Downloaded {len(files)} files\")"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#exploring-alphaearth-satellite-embeddings",
+    "href": "Notebooks/foundation_models.html#exploring-alphaearth-satellite-embeddings",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Exploring AlphaEarth Satellite Embeddings",
+    "text": "Exploring AlphaEarth Satellite Embeddings\n\n# %pip install -U geemap\n\n\nimport ee\nimport geoai\n\n\nee.Authenticate()\nee.Initialize(project=\"your-ee-project\")\n\n\nInteractive Map with AlphaEarth GUI\n\nm = geoai.Map(projection=\"globe\", sidebar_visible=True)\nm.add_basemap(\"USGS.Imagery\")\nm.add_alphaearth_gui()\nm\n\n\n\nVisualizing Embeddings as RGB Composites\n\nm = geoai.Map(projection=\"globe\", sidebar_visible=True)\nm.add_basemap(\"USGS.Imagery\")\n\nlon = -121.8036\nlat = 39.0372\nm.set_center(lon, lat, zoom=12)\nm\n\n\npoint = ee.Geometry.Point(lon, lat)\ndataset = ee.ImageCollection(\"GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL\")\n\nimage1 = dataset.filterDate(\"2017-01-01\", \"2018-01-01\").filterBounds(point).first()\nimage2 = dataset.filterDate(\"2024-01-01\", \"2025-01-01\").filterBounds(point).first()\n\n\nvis_params = {\"min\": -0.3, \"max\": 0.3, \"bands\": [\"A01\", \"A16\", \"A09\"]}\nm.add_ee_layer(image1, vis_params, name=\"2017 embeddings\")\nm.add_ee_layer(image2, vis_params, name=\"2024 embeddings\")\n\n\n\nChange Detection via Embedding Similarity\n\ndot_prod = image1.multiply(image2).reduce(ee.Reducer.sum())\n\n\nvis_params = {\"min\": 0, \"max\": 1, \"palette\": [\"#ffffff\", \"#000000\"]}\nm.add_ee_layer(dot_prod, vis_params, name=\"Similarity\")\nm.add_colorbar(cmap=\"gray\", label=\"Similarity\")\nm"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#key-takeaways",
+    "href": "Notebooks/foundation_models.html#key-takeaways",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways"
+  },
+  {
+    "objectID": "Notebooks/foundation_models.html#exercises",
+    "href": "Notebooks/foundation_models.html#exercises",
+    "title": "Aula 15 - Satellite Embeddings",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1: Exploring the Embedding Registry\n\n\nExercise 2: Clustering with Different K Values\n\n\nExercise 3: Similarity-Based Retrieval\n\n\nExercise 4: TESSERA Multi-Year Comparison\n\n\nExercise 5: AlphaEarth Change Detection for a Different Region"
+  },
+  {
+    "objectID": "Notebooks/Aula_6.html#objetivos-de-aprendizagem",
+    "href": "Notebooks/Aula_6.html#objetivos-de-aprendizagem",
+    "title": "Aula 6",
+    "section": "Objetivos de Aprendizagem",
+    "text": "Objetivos de Aprendizagem\nNo arquivo do notebook fornecido, a seção correspondente na célula Markdown 1 traz apenas o cabeçalho:\n\n1. Compreender os Fundamentos da Classificação de Cenas (Scene Classification)\n\nDo Pixel ao Rótulo (From Pixels to Labels): Entender a transição entre a classificação tradicional de sensoriamento remoto (pixel a pixel) e a atribuição de uma classe semântica global a um recorte/patch de imagem.\nMecanismos de Convolução: Compreender o papel das camadas convolucionais, pooling e campos receptivos na extração hierárquica de padrões espaciais, texturas e feições contextuais em imagens orbitais.\n\n\n\n2. Dominar a Preparação e Estruturação de Dados para Visão Computacional\n\nPadrão ImageFolder: Aprender a organizar diretórios onde os nomes das subpastas definem os rótulos das classes (padrão nativo do PyTorch/Torchvision).\nBenchmark EuroSAT: Conhecer a estrutura, resolução espacial (10 m), bandas visuais (RGB) e as 10 classes de cobertura da terra que compõem o dataset padrão da comunidade.\n\n\n\n3. Comparar Arquiteturas Modernas de Redes Neurais e Aplicar Transfer Learning\n\nDiferenciação de Arquiteturas: Identificar as vantagens e desvantagens de modelos convolucionais consolidados (como ResNet-50, com conexões residuais) frente a arquiteturas eficientes e otimizadas por busca neural (como EfficientNet-B0) e tendências contemporâneas (Vision Transformers e ConvNeXt).\nAjuste Fino (Fine-Tuning): Utilizar pesos pré-treinados no ImageNet (pretrained=True) para acelerar a convergência e reduzir a necessidade de volumes massivos de dados no treinamento em sensoriamento remoto.\n\n\n\n4. Avaliar o Desempenho e Diagnosticar Confusões Espectro-Espaciais\n\nDiagnóstico de Treinamento: Interpretar curvas de perda (loss) e acurácia ao longo das épocas para detectar overfitting ou underfitting.\nMétricas Globais e por Classe: Calcular acurácia global e examinar matrizes de confusão (brutas e normalizadas) para identificar classes de cobertura da terra propensas a confusão espectral mista.\nInspeção Visual de Inferência: Visualizar predições individuais com probabilidades associadas (Softmax), confrontando o rótulo verdadeiro com a certeza do modelo.\n\n\n\n5. Praticar MLOps e Compartilhamento de Modelos em Nuvem\n\nPublicação no Hugging Face Hub: Autenticar e publicar checkpoints de modelos com metadados e nomes de classes.\nReuso e Inferência Remota: Carregar modelos diretamente do repositório em nuvem para executar predições sem precisar reter o ambiente de treinamento local.\n\n\n\n1. Aprendizado por Transferência (Transfer Learning)\n\nTradução Conceitual: Transferência de Aprendizado / Aprendizado por Transferência.\nO Conceito: Redes Neurais Convolucionais profundas exigem centenas de milhares (ou milhões) de imagens para aprender representações visuais robustas a partir do zero (from scratch). No Transfer Learning, utiliza-se uma rede previamente treinada em uma base massiva de imagens (frequentemente o ImageNet, com mais de 1 milhão de fotos) e reaproveitam-se esses pesos para uma nova tarefa — no caso, a classificação de imagens de satélite.\nComo Funciona na Prática:\nExtrator de Feições Congelado (Feature Extractor): As camadas iniciais de uma CNN aprendem feições universais de baixo nível (arestas, gradientes de cor, texturas e linhas ortogonais). Essas camadas podem ser mantidas congeladas.\nAjuste Fino (Fine-Tuning): Substitui-se apenas a última camada densa/linear (a cabeça de classificação, head) para coincidir com o número de classes de interesse (por exemplo, as 10 classes do EuroSAT). Os pesos da rede são então ajustados suavemente com uma taxa de aprendizado menor.\nVantagem em Sensoriamento Remoto: Reduz drasticamente o tempo de treinamento e viabiliza modelos de alta acurácia mesmo com amostragens reduzidas de imagens orbitais.\n\n\n\n2. ResNet (Residual Networks)\n\nTradução Conceitual: Redes Residuais.\nO Problema Resolvido: Historicamente, ao empilhar dezenas de camadas convolucionais, as redes sofriam com a degradação de desempenho e o desaparecimento do gradiente (vanishing gradient), onde os sinais de correção calculados pelo backpropagation se tornavam próximos de zero antes de alcançar as camadas iniciais.\nA Solução das Conexões Residuais (Skip Connections / Shortcut):\nEm vez de forçar as camadas a aprenderem um mapeamento direto \\(H(x)\\), a ResNet formula o bloco para aprender um resíduo:\n\n\\[F(x) = H(x) - x \\implies H(x) = F(x) + x\\]\n\nO termo \\(+ x\\) representa uma ligação direta que pula uma ou mais camadas convolucionais. Se uma camada não acrescentar ganho preditivo, ela pode simplesmente convergir seus pesos para zero, mantendo a identidade intacta (\\(H(x) = x\\)).\nNo Notebook (resnet50): Utiliza uma variante de 50 camadas profundas dividida em blocos residuais do tipo bottleneck. É uma arquitetura de referência robusta e estável para benchmarks de cobertura do solo.\n\n\n\n3. EfficientNet\n\nTradução Conceitual: Redes Convolucionais Eficientes por Escalonamento Composto.\nO Problema Resolvido: Tradicionalmente, para melhorar o desempenho de uma rede, ampliava-se apenas uma dimensão: ou a profundidade (número de camadas, como na ResNet), ou a largura (quantidade de canais/filtros), ou a resolução espacial de entrada. O aumento desordenado de qualquer uma dessas variáveis de forma isolada causa saturação rápida de ganho e eleva os custos computacionais.\nA Abordagem do Escalonamento Composto (Compound Scaling):\nA EfficientNet balanceia uniformemente profundidade (\\(d\\)), largura (\\(w\\)) e resolução de entrada (\\(r\\)) sob uma restrição de recursos computacionais fixos, utilizando um coeficiente composto \\(\\phi\\):\n\n\\[\\text{Profundidade: } d = \\alpha^\\phi, \\quad \\text{Largura: } w = \\beta^\\phi, \\quad \\text{Resolução: } r = \\gamma^\\phi\\]\n\nA arquitetura base (B0) emprega blocos convolucionais invertidos com conexões residuais (MBConv — Mobile Inverted Bottleneck Convolution), combinados com mecanismos de atenção leves (Squeeze-and-Excitation).\nNo Notebook (efficientnet_b0): Representa a versão de entrada da família EfficientNet. Entrega níveis de acurácia comparáveis ou superiores aos da ResNet-50 com significativamente menos parâmetros treináveis e menor pegada de memória.\n\n\n\n\nComparativo Direto entre as Duas Abordagens no Notebook\n\n\n\n\n\n\n\n\nCaracterística\nResNet-50\nEfficientNet-B0\n\n\n\n\nMecanismo Central\nConexões de salto residuais (Skip Connections)\nEscalonamento composto balanceado + Blocos MBConv\n\n\nVolume de Parâmetros\nElevado (~25 milhões de parâmetros)\nReduzido (~5.3 milhões de parâmetros)\n\n\nCusto Computacional / Memória\nMaior consumo de GPU por época\nMuito leve, ideal para execuções ágeis e inferência rápida\n\n\nComportamento em Imagens Menores (64×64)\nMantém boa capacidade de generalização espacial\nAltamente eficiente, mas pode exigir atenção na resolução mínima aceita pelas reduções de escala sucessivas\n\n\n\n\n!pip install geoai-py\n\n\nimport os\nfrom geoai.utils import download_file\nfrom geoai.recognize import (\n    load_image_dataset,\n    train_image_classifier,\n    predict_images,\n    evaluate_classifier,\n    plot_training_history,\n    plot_confusion_matrix,\n    plot_predictions,\n    push_classifier_to_hub,\n    predict_images_from_hub,\n)\n\n\n---------------------------------------------------------------------------\nModuleNotFoundError                       Traceback (most recent call last)\nCell In[2], line 2\n      1 import os\n----&gt; 2 from geoai.utils import download_file\n      3 from geoai.recognize import (\n      4     load_image_dataset,\n      5     train_image_classifier,\n\nModuleNotFoundError: No module named 'geoai.utils'"
+  },
+  {
+    "objectID": "Notebooks/Aula_6.html#autenticar-no-hugging-face",
+    "href": "Notebooks/Aula_6.html#autenticar-no-hugging-face",
+    "title": "Aula 6",
+    "section": "Autenticar no Hugging Face",
+    "text": "Autenticar no Hugging Face\nAbre o widget interativo no notebook para inserir o token de acesso do Hugging Face e autenticar a sessão.\n\nfrom huggingface_hub import notebook_login\n\nnotebook_login()"
+  },
+  {
+    "objectID": "Notebooks/Aula_6.html#enviar-o-modelo-treinado-para-o-hub",
+    "href": "Notebooks/Aula_6.html#enviar-o-modelo-treinado-para-o-hub",
+    "title": "Aula 6",
+    "section": "Enviar o Modelo Treinado para o Hub",
+    "text": "Enviar o Modelo Treinado para o Hub\npush_classifier_to_hub(...): Empacota os pesos do modelo (checkpoint_path), metadados de configuração e a lista de classes, criando o repositório e subindo os artefatos para a nuvem do Hugging Face.\n\nrepo_url = push_classifier_to_hub(\n    model_path=result[\"checkpoint_path\"],\n    repo_id=\"your-username/eurosat-resnet50\",\n    model_name=\"resnet50\",\n    num_classes=len(result[\"class_names\"]),\n    in_channels=3,\n    class_names=result[\"class_names\"],\n    commit_message=\"EuroSAT ResNet-50 classifier trained for 5 epochs\",\n)\nprint(repo_url)"
+  },
+  {
+    "objectID": "Notebooks/Aula_6.html#executar-inferência-a-partir-do-hub",
+    "href": "Notebooks/Aula_6.html#executar-inferência-a-partir-do-hub",
+    "title": "Aula 6",
+    "section": "Executar Inferência a partir do Hub",
+    "text": "Executar Inferência a partir do Hub\n\nn_samples = 10\nhub_result = predict_images_from_hub(\n    image_paths=test_paths[:n_samples],\n    repo_id=\"your-username/eurosat-resnet50\",\n    image_size=64,\n)\n\nfig = plot_predictions(\n    image_paths=test_paths[:n_samples],\n    predictions=hub_result[\"predictions\"],\n    true_labels=test_labels[:n_samples],\n    class_names=hub_result[\"class_names\"],\n    probabilities=hub_result[\"probabilities\"],\n)\nplt.show()\n\nExercícios:"
   },
   {
     "objectID": "Notebooks/Aula_4.html#criando-mapas-interativos-com-leafmap",
@@ -257,6 +621,566 @@
     "title": "Aula 5",
     "section": "Exercício 2 Preparar um Dataset de Treinamento Completo",
     "text": "Exercício 2 Preparar um Dataset de Treinamento Completo\nCombine as técnicas deste capítulo em um pipeline completo. Começando com as imagens CBERS, (1) gere chips de 256 x 256 com 50% de sobreposição, (2) crie rótulos de máscara raster a partir de pegadas de edificações e (3) organize os dados em conjuntos espacialmente separados de treinamento (70%), validação (15%) e teste (15%)."
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#introduction",
+    "href": "Notebooks/change_detection.html#introduction",
+    "title": "Aula 11 - Change Detection",
+    "section": "Introduction",
+    "text": "Introduction"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#learning-objectives",
+    "href": "Notebooks/change_detection.html#learning-objectives",
+    "title": "Aula 11 - Change Detection",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#understanding-change-detection",
+    "href": "Notebooks/change_detection.html#understanding-change-detection",
+    "title": "Aula 11 - Change Detection",
+    "section": "Understanding Change Detection",
+    "text": "Understanding Change Detection\n\nTypes of Change\n\n\nChallenges"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#traditional-change-detection-methods",
+    "href": "Notebooks/change_detection.html#traditional-change-detection-methods",
+    "title": "Aula 11 - Change Detection",
+    "section": "Traditional Change Detection Methods",
+    "text": "Traditional Change Detection Methods\n\nImage Differencing\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport rasterio\nimport geoai\n\n# Download Landsat imagery for two dates\nurl_2023 = \"https://data.source.coop/opengeos/geoai/knoxville_landsat_2023.tif\"\nurl_2024 = \"https://data.source.coop/opengeos/geoai/knoxville_landsat_2024.tif\"\npath_2023 = geoai.download_file(url_2023)\npath_2024 = geoai.download_file(url_2024)\n\n# Read the NIR band (Band 5 in Landsat 8/9) from both dates\nwith rasterio.open(path_2023) as src:\n    nir_2023 = src.read(5).astype(np.float32)\n\nwith rasterio.open(path_2024) as src:\n    nir_2024 = src.read(5).astype(np.float32)\n\n# Compute the difference\ndiff = nir_2024 - nir_2023\n\n# Threshold to identify significant changes\nthreshold = 2 * np.std(diff)\nchange_mask = np.abs(diff) &gt; threshold\n\nprint(f\"Difference range: {diff.min():.2f} to {diff.max():.2f}\")\nprint(f\"Threshold: {threshold:.2f}\")\nprint(f\"Changed pixels: {change_mask.sum():,} ({100 * change_mask.mean():.1f}%)\")\n\n\nfig, axes = plt.subplots(1, 3, figsize=(15, 5))\naxes[0].imshow(diff, cmap=\"RdBu\", vmin=-threshold * 2, vmax=threshold * 2)\naxes[0].set_title(\"NIR Difference (2024 - 2023)\")\naxes[0].axis(\"off\")\naxes[1].hist(diff.ravel(), bins=100, color=\"steelblue\", edgecolor=\"none\")\naxes[1].axvline(\n    -threshold, color=\"red\", linestyle=\"--\", label=f\"Threshold (±{threshold:.2f})\"\n)\naxes[1].axvline(threshold, color=\"red\", linestyle=\"--\")\naxes[1].set_title(\"Difference Histogram\")\naxes[1].legend()\naxes[2].imshow(change_mask, cmap=\"Reds\")\naxes[2].set_title(f\"Change Mask ({100 * change_mask.mean():.1f}% changed)\")\naxes[2].axis(\"off\")\nplt.tight_layout()\nplt.show()\n\n\n\nChange Vector Analysis\n\n# Read Red and NIR bands from both dates\nwith rasterio.open(path_2023) as src:\n    red_2023 = src.read(4).astype(np.float32)\n    nir_2023 = src.read(5).astype(np.float32)\nwith rasterio.open(path_2024) as src:\n    red_2024 = src.read(4).astype(np.float32)\n    nir_2024 = src.read(5).astype(np.float32)\n\ndelta_red = red_2024 - red_2023\ndelta_nir = nir_2024 - nir_2023\nmagnitude = np.sqrt(delta_red**2 + delta_nir**2)\ndirection = np.degrees(np.arctan2(delta_nir, delta_red))\n\nmag_threshold = np.percentile(magnitude, 95)\nsignificant_change = magnitude &gt; mag_threshold\nprint(f\"CVA magnitude range: {magnitude.min():.2f} to {magnitude.max():.2f}\")\nprint(f\"95th percentile threshold: {mag_threshold:.2f}\")\nprint(f\"Significant change pixels: {significant_change.sum():,}\")"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#deep-learning-for-change-detection",
+    "href": "Notebooks/change_detection.html#deep-learning-for-change-detection",
+    "title": "Aula 11 - Change Detection",
+    "section": "Deep Learning for Change Detection",
+    "text": "Deep Learning for Change Detection\n\nSiamese Networks\n\n\nChangeStar"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#import-libraries",
+    "href": "Notebooks/change_detection.html#import-libraries",
+    "title": "Aula 11 - Change Detection",
+    "section": "Import Libraries",
+    "text": "Import Libraries\n\nimport os\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom pathlib import Path\n\nimport geoai\nfrom geoai.change_detection import (\n    ChangeStarDetection,\n    changestar_detect,\n    list_changestar_models,\n)"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#list-available-models",
+    "href": "Notebooks/change_detection.html#list-available-models",
+    "title": "Aula 11 - Change Detection",
+    "section": "List Available Models",
+    "text": "List Available Models\n\nmodels = list_changestar_models()\nfor short_name, full_name in models.items():\n    print(f\"{short_name:30s} -&gt; {full_name}\")"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#setup",
+    "href": "Notebooks/change_detection.html#setup",
+    "title": "Aula 11 - Change Detection",
+    "section": "Setup",
+    "text": "Setup\n\ndevice = geoai.get_device()\nprint(f\"Using device: {device}\")\n\nout_folder = \"changestar_results\"\nPath(out_folder).mkdir(exist_ok=True)\nprint(f\"Output directory: {out_folder}\")"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#download-sample-data",
+    "href": "Notebooks/change_detection.html#download-sample-data",
+    "title": "Aula 11 - Change Detection",
+    "section": "Download Sample Data",
+    "text": "Download Sample Data\n\nnaip_2019_url = \"https://data.source.coop/opengeos/geoai/las_vegas_naip_2019_a.tif\"\nnaip_2022_url = \"https://data.source.coop/opengeos/geoai/las_vegas_naip_2022_a.tif\"\n\nnaip_2019_path = geoai.download_file(naip_2019_url)\nnaip_2022_path = geoai.download_file(naip_2022_url)\n\nprint(f\"Downloaded 2019 NAIP: {naip_2019_path}\")\nprint(f\"Downloaded 2022 NAIP: {naip_2022_path}\")"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#visualize-input-imagery",
+    "href": "Notebooks/change_detection.html#visualize-input-imagery",
+    "title": "Aula 11 - Change Detection",
+    "section": "Visualize Input Imagery",
+    "text": "Visualize Input Imagery\n\ngeoai.create_split_map(\n    left_layer=naip_2019_path,\n    right_layer=naip_2022_path,\n    left_label=\"NAIP 2019\",\n    right_label=\"NAIP 2022\",\n)"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#initialize-the-changestar-model",
+    "href": "Notebooks/change_detection.html#initialize-the-changestar-model",
+    "title": "Aula 11 - Change Detection",
+    "section": "Initialize the ChangeStar Model",
+    "text": "Initialize the ChangeStar Model\n\ndetector = ChangeStarDetection(model_name=\"s1_s1c1_vitb\")"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#run-change-detection",
+    "href": "Notebooks/change_detection.html#run-change-detection",
+    "title": "Aula 11 - Change Detection",
+    "section": "Run Change Detection",
+    "text": "Run Change Detection\n\nresult = detector.predict(\n    naip_2019_path,\n    naip_2022_path,\n    output_change=os.path.join(out_folder, \"change_map.tif\"),\n    output_t1_semantic=os.path.join(out_folder, \"t1_buildings.tif\"),\n    output_t2_semantic=os.path.join(out_folder, \"t2_buildings.tif\"),\n    output_vector=os.path.join(out_folder, \"changes.gpkg\"),\n)\n\n\nprint(\"Result keys:\", list(result.keys()))\nfor key, value in result.items():\n    if hasattr(value, \"shape\"):\n        print(f\"  {key}: shape={value.shape}, dtype={value.dtype}\")\n    else:\n        print(f\"  {key}: {value}\")"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#visualize-results",
+    "href": "Notebooks/change_detection.html#visualize-results",
+    "title": "Aula 11 - Change Detection",
+    "section": "Visualize Results",
+    "text": "Visualize Results\n\nfig = detector.visualize(\n    naip_2019_path,\n    naip_2022_path,\n    result=result,\n    figsize=(25, 10),\n    title1=\"NAIP 2019\",\n    title2=\"NAIP 2022\",\n)\nplt.show()\n\n\nOverlay Visualization\n\nfig = detector.visualize_overlay(\n    naip_2019_path,\n    naip_2022_path,\n    result=result,\n    figsize=(20, 6),\n    title1=\"NAIP 2019\",\n    title2=\"NAIP 2022\",\n)\nplt.show()"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#using-the-convenience-function",
+    "href": "Notebooks/change_detection.html#using-the-convenience-function",
+    "title": "Aula 11 - Change Detection",
+    "section": "Using the Convenience Function",
+    "text": "Using the Convenience Function\n\nresult2 = changestar_detect(\n    naip_2019_path,\n    naip_2022_path,\n    model_name=\"s1_s1c1_vitb\",\n    output_change=os.path.join(out_folder, \"change_map_v2.tif\"),\n)\n\nprint(f\"Change pixels: {result2['change_map'].sum():,}\")\nprint(\n    f\"Changed area: {result2['change_map'].sum() / result2['change_map'].size * 100:.2f}%\"\n)"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#comparing-model-variants",
+    "href": "Notebooks/change_detection.html#comparing-model-variants",
+    "title": "Aula 11 - Change Detection",
+    "section": "Comparing Model Variants",
+    "text": "Comparing Model Variants\n\nresult_s1 = result\n\ndetector_s9 = ChangeStarDetection(model_name=\"s9_s9c1_vitb\")\nresult_s9 = detector_s9.predict(naip_2019_path, naip_2022_path)\n\n\nfig, axes = plt.subplots(1, 3, figsize=(18, 6))\n\naxes[0].imshow(result_s1[\"change_map\"], cmap=\"gray\")\naxes[0].set_title(f\"S1 Model\\n(Changed pixels: {result_s1['change_map'].sum():,})\")\naxes[0].axis(\"off\")\n\naxes[1].imshow(result_s9[\"change_map\"], cmap=\"gray\")\naxes[1].set_title(f\"S9 Model\\n(Changed pixels: {result_s9['change_map'].sum():,})\")\naxes[1].axis(\"off\")\n\ncombined = np.zeros((*result_s1[\"change_map\"].shape, 3), dtype=np.uint8)\ncombined[result_s1[\"change_map\"] == 1, 0] = 255  # S1 in red\ncombined[result_s9[\"change_map\"] == 1, 2] = 255  # S9 in blue\nboth = (result_s1[\"change_map\"] == 1) & (result_s9[\"change_map\"] == 1)\ncombined[both] = [255, 0, 255]\n\naxes[2].imshow(combined)\naxes[2].set_title(\"Comparison\\n(Red=S1 only, Blue=S9 only, Magenta=Both)\")\naxes[2].axis(\"off\")\n\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#adjusting-the-threshold",
+    "href": "Notebooks/change_detection.html#adjusting-the-threshold",
+    "title": "Aula 11 - Change Detection",
+    "section": "Adjusting the Threshold",
+    "text": "Adjusting the Threshold\n\nthresholds = [0.3, 0.5, 0.7]\nfig, axes = plt.subplots(1, len(thresholds), figsize=(18, 6))\n\nfor ax, thresh in zip(axes, thresholds):\n    result_t = detector.predict(naip_2019_path, naip_2022_path, threshold=thresh)\n    ax.imshow(result_t[\"change_map\"], cmap=\"gray\")\n    ax.set_title(\n        f\"Threshold = {thresh}\\n\" f\"(Changed pixels: {result_t['change_map'].sum():,})\"\n    )\n    ax.axis(\"off\")\n\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#view-saved-outputs",
+    "href": "Notebooks/change_detection.html#view-saved-outputs",
+    "title": "Aula 11 - Change Detection",
+    "section": "View Saved Outputs",
+    "text": "View Saved Outputs\n\nfor f in sorted(os.listdir(out_folder)):\n    fpath = os.path.join(out_folder, f)\n    size_mb = os.path.getsize(fpath) / 1024 / 1024\n    print(f\"{f:40s} {size_mb:.2f} MB\")\n\n\nchange_map_path = os.path.join(out_folder, \"change_map.tif\")\ngeoai.view_raster(\n    change_map_path,\n    nodata=0,\n    cmap=\"Reds\",\n    opacity=0.8,\n    basemap=naip_2019_path,\n    backend=\"ipyleaflet\",\n)"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#key-takeaways",
+    "href": "Notebooks/change_detection.html#key-takeaways",
+    "title": "Aula 11 - Change Detection",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways"
+  },
+  {
+    "objectID": "Notebooks/change_detection.html#exercises",
+    "href": "Notebooks/change_detection.html#exercises",
+    "title": "Aula 11 - Change Detection",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1: Threshold Sensitivity Analysis\n\n\nExercise 2: Comparing All Model Variants\n\n\nExercise 3: Traditional vs. Deep Learning Comparison\n\n\nExercise 4: Change Detection on a Different Image Pair\n\n\nExercise 5: Vector Output Analysis"
+  },
+  {
+    "objectID": "Notebooks/image_translation.html#introduction",
+    "href": "Notebooks/image_translation.html#introduction",
+    "title": "Aula 10 - Image Tanslation",
+    "section": "Introduction",
+    "text": "Introduction"
+  },
+  {
+    "objectID": "Notebooks/image_translation.html#learning-objectives",
+    "href": "Notebooks/image_translation.html#learning-objectives",
+    "title": "Aula 10 - Image Tanslation",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives"
+  },
+  {
+    "objectID": "Notebooks/image_translation.html#foundations-of-image-translation",
+    "href": "Notebooks/image_translation.html#foundations-of-image-translation",
+    "title": "Aula 10 - Image Tanslation",
+    "section": "Foundations of Image Translation",
+    "text": "Foundations of Image Translation\n\nWhat Is Image-to-Image Translation?\n\n\nSuper-Resolution for Remote Sensing\n\n\nLatent Diffusion Models for Super-Resolution"
+  },
+  {
+    "objectID": "Notebooks/image_translation.html#import-libraries",
+    "href": "Notebooks/image_translation.html#import-libraries",
+    "title": "Aula 10 - Image Tanslation",
+    "section": "Import Libraries",
+    "text": "Import Libraries\n\nimport geoai\nimport numpy as np\nimport rasterio as rio\nfrom matplotlib import pyplot as plt"
+  },
+  {
+    "objectID": "Notebooks/image_translation.html#download-sample-data",
+    "href": "Notebooks/image_translation.html#download-sample-data",
+    "title": "Aula 10 - Image Tanslation",
+    "section": "Download Sample Data",
+    "text": "Download Sample Data\n\nurl = \"https://data.source.coop/opengeos/geoai/S2C-MSIL2A-20250920T162001-Knoxville.tif\"\ns2_path = geoai.download_file(url)\n\n\nInspecting the Input Data\n\nwith rio.open(s2_path) as src:\n    print(f\"Bands: {src.count}\")\n    print(f\"Size: {src.width} x {src.height}\")\n    print(f\"CRS: {src.crs}\")\n    print(f\"Resolution: {src.res[0]:.2f} m\")\n    print(f\"Dtype: {src.dtypes[0]}\")"
+  },
+  {
+    "objectID": "Notebooks/image_translation.html#visualize-the-input-rgb-composite",
+    "href": "Notebooks/image_translation.html#visualize-the-input-rgb-composite",
+    "title": "Aula 10 - Image Tanslation",
+    "section": "Visualize the Input RGB Composite",
+    "text": "Visualize the Input RGB Composite\n\nwith rio.open(s2_path) as src:\n    rgb = src.read([1, 2, 3]).astype(np.float32)\n\nfor i in range(3):\n    band = rgb[i]\n    p2, p98 = np.percentile(band, (2, 98))\n    rgb[i] = (band - p2) / (p98 - p2)\nrgb = np.clip(rgb, 0, 1)\n\nfig, ax = plt.subplots(figsize=(12, 7))\nax.imshow(rgb.transpose(1, 2, 0))\nax.set_title(\"Sentinel-2 RGB Composite (10 m)\")\nax.set_axis_off()\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "Notebooks/image_translation.html#single-patch-super-resolution",
+    "href": "Notebooks/image_translation.html#single-patch-super-resolution",
+    "title": "Aula 10 - Image Tanslation",
+    "section": "Single-Patch Super-Resolution",
+    "text": "Single-Patch Super-Resolution\n\nsr_output = \"sr_output.tif\"\nsr_image, _ = geoai.super_resolution(\n    input_lr_path=s2_path,\n    output_sr_path=sr_output,\n    rgb_nir_bands=[1, 2, 3, 4],\n    window=(700, 1300, 128, 128),\n    sampling_steps=100,\n)\n\n\nprint(f\"Input shape:  (4, 128, 128) at 10 m\")\nprint(f\"Output shape: {sr_image.shape} at 2.5 m\")\n\n\nComparing Low-Resolution and Super-Resolution\n\ngeoai.plot_sr_comparison(s2_path, sr_output, bands=[1, 2, 3])\nplt.show()\n\n\nwith rio.open(sr_output) as src:\n    print(f\"SR Bands: {src.count}\")\n    print(f\"SR Size: {src.width} x {src.height}\")\n    print(f\"SR CRS: {src.crs}\")\n    print(f\"SR Resolution: {src.res[0]:.2f} m\")"
+  },
+  {
+    "objectID": "Notebooks/image_translation.html#uncertainty-estimation",
+    "href": "Notebooks/image_translation.html#uncertainty-estimation",
+    "title": "Aula 10 - Image Tanslation",
+    "section": "Uncertainty Estimation",
+    "text": "Uncertainty Estimation\n\nsr_unc_output = \"sr_with_uncertainty.tif\"\nunc_output = \"uncertainty.tif\"\nsr_image2, uncertainty = geoai.super_resolution(\n    input_lr_path=s2_path,\n    output_sr_path=sr_unc_output,\n    output_uncertainty_path=unc_output,\n    rgb_nir_bands=[1, 2, 3, 4],\n    window=(700, 1300, 128, 128),\n    compute_uncertainty=True,\n    n_variations=5,\n    sampling_steps=100,\n)\n\n\nVisualizing the Uncertainty Map\n\ngeoai.plot_sr_uncertainty(unc_output)\nplt.show()"
+  },
+  {
+    "objectID": "Notebooks/image_translation.html#tiled-inference-for-larger-regions",
+    "href": "Notebooks/image_translation.html#tiled-inference-for-larger-regions",
+    "title": "Aula 10 - Image Tanslation",
+    "section": "Tiled Inference for Larger Regions",
+    "text": "Tiled Inference for Larger Regions\n\nsr_large = \"sr_large.tif\"\nsr_large_img, _ = geoai.super_resolution(\n    input_lr_path=s2_path,\n    output_sr_path=sr_large,\n    rgb_nir_bands=[1, 2, 3, 4],\n    window=(700, 1300, 256, 256),\n    patch_size=128,\n    overlap=16,\n    sampling_steps=100,\n)\n\n\nprint(f\"Input shape:  (4, 256, 256) at 10 m\")\nprint(f\"Output shape: {sr_large_img.shape} at 2.5 m\")\n\n\nComparing Results for the Larger Region\n\ngeoai.plot_sr_comparison(s2_path, sr_large, bands=[1, 2, 3])\nplt.show()\n\n\n\nInteractive Split Map Comparison\n\ngeoai.create_split_map(\n    left_layer=sr_large, right_layer=\"Esri.WorldImagery\", left_args={\"vmax\": 0.3}\n)"
+  },
+  {
+    "objectID": "Notebooks/image_translation.html#limitations-and-cautions",
+    "href": "Notebooks/image_translation.html#limitations-and-cautions",
+    "title": "Aula 10 - Image Tanslation",
+    "section": "Limitations and Cautions",
+    "text": "Limitations and Cautions"
+  },
+  {
+    "objectID": "Notebooks/image_translation.html#key-takeaways",
+    "href": "Notebooks/image_translation.html#key-takeaways",
+    "title": "Aula 10 - Image Tanslation",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways"
+  },
+  {
+    "objectID": "Notebooks/image_translation.html#exercises",
+    "href": "Notebooks/image_translation.html#exercises",
+    "title": "Aula 10 - Image Tanslation",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1: Sampling Steps and Output Quality\n\n\nExercise 2: Uncertainty Across Land Cover Types\n\n\nExercise 3: Overlap Parameter and Stitching Quality\n\n\nExercise 4: Super-Resolution Across Landscape Types\n\n\nExercise 5: Validation Against High-Resolution Imagery"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#introduction",
+    "href": "Notebooks/object_detection.html#introduction",
+    "title": "Aula 7 - Object Detection",
+    "section": "Introduction",
+    "text": "Introduction"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#learning-objectives",
+    "href": "Notebooks/object_detection.html#learning-objectives",
+    "title": "Aula 7 - Object Detection",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#understanding-object-detection",
+    "href": "Notebooks/object_detection.html#understanding-object-detection",
+    "title": "Aula 7 - Object Detection",
+    "section": "Understanding Object Detection",
+    "text": "Understanding Object Detection\n\nClassification vs. Detection\n\n\nKey Concepts"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#detection-architectures",
+    "href": "Notebooks/object_detection.html#detection-architectures",
+    "title": "Aula 7 - Object Detection",
+    "section": "Detection Architectures",
+    "text": "Detection Architectures\n\nTwo-Stage Detectors\n\n\nSingle-Stage Detectors\n\n\nTransformer-Based Detectors\n\n\nZero-Shot Detection\n\n\nChoosing an Architecture"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#preparing-detection-datasets",
+    "href": "Notebooks/object_detection.html#preparing-detection-datasets",
+    "title": "Aula 7 - Object Detection",
+    "section": "Preparing Detection Datasets",
+    "text": "Preparing Detection Datasets\n\nAnnotation Formats\n\n\nThe NWPU-VHR-10 Dataset"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#evaluating-detection-results",
+    "href": "Notebooks/object_detection.html#evaluating-detection-results",
+    "title": "Aula 7 - Object Detection",
+    "section": "Evaluating Detection Results",
+    "text": "Evaluating Detection Results\n\nMean Average Precision (mAP)\n\n\nPrecision-Recall Curves\n\n\nIoU Thresholds"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#import-libraries",
+    "href": "Notebooks/object_detection.html#import-libraries",
+    "title": "Aula 7 - Object Detection",
+    "section": "Import Libraries",
+    "text": "Import Libraries\n\nimport os\nimport json\n\nimport geoai"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#download-the-nwpu-vhr-10-dataset",
+    "href": "Notebooks/object_detection.html#download-the-nwpu-vhr-10-dataset",
+    "title": "Aula 7 - Object Detection",
+    "section": "Download the NWPU-VHR-10 Dataset",
+    "text": "Download the NWPU-VHR-10 Dataset\n\nurl = \"https://data.source.coop/opengeos/geoai/NWPU-VHR-10.zip\"\ndata_dir = geoai.download_file(url)\n\n\nprint(f\"Dataset directory: {data_dir}\")\nprint(f\"Contents: {os.listdir(data_dir)}\")"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#explore-the-dataset",
+    "href": "Notebooks/object_detection.html#explore-the-dataset",
+    "title": "Aula 7 - Object Detection",
+    "section": "Explore the Dataset",
+    "text": "Explore the Dataset\n\nprint(f\"\\nNWPU-VHR-10 Classes:\")\nfor i, name in enumerate(geoai.NWPU_VHR10_CLASSES):\n    print(f\"  {i}: {name}\")"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#prepare-the-dataset",
+    "href": "Notebooks/object_detection.html#prepare-the-dataset",
+    "title": "Aula 7 - Object Detection",
+    "section": "Prepare the Dataset",
+    "text": "Prepare the Dataset\n\nsplits = geoai.prepare_nwpu_vhr10(data_dir, val_split=0.2, seed=42)\n\n\nprint(f\"Images directory: {splits['images_dir']}\")\nprint(f\"Number of classes: {splits['num_classes']}\")\nprint(f\"Class names: {splits['class_names']}\")\nprint(f\"Training images: {len(splits['train_image_ids'])}\")\nprint(f\"Validation images: {len(splits['val_image_ids'])}\")"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#visualize-sample-annotations",
+    "href": "Notebooks/object_detection.html#visualize-sample-annotations",
+    "title": "Aula 7 - Object Detection",
+    "section": "Visualize Sample Annotations",
+    "text": "Visualize Sample Annotations\n\ngeoai.visualize_coco_annotations(\n    annotations_path=splits[\"annotations_path\"],\n    images_dir=splits[\"images_dir\"],\n    num_samples=6,\n    random=True,\n    seed=1,\n    cols=3,\n    figsize=(12, 6),\n)"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#train-a-multi-class-detection-model",
+    "href": "Notebooks/object_detection.html#train-a-multi-class-detection-model",
+    "title": "Aula 7 - Object Detection",
+    "section": "Train a Multi-Class Detection Model",
+    "text": "Train a Multi-Class Detection Model\n\noutput_dir = \"nwpu_output\"\n\nmodel_path = geoai.train_multiclass_detector(\n    images_dir=splits[\"images_dir\"],\n    annotations_path=splits[\"train_annotations\"],\n    output_dir=output_dir,\n    model_name=\"fasterrcnn_resnet50_fpn_v2\",\n    class_names=splits[\"class_names\"],\n    num_channels=3,\n    batch_size=4,\n    num_epochs=10,\n    learning_rate=0.005,\n    val_split=0.1,\n    seed=42,\n    pretrained=True,\n    verbose=True,\n)"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#plot-training-metrics",
+    "href": "Notebooks/object_detection.html#plot-training-metrics",
+    "title": "Aula 7 - Object Detection",
+    "section": "Plot Training Metrics",
+    "text": "Plot Training Metrics\n\ngeoai.plot_detection_training_history(\n    history_path=os.path.join(output_dir, \"training_history.pth\"),\n)"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#evaluate-with-coco-metrics",
+    "href": "Notebooks/object_detection.html#evaluate-with-coco-metrics",
+    "title": "Aula 7 - Object Detection",
+    "section": "Evaluate with COCO Metrics",
+    "text": "Evaluate with COCO Metrics\n\nmetrics = geoai.evaluate_multiclass_detector(\n    model_path=model_path,\n    images_dir=splits[\"images_dir\"],\n    annotations_path=splits[\"val_annotations\"],\n    num_classes=splits[\"num_classes\"],\n    class_names=splits[\"class_names\"][1:],  # Exclude background\n    batch_size=4,\n)"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#run-inference-on-sample-images",
+    "href": "Notebooks/object_detection.html#run-inference-on-sample-images",
+    "title": "Aula 7 - Object Detection",
+    "section": "Run Inference on Sample Images",
+    "text": "Run Inference on Sample Images\n\n# Load validation data to pick a test image\nwith open(splits[\"val_annotations\"], \"r\") as f:\n    val_data = json.load(f)\n\ntest_img_info = val_data[\"images\"][0]\ntest_img_path = os.path.join(splits[\"images_dir\"], test_img_info[\"file_name\"])\nprint(f\"Test image: {test_img_path}\")\n\n\noutput_raster = \"nwpu_detection_output.tif\"\n\nresult_path, inference_time, detections = geoai.multiclass_detection(\n    input_path=test_img_path,\n    output_path=output_raster,\n    model_path=model_path,\n    num_classes=splits[\"num_classes\"],\n    class_names=splits[\"class_names\"],\n    window_size=512,\n    overlap=256,\n    confidence_threshold=0.5,\n    batch_size=4,\n    num_channels=3,\n)\n\nprint(f\"\\nInference time: {inference_time:.2f}s\")\nprint(f\"Total detections: {len(detections)}\")"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#visualize-detections",
+    "href": "Notebooks/object_detection.html#visualize-detections",
+    "title": "Aula 7 - Object Detection",
+    "section": "Visualize Detections",
+    "text": "Visualize Detections\n\ngeoai.visualize_multiclass_detections(\n    image_path=test_img_path,\n    detections=detections,\n    class_names=splits[\"class_names\"],\n    confidence_threshold=0.5,\n    figsize=(12, 10),\n)"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#batch-inference-on-multiple-images",
+    "href": "Notebooks/object_detection.html#batch-inference-on-multiple-images",
+    "title": "Aula 7 - Object Detection",
+    "section": "Batch Inference on Multiple Images",
+    "text": "Batch Inference on Multiple Images\n\nval_image_paths = [\n    os.path.join(splits[\"images_dir\"], img[\"file_name\"])\n    for img in val_data[\"images\"][:4]\n]\n\nresults = geoai.batch_multiclass_detection(\n    image_paths=val_image_paths,\n    output_dir=\"nwpu_batch_output\",\n    model_path=model_path,\n    num_classes=splits[\"num_classes\"],\n    class_names=splits[\"class_names\"],\n    confidence_threshold=0.5,\n    num_channels=3,\n    figsize=(16, 12),\n)"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#publish-and-reuse-models",
+    "href": "Notebooks/object_detection.html#publish-and-reuse-models",
+    "title": "Aula 7 - Object Detection",
+    "section": "Publish and Reuse Models",
+    "text": "Publish and Reuse Models\n\nPush to Hugging Face Hub\n\nfrom huggingface_hub import notebook_login\n\nnotebook_login()\n\n\nurl = geoai.push_detector_to_hub(\n    model_path=model_path,\n    repo_id=\"your-username/nwpu-vhr10-fasterrcnn\",\n    model_name=\"fasterrcnn_resnet50_fpn_v2\",\n    num_classes=splits[\"num_classes\"],\n    class_names=splits[\"class_names\"],\n)\n\n\n\nRun Inference from Hub\n\nsample_img_path = os.path.join(splits[\"images_dir\"], \"608.jpg\")\n\nresult_path, inference_time, detections = geoai.predict_detector_from_hub(\n    input_path=sample_img_path,\n    output_path=\"hub_detection.tif\",\n    repo_id=\"giswqs/nwpu-vhr10-fasterrcnn\",\n    confidence_threshold=0.5,\n)\n\nprint(f\"Inference time: {inference_time:.2f}s\")\nprint(f\"Total detections: {len(detections)}\")\n\n# Clean up\nif os.path.exists(\"hub_detection.tif\"):\n    os.remove(\"hub_detection.tif\")\n\n\ngeoai.visualize_multiclass_detections(\n    image_path=sample_img_path,\n    detections=detections,\n    class_names=geoai.NWPU_VHR10_CLASSES,\n    confidence_threshold=0.5,\n    figsize=(12, 10),\n)"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#key-takeaways",
+    "href": "Notebooks/object_detection.html#key-takeaways",
+    "title": "Aula 7 - Object Detection",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways"
+  },
+  {
+    "objectID": "Notebooks/object_detection.html#exercises",
+    "href": "Notebooks/object_detection.html#exercises",
+    "title": "Aula 7 - Object Detection",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1: Training with a Different Architecture\n\n\nExercise 2: Confidence Threshold Analysis\n\n\nExercise 3: Hyperparameter Sensitivity"
+  },
+  {
+    "objectID": "Notebooks/sam_geospatial.html#introduction",
+    "href": "Notebooks/sam_geospatial.html#introduction",
+    "title": "Aula 13 - Sam for Geospatial Aplications",
+    "section": "Introduction",
+    "text": "Introduction"
+  },
+  {
+    "objectID": "Notebooks/sam_geospatial.html#learning-objectives",
+    "href": "Notebooks/sam_geospatial.html#learning-objectives",
+    "title": "Aula 13 - Sam for Geospatial Aplications",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives"
+  },
+  {
+    "objectID": "Notebooks/sam_geospatial.html#how-sam-3-works",
+    "href": "Notebooks/sam_geospatial.html#how-sam-3-works",
+    "title": "Aula 13 - Sam for Geospatial Aplications",
+    "section": "How SAM 3 Works",
+    "text": "How SAM 3 Works"
+  },
+  {
+    "objectID": "Notebooks/sam_geospatial.html#setting-up-the-environment",
+    "href": "Notebooks/sam_geospatial.html#setting-up-the-environment",
+    "title": "Aula 13 - Sam for Geospatial Aplications",
+    "section": "Setting Up the Environment",
+    "text": "Setting Up the Environment\n\n# %pip install geoai-py \"segment-geospatial[samgeo3]\"\n\n\nimport os\nimport geoai\nimport leafmap\nfrom samgeo import SamGeo3, SamGeo3Video, download_file, show_image\nfrom samgeo.common import raster_to_vector, regularize\n\n\n# from huggingface_hub import login\n# login()"
+  },
+  {
+    "objectID": "Notebooks/sam_geospatial.html#image-segmentation",
+    "href": "Notebooks/sam_geospatial.html#image-segmentation",
+    "title": "Aula 13 - Sam for Geospatial Aplications",
+    "section": "Image Segmentation",
+    "text": "Image Segmentation\n\nurl = \"https://data.source.coop/opengeos/geoai/uc-berkeley.tif\"\nimage_path = download_file(url)\n\n\nm = leafmap.Map()\nm.add_raster(image_path, layer_name=\"Satellite image\")\nm\n\n\nsam3 = SamGeo3(backend=\"meta\", device=None, checkpoint_path=None, load_from_HF=True)\nsam3.set_image(image_path)\n\n\nText-Prompted Segmentation\n\nsam3.generate_masks(prompt=\"building\")\n\n\nsam3.show_anns()\n\n\nsam3.show_masks()\n\n\nsam3.save_masks(output=\"building_masks.tif\", unique=True)\n\n\nsam3.save_masks(\n    output=\"building_masks_with_scores.tif\",\n    save_scores=\"building_scores.tif\",\n    unique=True,\n)\n\n\nsam3.show_masks(cmap=\"coolwarm\")\n\n\nm.add_raster(\"building_masks.tif\", layer_name=\"Building masks\", visible=False)\nm.add_raster(\n    \"building_scores.tif\",\n    layer_name=\"Building scores\",\n    cmap=\"coolwarm\",\n    opacity=0.8,\n    nodata=0,\n    vmin=0.5,\n    vmax=1.0,\n)\nm.add_colormap(cmap=\"coolwarm\", vmin=0.5, vmax=1.0, label=\"Confidence score\")\nm\n\n\n\nBox-Prompted Segmentation\n\n# Define boxes in [xmin, ymin, xmax, ymax] format\nboxes = [[-122.2597, 37.8709, -122.2587, 37.8717]]\nbox_labels = [True]  # True=include, False=exclude\n\nsam3.generate_masks_by_boxes(boxes, box_labels, box_crs=\"EPSG:4326\")\n\n\nsam3.show_boxes(boxes, box_labels, box_crs=\"EPSG:4326\")\n\n\nsam3.show_anns()\n\n\nbuilding_mask_path = \"building_masks.tif\"\nsam3.save_masks(output=building_mask_path, unique=True)\n\n\ngeoai.view_raster(building_mask_path, nodata=0, opacity=0.7, basemap=image_path)\n\n\ngeoai.empty_cache()"
+  },
+  {
+    "objectID": "Notebooks/sam_geospatial.html#point-prompts-for-instance-segmentation",
+    "href": "Notebooks/sam_geospatial.html#point-prompts-for-instance-segmentation",
+    "title": "Aula 13 - Sam for Geospatial Aplications",
+    "section": "Point Prompts for Instance Segmentation",
+    "text": "Point Prompts for Instance Segmentation\n\nurl = \"https://data.source.coop/opengeos/geoai/truck-example.jpg\"\nimage_path = download_file(url)\n\n\nshow_image(image_path, axis=\"on\")\n\n\nsam = SamGeo3(backend=\"meta\", enable_inst_interactivity=True)\nsam.set_image(image_path)\n\n\nSingle Point Prompt\n\nsam.generate_masks_by_points([[750, 370]])\n\n\nsam.show_points([[750, 370]], [1])\n\n\nsam.show_anns()\n\n\nsam.save_masks(\"truck_mask.png\", unique=True)\n\n\n\nMultiple Points\n\nsam.generate_masks_by_points([[500, 375], [1125, 625]], point_labels=[1, 1])\n\n\nsam.show_points([[500, 375], [1125, 625]], [1, 1])\n\n\nsam.show_anns()\n\n\n\nBackground Points\n\nsam.generate_masks_by_points([[750, 370], [1125, 625]], point_labels=[1, 0])\n\n\nsam.show_points([[750, 370], [1125, 625]], [1, 0])\n\n\nsam.show_anns()\n\n\n\nMultiple Box Prompts\n\nboxes = [\n    [75, 275, 1725, 850],  # Whole truck\n    [425, 600, 700, 875],  # Rear wheel\n    [1375, 550, 1650, 800],  # Front wheel on the passenger side\n    [1240, 675, 1400, 750],  # Front wheel on the driver's side\n]\nsam.generate_masks_by_boxes_inst(boxes)\n\n\nsam.show_boxes(boxes)\n\n\nsam.show_anns()\n\n\nsam.save_masks(\"truck_boxes_mask.png\", unique=True)\n\n\ngeoai.empty_cache()\n\n\n\nBatch Point Prompts for Geospatial Data\n\nimage_url = \"https://data.source.coop/opengeos/geoai/wa-building-image.tif\"\ngeojson_url = \"https://data.source.coop/opengeos/geoai/wa-building-centroids.geojson\"\nimage_path = download_file(image_url)\ngeojson_path = download_file(geojson_url)\n\n\nm = leafmap.Map()\nm.add_raster(image_path, layer_name=\"Satellite image\")\nm\n\n\nsam = SamGeo3(backend=\"meta\", enable_inst_interactivity=True)\nsam.set_image(image_path)\n\n\npoint_coords_batch = [\n    [-117.599896, 47.655345],\n    [-117.59992, 47.655167],\n    [-117.599928, 47.654974],\n    [-117.599518, 47.655337],\n]\n\nsam.generate_masks_by_points_patch(\n    point_coords_batch=point_coords_batch,\n    point_crs=\"EPSG:4326\",\n    output=\"masks.tif\",\n    dtype=\"uint8\",\n)\n\n\nsam.show_points(point_coords_batch, point_crs=\"EPSG:4326\")\n\n\nm.add_raster(\"masks.tif\", cmap=\"viridis\", nodata=0, opacity=0.7, layer_name=\"Mask\")\nm\n\n\nsam.generate_masks_by_points_patch(\n    point_coords_batch=geojson_path,\n    point_crs=\"EPSG:4326\",\n    output=\"building_masks.tif\",\n    dtype=\"uint16\",\n)\n\n\nm.add_raster(\n    \"building_masks.tif\", cmap=\"jet\", nodata=0, opacity=0.7, layer_name=\"Building masks\"\n)\nm.add_circle_markers_from_xy(\n    geojson_path, radius=3, color=\"red\", fill_color=\"yellow\", fill_opacity=0.8\n)\nm\n\n\ngeoai.empty_cache()"
+  },
+  {
+    "objectID": "Notebooks/sam_geospatial.html#box-prompts-for-building-extraction",
+    "href": "Notebooks/sam_geospatial.html#box-prompts-for-building-extraction",
+    "title": "Aula 13 - Sam for Geospatial Aplications",
+    "section": "Box Prompts for Building Extraction",
+    "text": "Box Prompts for Building Extraction\n\nm = leafmap.Map()\nm.add_raster(image_path, layer_name=\"Satellite image\")\nm\n\n\nsam = SamGeo3(backend=\"meta\", enable_inst_interactivity=True)\nsam.set_image(image_path)\n\n\nif m.user_rois is not None:\n    boxes = m.user_rois\nelse:\n    boxes = [\n        [-117.5995, 47.6518, -117.5988, 47.652],\n        [-117.5987, 47.6518, -117.5979, 47.652],\n    ]\n\n\nsam.generate_masks_by_boxes_inst(boxes=boxes, box_crs=\"EPSG:4326\")\n\n\nsam.save_masks(output=\"mask.tif\", dtype=\"uint8\")\n\n\nm.add_raster(\"mask.tif\", cmap=\"viridis\", nodata=0, opacity=0.5, layer_name=\"Mask\")\nm\n\n\nUsing a Vector File as Box Prompts\n\nurl = \"https://data.source.coop/opengeos/geoai/wa-building-bboxes.geojson\"\ngeojson_path = download_file(url)\n\n\nm = leafmap.Map()\nm.add_raster(image_path, layer_name=\"Image\")\nstyle = {\n    \"color\": \"#ffff00\",\n    \"weight\": 2,\n    \"fillColor\": \"#7c4185\",\n    \"fillOpacity\": 0,\n}\nm.add_vector(geojson_path, style=style, zoom_to_layer=True, layer_name=\"Bboxes\")\nm\n\n\noutput_masks = \"building_masks.tif\"\nsam.generate_masks_by_boxes_inst(\n    boxes=geojson_path,\n    box_crs=\"EPSG:4326\",\n    output=output_masks,\n    dtype=\"uint16\",\n    multimask_output=False,\n)\n\n\nm.add_raster(\n    output_masks, cmap=\"jet\", nodata=0, opacity=0.5, layer_name=\"Building masks\"\n)\nm\n\n\n\nConverting to Vector and Regularizing\n\noutput_vector = \"building_vector.geojson\"\nraster_to_vector(output_masks, output_vector)\n\n\noutput_regularized = \"building_regularized.geojson\"\nregularize(output_vector, output_regularized)\n\n\nm.add_vector(\n    output_regularized, style=style, layer_name=\"Building regularized\", info_mode=None\n)\nm\n\n\ngeoai.empty_cache()"
+  },
+  {
+    "objectID": "Notebooks/sam_geospatial.html#batch-segmentation",
+    "href": "Notebooks/sam_geospatial.html#batch-segmentation",
+    "title": "Aula 13 - Sam for Geospatial Aplications",
+    "section": "Batch Segmentation",
+    "text": "Batch Segmentation\n\nimage_paths = []\nfor i in range(1, 5):\n    url = f\"https://data.source.coop/opengeos/geoai/uc-berkeley-{i}.tif\"\n    image_path = download_file(url)\n    image_paths.append(image_path)\n\n\nm = leafmap.Map()\nfor i, image_path in enumerate(image_paths):\n    m.add_raster(image_path, layer_name=f\"image_{i + 1}\")\nm\n\n\nsam3 = SamGeo3(backend=\"meta\", device=None, checkpoint_path=None, load_from_HF=True)\nsam3.set_image_batch(image_paths)\n\n\nsam3.generate_masks_batch(\"building\", min_size=100)\n\n\nfor i, result in enumerate(sam3.batch_results):\n    print(f\"Image {i + 1}: Found {len(result['masks'])} objects\")\n\n\nsam3.show_anns_batch(ncols=2, show_bbox=True, show_score=True, figsize=(12, 8))\n\n\nsam3.show_anns_batch(output_dir=\"output/annotations/\", prefix=\"ann\", dpi=300)\n\n\nsaved_files = sam3.save_masks_batch(\n    output_dir=\"output/\", prefix=\"building_mask\", unique=True\n)\n\n\ngeoai.empty_cache()"
+  },
+  {
+    "objectID": "Notebooks/sam_geospatial.html#tiled-segmentation-for-large-images",
+    "href": "Notebooks/sam_geospatial.html#tiled-segmentation-for-large-images",
+    "title": "Aula 13 - Sam for Geospatial Aplications",
+    "section": "Tiled Segmentation for Large Images",
+    "text": "Tiled Segmentation for Large Images\n\nurl = \"https://data.source.coop/opengeos/geoai/naip_water_train.tif\"\nimage_path = download_file(url)\n\n\ngeoai.print_raster_info(image_path)\n\n\nsam = SamGeo3(backend=\"meta\")\n\noutput_path = \"segmentation_mask.tif\"\n\nsam.generate_masks_tiled(\n    source=image_path,\n    prompt=\"water\",\n    output=output_path,\n    tile_size=1024,\n    overlap=128,\n    min_size=100,\n    unique=False,\n    dtype=\"int32\",\n    verbose=True,\n)\n\n\nm = leafmap.Map()\nm.add_raster(image_path, layer_name=\"Original Image\")\nm.add_raster(\n    output_path, nodata=0, opacity=0.8, cmap=\"Blues\", layer_name=\"Segmentation Mask\"\n)\nm\n\n\nvector_path = \"segmentation_mask.gpkg\"\ngeoai.raster_to_vector(output_path, vector_path)\n\n\nsmooth_vector_path = \"segmentation_mask_smooth.gpkg\"\ngdf = geoai.smooth_vector(vector_path, smooth_vector_path)\n\n\nstyle = {\n    \"color\": \"#ff0000\",\n    \"weight\": 2,\n    \"fillOpacity\": 0,\n}\nm.add_gdf(gdf, layer_name=\"Smoothed Vector\", info_mode=None, style=style)\nm\n\n\ngeoai.empty_cache()"
+  },
+  {
+    "objectID": "Notebooks/sam_geospatial.html#interactive-segmentation",
+    "href": "Notebooks/sam_geospatial.html#interactive-segmentation",
+    "title": "Aula 13 - Sam for Geospatial Aplications",
+    "section": "Interactive Segmentation",
+    "text": "Interactive Segmentation\n\nurl = \"https://data.source.coop/opengeos/geoai/uc-berkeley.tif\"\nimage_path = download_file(url)\n\n\nsam3 = SamGeo3(\n    backend=\"transformers\", device=None, checkpoint_path=None, load_from_HF=True\n)\nsam3.set_image(image_path)\n\n\nsam3.generate_masks(prompt=\"building\")\nsam3.save_masks(\"masks.tif\")\n\n\nsam3.show_map(height=\"700px\", min_size=10)\n\n\ngeoai.empty_cache()"
+  },
+  {
+    "objectID": "Notebooks/sam_geospatial.html#video-segmentation",
+    "href": "Notebooks/sam_geospatial.html#video-segmentation",
+    "title": "Aula 13 - Sam for Geospatial Aplications",
+    "section": "Video Segmentation",
+    "text": "Video Segmentation\n\nText-Prompted Video Segmentation\n\nurl = \"https://data.source.coop/opengeos/geoai/cars.mp4\"\nvideo_path = download_file(url)\n\n\nsam = SamGeo3Video()\nsam.set_video(video_path)\nsam.show_video(video_path)\n\n\nsam.generate_masks(\"car\")\n\n\nsam.show_frame(0, axis=\"on\")\n\n\nsam.show_frames(frame_stride=20, ncols=3)\n\n\nsam.remove_object(2)\nsam.propagate()\nsam.show_frame(0)\n\n\nos.makedirs(\"output\", exist_ok=True)\nsam.save_masks(\"output/masks\")\n\n\nsam.save_video(\"output/segmented.mp4\", fps=25)\n\n\nsam.close()\n\n\n\nPoint-Prompted Video Segmentation\n\nsam = SamGeo3Video()\nsam.set_video(video_path)\nsam.init_tracker()\nsam.show_frame(0, axis=\"on\")\n\n\nsam.add_point_prompts([[300, 200]], [1], obj_id=1, frame_idx=0)\nsam.add_point_prompts([[420, 200]], [1], obj_id=2, frame_idx=0)\nsam.propagate()\n\n\nsam.show_frame(0, axis=\"on\")\n\n\nsam.show_frames(frame_stride=20, ncols=3)\n\n\n# Positive point on windshield, negative point on car body\nsam.add_point_prompts(\n    points=[[335, 195], [335, 220]],\n    labels=[1, 0],\n    obj_id=1,\n    frame_idx=0,\n)\nsam.propagate()\nsam.show_frames(frame_stride=20, ncols=3)\n\n\nsam.save_masks(\"output/masks\")\nsam.save_video(\"output/segmented.mp4\", fps=25)\nsam.close()\n\n\n\nObject Tracking\n\nurl = \"https://data.source.coop/opengeos/geoai/basketball.mp4\"\nvideo_path = download_file(url)\n\n\nsam = SamGeo3Video()\nsam.set_video(video_path)\nsam.show_video(video_path)\n\n\nsam.generate_masks(\"player\")\n\n\nplayer_names = {}\nfor i in range(15):\n    player_names[i] = f\"Player {i}\"\nsam.show_frame(0, axis=\"on\", show_ids=player_names)\n\n\nsam.remove_object(obj_id=[5, 8, 12, 13])\nsam.propagate()\nsam.show_frame(0, show_ids=player_names)\n\n\nos.makedirs(\"output\", exist_ok=True)\nsam.save_masks(\"output/masks\")\nsam.save_video(\"output/players_segmented.mp4\", fps=60, show_ids=player_names)\nsam.show_video(\"output/players_segmented.mp4\")\n\n\nsam.close()\nsam.shutdown()"
+  },
+  {
+    "objectID": "Notebooks/sam_geospatial.html#key-takeaways",
+    "href": "Notebooks/sam_geospatial.html#key-takeaways",
+    "title": "Aula 13 - Sam for Geospatial Aplications",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways"
+  },
+  {
+    "objectID": "Notebooks/sam_geospatial.html#exercises",
+    "href": "Notebooks/sam_geospatial.html#exercises",
+    "title": "Aula 13 - Sam for Geospatial Aplications",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1: Comparing Prompt Types\n\n\nExercise 2: Batch Segmentation Across Tiles\n\n\nExercise 3: Tiled Segmentation on a Large Image\n\n\nExercise 4: Point-Prompted Instance Segmentation with Geographic Coordinates\n\n\nExercise 5: End-to-End Video Segmentation Pipeline"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#introduction",
+    "href": "Notebooks/vision_language_models.html#introduction",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Introduction",
+    "text": "Introduction"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#learning-objectives",
+    "href": "Notebooks/vision_language_models.html#learning-objectives",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#how-vision-language-models-work",
+    "href": "Notebooks/vision_language_models.html#how-vision-language-models-work",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "How Vision-Language Models Work",
+    "text": "How Vision-Language Models Work"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#setting-up-the-environment",
+    "href": "Notebooks/vision_language_models.html#setting-up-the-environment",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Setting Up the Environment",
+    "text": "Setting Up the Environment\n\n# %pip install geoai-py transformers==4.57.6\n\n\nimport geoai\nimport leafmap\nfrom geoai import MoondreamGeo"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#sample-data",
+    "href": "Notebooks/vision_language_models.html#sample-data",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Sample Data",
+    "text": "Sample Data\n\nurl = \"https://data.source.coop/opengeos/geoai/parking-lot.tif\"\nimage_path = geoai.download_file(url)\n\n\nm = leafmap.Map()\nm.add_raster(image_path, layer_name=\"Satellite Image\")\nm"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#initializing-the-moondream-processor",
+    "href": "Notebooks/vision_language_models.html#initializing-the-moondream-processor",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Initializing the Moondream Processor",
+    "text": "Initializing the Moondream Processor\n\nprocessor = MoondreamGeo(\n    model_name=\"vikhyatk/moondream2\",\n    revision=\"2025-06-21\",\n)"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#image-captioning",
+    "href": "Notebooks/vision_language_models.html#image-captioning",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Image Captioning",
+    "text": "Image Captioning\n\nresult = processor.caption(image_path, length=\"short\")\nprint(result[\"caption\"])\n\n\nresult = processor.caption(image_path, length=\"normal\")\nprint(result[\"caption\"])\n\n\nresult = processor.caption(image_path, length=\"long\")\nprint(result[\"caption\"])"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#visual-question-answering",
+    "href": "Notebooks/vision_language_models.html#visual-question-answering",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Visual Question Answering",
+    "text": "Visual Question Answering\n\nresult = processor.query(\"How many buildings are in the image?\", image_path)\nprint(result[\"answer\"])\n\n\nresult = processor.query(\"What are the building roof colors?\", image_path)\nprint(result[\"answer\"])\n\n\nresult = processor.query(\n    \"What types of vehicles are visible in the parking areas?\", image_path\n)\nprint(result[\"answer\"])"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#object-detection-and-point-localization",
+    "href": "Notebooks/vision_language_models.html#object-detection-and-point-localization",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Object Detection and Point Localization",
+    "text": "Object Detection and Point Localization\n\nDetect Buildings\n\nresult = processor.detect(image_path, \"building\", output_path=\"buildings.geojson\")\nprint(f\"Detected {len(result['objects'])} buildings\")\n\n\nresult[\"gdf\"]\n\n\nstyle = {\"color\": \"red\", \"weight\": 2}\nm.add_gdf(result[\"gdf\"], layer_name=\"Buildings\", style=style)\nm\n\n\n\nLocate Building Centroids\n\nresult = processor.point(\n    image_path, \"building\", output_path=\"building_centroids.geojson\"\n)\nprint(f\"Found {len(result['points'])} building centroids\")\n\n\nm.add_gdf(result[\"gdf\"], layer_name=\"Building Centroids\")\nm\n\n\n\nDetect Trees\n\nresult = processor.detect(image_path, \"tree\", output_path=\"trees.geojson\")\nprint(f\"Detected {len(result['objects'])} trees\")\n\n\nm.add_gdf(result[\"gdf\"], layer_name=\"Trees\", style={\"color\": \"green\", \"weight\": 2})\n\n\n\nLocate Tree Centroids\n\nresult = processor.point(image_path, \"tree\", output_path=\"tree_centroids.geojson\")\nprint(f\"Found {len(result['points'])} tree centroids\")\n\n\nm.add_gdf(result[\"gdf\"], layer_name=\"Tree Centroids\")\nm"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#interactive-gui",
+    "href": "Notebooks/vision_language_models.html#interactive-gui",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Interactive GUI",
+    "text": "Interactive GUI\n\nmoondream = MoondreamGeo(\n    model_name=\"vikhyatk/moondream2\",\n    revision=\"2025-06-21\",\n)\nmoondream.load_image(image_path)\nm_gui = moondream.show_gui()\nm_gui\n\n\ngdf = m_gui.last_result_as_gdf\ngdf"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#sliding-window-analysis-for-large-rasters",
+    "href": "Notebooks/vision_language_models.html#sliding-window-analysis-for-large-rasters",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Sliding Window Analysis for Large Rasters",
+    "text": "Sliding Window Analysis for Large Rasters\n\nObject Detection with Sliding Window\n\nresult = processor.detect_sliding_window(\n    image_path,\n    \"car\",\n    window_size=512,\n    overlap=64,\n    iou_threshold=0.5,\n    output_path=\"cars_sliding_window.geojson\",\n)\nprint(f\"Detected {len(result['objects'])} cars\")\n\n\nresult[\"gdf\"].head()\n\n\nm2 = leafmap.Map()\nm2.add_raster(image_path, layer_name=\"Satellite Image\")\nm2.add_gdf(\n    result[\"gdf\"],\n    layer_name=\"Detected Cars\",\n    style={\"color\": \"red\", \"fillOpacity\": 0.3},\n)\nm2\n\n\n\nPoint Detection with Sliding Window\n\ntrees = processor.point_sliding_window(\n    image_path,\n    \"tree\",\n    window_size=512,\n    overlap=64,\n    output_path=\"trees_sliding_window.geojson\",\n)\nprint(f\"Found {len(trees['points'])} tree locations\")\n\n\nm3 = leafmap.Map()\nm3.add_raster(image_path, layer_name=\"Satellite Image\")\nm3.add_gdf(trees[\"gdf\"], layer_name=\"Trees\", style={\"color\": \"green\", \"radius\": 3})\nm3\n\n\n\nVisual Question Answering with Sliding Window\n\nresult = processor.query_sliding_window(\n    \"What types of vehicles are visible?\",\n    image_path,\n    window_size=512,\n    overlap=64,\n    combine_strategy=\"concatenate\",\n)\nprint(result[\"answer\"])\n\n\nresult = processor.query_sliding_window(\n    \"Describe the land use and features in this area.\",\n    image_path,\n    window_size=512,\n    overlap=64,\n    combine_strategy=\"summarize\",\n)\nprint(result[\"answer\"])\n\n\nfor tile in result[\"tile_answers\"][:2]:  # Show first 2 tiles\n    print(f\"Tile {tile['tile_id']}: {tile['answer']}\\n\")\n\n\n\nImage Captioning with Sliding Window\n\nresult = processor.caption_sliding_window(\n    image_path,\n    window_size=512,\n    overlap=64,\n    length=\"normal\",\n    combine_strategy=\"concatenate\",\n)\nprint(result[\"caption\"])\n\n\nresult = processor.caption_sliding_window(\n    image_path,\n    window_size=512,\n    overlap=64,\n    length=\"long\",\n    combine_strategy=\"summarize\",\n)\nprint(result[\"caption\"])\n\n\ngeoai.empty_cache()\n\n\n\nConvenience Functions\n\nfrom geoai import moondream_detect_sliding_window\n\nresult = moondream_detect_sliding_window(\n    image_path,\n    \"car\",\n    window_size=512,\n    overlap=64,\n    model_name=\"vikhyatk/moondream2\",\n    revision=\"2025-06-21\",\n)\nprint(f\"Detected {len(result['objects'])} cars\")\n\n\ngeoai.view_vector_interactive(result[\"gdf\"], tiles=image_path)\n\n\n\nComparing Regular vs. Sliding Window Detection\n\nprocessor = MoondreamGeo(\n    model_name=\"vikhyatk/moondream2\",\n    revision=\"2025-06-21\",\n)\n\n\nregular_result = processor.detect(image_path, \"car\")\nprint(f\"Regular detection: {len(regular_result['objects'])} cars\")\n\nsliding_result = processor.detect_sliding_window(\n    image_path, \"car\", window_size=512, overlap=64\n)\nprint(f\"Sliding window detection: {len(sliding_result['objects'])} cars\")\n\n\ngeoai.empty_cache()\n\n\n\nPerformance Tips"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#clip-based-segmentation",
+    "href": "Notebooks/vision_language_models.html#clip-based-segmentation",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "CLIP-Based Segmentation",
+    "text": "CLIP-Based Segmentation\n\nclip_image_url = \"https://data.source.coop/opengeos/geoai/uc-berkeley.tif\"\nclip_image_path = geoai.download_file(clip_image_url)\n\n\ngeoai.view_raster(clip_image_path)\n\n\nsegmenter = geoai.CLIPSegmentation(tile_size=512, overlap=32)\n\n\nmask_output_path = \"tree_masks.tif\"\ntext_prompt = \"trees\"\n\n\nsegmenter.segment_image(\n    clip_image_path,\n    output_path=mask_output_path,\n    text_prompt=text_prompt,\n    threshold=0.5,\n    smoothing_sigma=1.0,\n)\n\n\ngeoai.view_raster(\n    mask_output_path,\n    nodata=0,\n    opacity=0.7,\n    colormap=\"greens\",\n    layer_name=\"Trees\",\n    basemap=clip_image_path,\n)\n\n\ngeoai.create_split_map(\n    left_layer=mask_output_path,\n    right_layer=clip_image_path,\n    left_label=\"Trees\",\n    right_label=\"Satellite Image\",\n    left_args={\"nodata\": 0, \"opacity\": 0.8, \"colormap\": \"greens\"},\n    basemap=clip_image_path,\n)"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#practical-applications-in-earth-observation",
+    "href": "Notebooks/vision_language_models.html#practical-applications-in-earth-observation",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Practical Applications in Earth Observation",
+    "text": "Practical Applications in Earth Observation"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#limitations-and-considerations",
+    "href": "Notebooks/vision_language_models.html#limitations-and-considerations",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Limitations and Considerations",
+    "text": "Limitations and Considerations"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#key-takeaways",
+    "href": "Notebooks/vision_language_models.html#key-takeaways",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways"
+  },
+  {
+    "objectID": "Notebooks/vision_language_models.html#exercises",
+    "href": "Notebooks/vision_language_models.html#exercises",
+    "title": "Aula 14 - Vision-Language Models",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1: Caption Length Comparison\n\n\nExercise 2: Geospatial Visual Question Answering\n\n\nExercise 3: Object Detection and Counting\n\n\nExercise 4: Multi-Class CLIP Segmentation"
   },
   {
     "objectID": "slides.html",
