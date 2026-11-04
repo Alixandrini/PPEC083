@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Mauro Alixandrini">
+<meta name="dcterms.date" content="2027-04-09">
 
-<title>aula_6 – PPEC083</title>
+<title>Aula 5 - Reconhecimento de Imagens – PPEC083</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -192,7 +194,9 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objetivos-de-aprendizagem" id="toc-objetivos-de-aprendizagem" class="nav-link active" data-scroll-target="#objetivos-de-aprendizagem">Objetivos de Aprendizagem</a>
+  <li><a href="#reconhecimento-de-imagens" id="toc-reconhecimento-de-imagens" class="nav-link active" data-scroll-target="#reconhecimento-de-imagens">Reconhecimento de Imagens</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-de-aprendizagem" id="toc-objetivos-de-aprendizagem" class="nav-link" data-scroll-target="#objetivos-de-aprendizagem">Objetivos de Aprendizagem</a>
   <ul class="collapse">
   <li><a href="#compreender-os-fundamentos-da-classificação-de-cenas-scene-classification" id="toc-compreender-os-fundamentos-da-classificação-de-cenas-scene-classification" class="nav-link" data-scroll-target="#compreender-os-fundamentos-da-classificação-de-cenas-scene-classification">1. Compreender os Fundamentos da Classificação de Cenas (<em>Scene Classification</em>)</a></li>
   <li><a href="#dominar-a-preparação-e-estruturação-de-dados-para-visão-computacional" id="toc-dominar-a-preparação-e-estruturação-de-dados-para-visão-computacional" class="nav-link" data-scroll-target="#dominar-a-preparação-e-estruturação-de-dados-para-visão-computacional">2. Dominar a Preparação e Estruturação de Dados para Visão Computacional</a></li>
@@ -203,6 +207,7 @@ window.Quarto = {
   <li><a href="#resnet-residual-networks" id="toc-resnet-residual-networks" class="nav-link" data-scroll-target="#resnet-residual-networks">2. ResNet (<em>Residual Networks</em>)</a></li>
   <li><a href="#efficientnet" id="toc-efficientnet" class="nav-link" data-scroll-target="#efficientnet">3. EfficientNet</a></li>
   <li><a href="#comparativo-direto-entre-as-duas-abordagens-no-notebook" id="toc-comparativo-direto-entre-as-duas-abordagens-no-notebook" class="nav-link" data-scroll-target="#comparativo-direto-entre-as-duas-abordagens-no-notebook">Comparativo Direto entre as Duas Abordagens no Notebook</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#download-the-eurosat-rgb-dataset" id="toc-download-the-eurosat-rgb-dataset" class="nav-link" data-scroll-target="#download-the-eurosat-rgb-dataset">Download the EuroSAT RGB Dataset</a></li>
   <li><a href="#explorar-o-conjunto-de-dados" id="toc-explorar-o-conjunto-de-dados" class="nav-link" data-scroll-target="#explorar-o-conjunto-de-dados">Explorar o Conjunto de Dados</a></li>
@@ -223,12 +228,45 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Aula 5 - Reconhecimento de Imagens</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">GeoAI</div>
+    <div class="quarto-category">technology</div>
+  </div>
+  </div>
 
 
 
+<div class="quarto-title-meta">
 
-<p># Reconhecimento de Imagens</p>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mauro Alixandrini </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 9, 2027</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="reconhecimento-de-imagens" class="level1">
+<h1>Reconhecimento de Imagens</h1>
 <p>O reconhecimento de imagens, frequentemente chamado de classificação de imagens ou classificação de cenas na literatura de visão computacional, é a tarefa de atribuir um único rótulo categórico a uma imagem inteira. Dado um tile de imagem de satélite ou aérea, um classificador pode rotulá-lo como “floresta”, “residencial”, “industrial” ou “agrícola”. Diferentemente da segmentação, que produz um rótulo para cada pixel, a classifi cação de imagens trata o tile inteiro como uma unidade e pergunta: “Qual é o uso ou cobertura do solo dominante ou mais representativo nesta cena?”</p>
 <p>Essa classificação no nível de tile é uma das tarefas mais fundamentais em IA geoespacial e serve como base para tarefas mais complexas abordadas em capítulos posteriores.</p>
 <p>Abaixo estão os principais exemplos de aplicação prática dessa abordagem em sensoriamento remoto e gestão territorial:</p>
@@ -411,6 +449,7 @@ window.Quarto = {
   _set_context_ca_bundle_path(ca_bundle_path)</code></pre>
 </div>
 </div>
+</section>
 </section>
 </section>
 <section id="download-the-eurosat-rgb-dataset" class="level1">
