@@ -2,6 +2,9 @@
   {
     "listing": "/notebooks.html",
     "items": [
+      "/Notebooks/Aula_6.html",
+      "/Notebooks/Segmentacao_semantica.html",
+      "/Notebooks/Zero-shot.html",
       "/Notebooks/change_detection.html",
       "/Notebooks/foundation_models.html",
       "/Notebooks/image_translation.html",
@@ -11,10 +14,10 @@
       "/Notebooks/sam_geospatial.html",
       "/Notebooks/semantic_segmentation.html",
       "/Notebooks/vision_language_models.html",
-      "/Notebooks/Aula_6.html",
       "/Notebooks/Aula_3.html",
       "/Notebooks/Aula_4.html",
       "/Notebooks/Aula_5.html",
+      "/Notebooks/wms_to_geotiff.html",
       "/Notebooks/Aula_2.html"
     ]
   }

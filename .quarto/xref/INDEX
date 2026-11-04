@@ -73,5 +73,14 @@
   },
   "Notebooks/vision_language_models.ipynb": {
     "vision_language_models.html": "5f86de0b"
+  },
+  "Notebooks/Segmentacao_semantica.ipynb": {
+    "Segmentacao_semantica.html": "de87ea39"
+  },
+  "Notebooks/wms_to_geotiff.ipynb": {
+    "wms_to_geotiff.html": "88b989d8"
+  },
+  "Notebooks/Zero-shot.ipynb": {
+    "Zero-shot.html": "7e970875"
   }
 }

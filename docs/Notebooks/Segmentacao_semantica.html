@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>segmentacao_semantica – PPEC083</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">PPEC083</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Apresentação</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../notebooks.html"> 
+<span class="menu-text">Notebooks das Aulas</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../slides.html"> 
+<span class="menu-text">Folhas de apresentação</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">Sobre o Curso</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#segmentação-semantica" id="toc-segmentação-semantica" class="nav-link active" data-scroll-target="#segmentação-semantica">Segmentação semantica</a>
+  <ul class="collapse">
+  <li><a href="#instalação-das-dependências-colab" id="toc-instalação-das-dependências-colab" class="nav-link" data-scroll-target="#instalação-das-dependências-colab">1: Instalação das Dependências (Colab)</a></li>
+  <li><a href="#importação-das-bibliotecas" id="toc-importação-das-bibliotecas" class="nav-link" data-scroll-target="#importação-das-bibliotecas">2: Importação das Bibliotecas</a></li>
+  <li><a href="#download-do-recorte-sentinel-2-rgb-nir" id="toc-download-do-recorte-sentinel-2-rgb-nir" class="nav-link" data-scroll-target="#download-do-recorte-sentinel-2-rgb-nir">3: Download do Recorte Sentinel-2 (RGB + NIR)</a></li>
+  <li><a href="#visualização-das-composições-rgb-e-falsa-cor-urbanavegetação" id="toc-visualização-das-composições-rgb-e-falsa-cor-urbanavegetação" class="nav-link" data-scroll-target="#visualização-das-composições-rgb-e-falsa-cor-urbanavegetação">4: Visualização das Composições (RGB e Falsa-Cor Urbana/Vegetação)</a></li>
+  <li><a href="#inferência-com-modelo-pré-treinado-do-hugging-face-hub" id="toc-inferência-com-modelo-pré-treinado-do-hugging-face-hub" class="nav-link" data-scroll-target="#inferência-com-modelo-pré-treinado-do-hugging-face-hub">5: Inferência com Modelo Pré-treinado do Hugging Face Hub</a></li>
+  <li><a href="#exibição-dos-resultados-com-legenda-temática" id="toc-exibição-dos-resultados-com-legenda-temática" class="nav-link" data-scroll-target="#exibição-dos-resultados-com-legenda-temática">6: Exibição dos Resultados com Legenda Temática</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="segmentação-semantica" class="level1">
+<h1>Segmentação semantica</h1>
+<p>O fluxo mais direto com o <code>geoai</code> consiste em utilizar a função <code>geoai.timm_segmentation_from_hub</code>. Essa função permite baixar os pesos de um modelo já treinado no Hugging Face Hub e aplicar a inferência em mosaico (<em>tiled inference</em>) sobre um recorte local sem necessidade de retreinar a rede.</p>
+<p>Abaixo está uma estrutura completa e pronta para notebook (<code>.ipynb</code>), dividida por blocos de aula.</p>
+<section id="instalação-das-dependências-colab" class="level3">
+<h3 class="anchored" data-anchor-id="instalação-das-dependências-colab">1: Instalação das Dependências (Colab)</h3>
+<div id="cell-1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="6e384e89-d6dd-4310-84f1-bddb98e846f5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalação do geoai e dependências de visão computacional/geoprocessamento</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>q geoai<span class="op">-</span>py rasterio matplotlib huggingface_hub</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+  Building wheel for antlr4-python3-runtime (pyproject.toml) ... done</code></pre>
+</div>
+</div>
+</section>
+<section id="importação-das-bibliotecas" class="level3">
+<h3 class="anchored" data-anchor-id="importação-das-bibliotecas">2: Importação das Bibliotecas</h3>
+<div id="cell-3" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio <span class="im">as</span> rio</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.colors <span class="im">import</span> ListedColormap</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.patches <span class="im">import</span> Patch</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geoai</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="download-do-recorte-sentinel-2-rgb-nir" class="level3">
+<h3 class="anchored" data-anchor-id="download-do-recorte-sentinel-2-rgb-nir">3: Download do Recorte Sentinel-2 (RGB + NIR)</h3>
+<p>Aqui você pode apontar para o seu repositório (GitHub Releases, Source Cooperative, ou Google Drive público):</p>
+<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="2cf2a079-fe09-43fa-f701-ac80103a80c9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> urllib.request</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio <span class="im">as</span> rio</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. URL de origem</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>s2_url <span class="op">=</span> <span class="st">"https://github.com/Alixandrini/PPEC083/raw/refs/heads/main/sentinel_2/S2_Ilha_de_mare_4b.tif"</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Caminho do arquivo LOCAL que será salvo no Colab</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>input_raster <span class="op">=</span> <span class="st">"S2_Ilha_de_mare_4b.tif"</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Download explícito salvando com o nome do arquivo local</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> os.path.exists(input_raster):</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Baixando o recorte Sentinel-2..."</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    urllib.request.urlretrieve(s2_url, input_raster)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Download concluído com sucesso!"</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Arquivo local já existente."</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Inspeção dos metadados locais</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> rio.<span class="bu">open</span>(input_raster) <span class="im">as</span> src:</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Arquivo local: </span><span class="sc">{</span>input_raster<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Dimensões: </span><span class="sc">{</span>src<span class="sc">.</span>width<span class="sc">}</span><span class="ss"> x </span><span class="sc">{</span>src<span class="sc">.</span>height<span class="sc">}</span><span class="ss"> pixels"</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Bandas: </span><span class="sc">{</span>src<span class="sc">.</span>count<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"CRS: </span><span class="sc">{</span>src<span class="sc">.</span>crs<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Resolução espacial: </span><span class="sc">{</span>src<span class="sc">.</span>res[<span class="dv">0</span>]<span class="sc">:.2f}</span><span class="ss"> m"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Baixando o recorte Sentinel-2...
+Download concluído com sucesso!
+Arquivo local: S2_Ilha_de_mare_4b.tif
+Dimensões: 828 x 693 pixels
+Bandas: 4
+CRS: EPSG:32724
+Resolução espacial: 10.00 m</code></pre>
+</div>
+</div>
+</section>
+<section id="visualização-das-composições-rgb-e-falsa-cor-urbanavegetação" class="level3">
+<h3 class="anchored" data-anchor-id="visualização-das-composições-rgb-e-falsa-cor-urbanavegetação">4: Visualização das Composições (RGB e Falsa-Cor Urbana/Vegetação)</h3>
+<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:463}}" data-outputid="8705455d-499b-40c0-9ea9-94844d1c1f3c">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> rio.<span class="bu">open</span>(<span class="st">"S2_Ilha_de_mare_4b.tif"</span>) <span class="im">as</span> src:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Lê as 4 bandas (1: Red, 2: Green, 3: Blue, 4: NIR)</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> src.read([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]).astype(np.float32)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    nodata_val <span class="op">=</span> src.nodata</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> stretch_robusto(band, nodata<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mascara valores inválidos, zeros de fundo e NaNs</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    mask_valida <span class="op">=</span> <span class="op">~</span>np.isnan(band)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> nodata <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        mask_valida <span class="op">&amp;=</span> (band <span class="op">!=</span> nodata)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    mask_valida <span class="op">&amp;=</span> (band <span class="op">&gt;</span> <span class="dv">0</span>)  <span class="co"># Evita zeros de recorte/borda</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Se a banda inteira for nula, evita divisão por zero</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> np.<span class="bu">any</span>(mask_valida):</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> np.zeros_like(band)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    p2, p98 <span class="op">=</span> np.percentile(band[mask_valida], (<span class="dv">2</span>, <span class="dv">98</span>))</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> p98 <span class="op">==</span> p2:</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> np.zeros_like(band)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    normalizado <span class="op">=</span> (band <span class="op">-</span> p2) <span class="op">/</span> (p98 <span class="op">-</span> p2)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.clip(normalizado, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>r_norm <span class="op">=</span> stretch_robusto(data[<span class="dv">0</span>], nodata_val)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>g_norm <span class="op">=</span> stretch_robusto(data[<span class="dv">1</span>], nodata_val)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>b_norm <span class="op">=</span> stretch_robusto(data[<span class="dv">2</span>], nodata_val)</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>nir_norm <span class="op">=</span> stretch_robusto(data[<span class="dv">3</span>], nodata_val)</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>rgb <span class="op">=</span> np.stack([r_norm, g_norm, b_norm], axis<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>cir <span class="op">=</span> np.stack([nir_norm, r_norm, g_norm], axis<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">7</span>))</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].imshow(rgb)</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"Sentinel-2 RGB (Cor Verdadeira)"</span>)</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].axis(<span class="st">"off"</span>)</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].imshow(cir)</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_title(<span class="st">"Sentinel-2 Falsa-Cor (NIR, R, G)"</span>)</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].axis(<span class="st">"off"</span>)</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Segmentacao_semantica_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="inferência-com-modelo-pré-treinado-do-hugging-face-hub" class="level3">
+<h3 class="anchored" data-anchor-id="inferência-com-modelo-pré-treinado-do-hugging-face-hub">5: Inferência com Modelo Pré-treinado do Hugging Face Hub</h3>
+<p>O <code>geoai</code> baixa a arquitetura e os pesos diretamente via <code>repo_id</code> e fatia a imagem em blocos com sobreposição (<code>overlap</code>) para evitar linhas de costura:</p>
+<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:270}}" data-outputid="0a82ed19-58d7-4864-a030-34a37387d63f">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> huggingface_hub <span class="im">import</span> notebook_login</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>notebook_login()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<center><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" width="100" alt="Hugging Face"><br><br><p>To log in, open this URL and enter the code:</p><p><a href="https://hf.co/oauth/device" target="_blank"><b>https://hf.co/oauth/device</b></a></p><p style="font-size: 1.6em; letter-spacing: 0.3em; font-family: monospace;"><b>5SLZ-ZRMV</b></p></center>
+</div>
+<div class="cell-output cell-output-display">
+<center><i>Waiting for authorization...</i></center>
+</div>
+<div class="cell-output cell-output-display">
+<center>Login successful. Logged in as <b>mauro-alixandrini</b> (token: <code>oauth-mauro-alixandrini</code>).<br>This token will be refreshed automatically when it expires.</center>
+</div>
+</div>
+<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="ac578391-3bd9-4853-d2a8-4b97ad1e1259">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install omniwatermask</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<div class="ansi-escaped-output">
+<pre>Collecting omniwatermask
+
+  Downloading omniwatermask-0.6.2-py3-none-any.whl.metadata (14 kB)
+
+Requirement already satisfied: numpy&gt;=2.0 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (2.1.3)
+
+Collecting omnicloudmask&gt;=1.7.1 (from omniwatermask)
+
+  Downloading omnicloudmask-1.8.0-py3-none-any.whl.metadata (4.9 kB)
+
+Requirement already satisfied: opencv-python&gt;=4.9.0.80 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (5.0.0.93)
+
+Requirement already satisfied: geopandas&gt;=1.0 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (1.2.0)
+
+Collecting osmnx&gt;=2.0.0 (from omniwatermask)
+
+  Downloading osmnx-2.1.1-py3-none-any.whl.metadata (4.7 kB)
+
+Requirement already satisfied: overturemaps&gt;=1.0.0 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (1.0.2)
+
+Requirement already satisfied: scipy&gt;=1.10.0 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (1.16.3)
+
+Requirement already satisfied: pyarrow&gt;=15.0.2 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (23.0.1)
+
+Requirement already satisfied: huggingface_hub&gt;=0.28.1 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (1.33.0)
+
+Requirement already satisfied: safetensors&gt;=0.3.0 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (0.8.0)
+
+Requirement already satisfied: gdown&gt;=5.1.0 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (5.2.2)
+
+Requirement already satisfied: rasterio&gt;=1.3 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (1.5.2)
+
+Requirement already satisfied: timm&gt;=0.9 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (1.0.30)
+
+Requirement already satisfied: torch&gt;=2.3.0 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (2.11.0+cpu)
+
+Requirement already satisfied: tqdm&gt;=4.0 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (4.67.3)
+
+Requirement already satisfied: platformdirs&gt;=4.0.0 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (4.13.5)
+
+Requirement already satisfied: fastai&gt;=2.7 in /usr/local/lib/python3.13/dist-packages (from omniwatermask) (2.8.12)
+
+Requirement already satisfied: fastdownload&lt;2,&gt;=0.0.8 in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (0.0.8)
+
+Requirement already satisfied: fastcore&gt;=2.2.22 in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (2.2.33)
+
+Requirement already satisfied: fasttransform&gt;=0.0.3 in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (0.0.5)
+
+Requirement already satisfied: torchvision&gt;=0.11 in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (0.26.0+cpu)
+
+Requirement already satisfied: matplotlib in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (3.10.0)
+
+Requirement already satisfied: pandas in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (2.2.3)
+
+Requirement already satisfied: requests in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (2.32.4)
+
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (6.0.3)
+
+Requirement already satisfied: fastprogress&gt;=0.2.4 in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (1.1.6)
+
+Requirement already satisfied: pillow&gt;=9.0.0 in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (11.3.0)
+
+Requirement already satisfied: scikit-learn in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (1.6.1)
+
+Requirement already satisfied: spacy&lt;4 in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (3.8.16)
+
+Requirement already satisfied: packaging in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (26.3)
+
+Requirement already satisfied: plum-dispatch&lt;2.10 in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (2.9.0)
+
+Requirement already satisfied: cloudpickle in /usr/local/lib/python3.13/dist-packages (from fastai&gt;=2.7-&gt;omniwatermask) (3.1.2)
+
+Requirement already satisfied: beartype&gt;=0.16.2 in /usr/local/lib/python3.13/dist-packages (from plum-dispatch&lt;2.10-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.23.1)
+
+Requirement already satisfied: rich&gt;=10.0 in /usr/local/lib/python3.13/dist-packages (from plum-dispatch&lt;2.10-&gt;fastai&gt;=2.7-&gt;omniwatermask) (13.9.4)
+
+Requirement already satisfied: typing-extensions&gt;=4.9.0 in /usr/local/lib/python3.13/dist-packages (from plum-dispatch&lt;2.10-&gt;fastai&gt;=2.7-&gt;omniwatermask) (4.16.0)
+
+Requirement already satisfied: spacy-legacy&lt;3.1.0,&gt;=3.0.11 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (3.0.12)
+
+Requirement already satisfied: spacy-loggers&lt;2.0.0,&gt;=1.0.0 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.0.5)
+
+Requirement already satisfied: murmurhash&lt;1.1.0,&gt;=0.28.0 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.0.15)
+
+Requirement already satisfied: cymem&lt;2.1.0,&gt;=2.0.2 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2.0.13)
+
+Requirement already satisfied: preshed&lt;3.1.0,&gt;=3.0.2 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (3.0.13)
+
+Requirement already satisfied: thinc&lt;8.4.0,&gt;=8.3.12 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (8.3.13)
+
+Requirement already satisfied: wasabi&lt;1.2.0,&gt;=0.9.1 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.1.3)
+
+Requirement already satisfied: srsly&lt;3.0.0,&gt;=2.5.3 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2.5.4)
+
+Requirement already satisfied: catalogue&lt;2.1.0,&gt;=2.0.6 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2.0.10)
+
+Requirement already satisfied: weasel&lt;2.0.0,&gt;=1.0.0 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.0.0)
+
+Requirement already satisfied: confection&lt;2.0.0,&gt;=1.3.2 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.3.3)
+
+Requirement already satisfied: typer&lt;1.0.0,&gt;=0.3.0 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.27.3)
+
+Requirement already satisfied: click&lt;9.0.0,&gt;=8.2.1 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (8.5.0)
+
+Requirement already satisfied: pydantic&lt;3.0.0,&gt;=2.0.0 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2.14.1)
+
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (3.1.6)
+
+Requirement already satisfied: setuptools in /usr/local/lib/python3.13/dist-packages (from spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (80.10.2)
+
+Requirement already satisfied: annotated-types&gt;=0.6.0 in /usr/local/lib/python3.13/dist-packages (from pydantic&lt;3.0.0,&gt;=2.0.0-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.8.0)
+
+Requirement already satisfied: pydantic-core==2.50.1 in /usr/local/lib/python3.13/dist-packages (from pydantic&lt;3.0.0,&gt;=2.0.0-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2.50.1)
+
+Requirement already satisfied: typing-inspection&gt;=0.4.4 in /usr/local/lib/python3.13/dist-packages (from pydantic&lt;3.0.0,&gt;=2.0.0-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.4.4)
+
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /usr/local/lib/python3.13/dist-packages (from requests-&gt;fastai&gt;=2.7-&gt;omniwatermask) (3.4.9)
+
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.13/dist-packages (from requests-&gt;fastai&gt;=2.7-&gt;omniwatermask) (3.20)
+
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/lib/python3.13/dist-packages (from requests-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2.5.0)
+
+Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.13/dist-packages (from requests-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2026.10.19)
+
+Requirement already satisfied: blis&lt;1.4.0,&gt;=1.3.0 in /usr/local/lib/python3.13/dist-packages (from thinc&lt;8.4.0,&gt;=8.3.12-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.3.3)
+
+Requirement already satisfied: filelock in /usr/local/lib/python3.13/dist-packages (from torch&gt;=2.3.0-&gt;omniwatermask) (4.2.4)
+
+Requirement already satisfied: sympy&gt;=1.13.3 in /usr/local/lib/python3.13/dist-packages (from torch&gt;=2.3.0-&gt;omniwatermask) (1.14.0)
+
+Requirement already satisfied: networkx&gt;=2.5.1 in /usr/local/lib/python3.13/dist-packages (from torch&gt;=2.3.0-&gt;omniwatermask) (3.7)
+
+Requirement already satisfied: fsspec&gt;=0.8.5 in /usr/local/lib/python3.13/dist-packages (from torch&gt;=2.3.0-&gt;omniwatermask) (2025.12.0)
+
+Requirement already satisfied: shellingham&gt;=1.3.0 in /usr/local/lib/python3.13/dist-packages (from typer&lt;1.0.0,&gt;=0.3.0-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.5.4)
+
+Requirement already satisfied: annotated-doc&gt;=0.0.2 in /usr/local/lib/python3.13/dist-packages (from typer&lt;1.0.0,&gt;=0.3.0-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.0.5)
+
+Requirement already satisfied: cloudpathlib&gt;=0.7.0 in /usr/local/lib/python3.13/dist-packages (from weasel&lt;2.0.0,&gt;=1.0.0-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.26.0)
+
+Requirement already satisfied: smart-open&gt;=5.2.1 in /usr/local/lib/python3.13/dist-packages (from weasel&lt;2.0.0,&gt;=1.0.0-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (8.0.4)
+
+Requirement already satisfied: httpx&gt;=0.24.0 in /usr/local/lib/python3.13/dist-packages (from weasel&lt;2.0.0,&gt;=1.0.0-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.28.1)
+
+Requirement already satisfied: python-fasthtml&gt;=0.12.34 in /usr/local/lib/python3.13/dist-packages (from fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.14.14)
+
+Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.13/dist-packages (from gdown&gt;=5.1.0-&gt;omniwatermask) (4.13.5)
+
+Requirement already satisfied: pyogrio&gt;=0.8 in /usr/local/lib/python3.13/dist-packages (from geopandas&gt;=1.0-&gt;omniwatermask) (0.13.0)
+
+Requirement already satisfied: pyproj&gt;=3.7.0 in /usr/local/lib/python3.13/dist-packages (from geopandas&gt;=1.0-&gt;omniwatermask) (3.8.0)
+
+Requirement already satisfied: shapely&gt;=2.1.0 in /usr/local/lib/python3.13/dist-packages (from geopandas&gt;=1.0-&gt;omniwatermask) (2.2.0)
+
+Requirement already satisfied: anyio in /usr/local/lib/python3.13/dist-packages (from httpx&gt;=0.24.0-&gt;weasel&lt;2.0.0,&gt;=1.0.0-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (4.15.1)
+
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.13/dist-packages (from httpx&gt;=0.24.0-&gt;weasel&lt;2.0.0,&gt;=1.0.0-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.0.9)
+
+Requirement already satisfied: h11&gt;=0.16 in /usr/local/lib/python3.13/dist-packages (from httpcore==1.*-&gt;httpx&gt;=0.24.0-&gt;weasel&lt;2.0.0,&gt;=1.0.0-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.16.0)
+
+Requirement already satisfied: hf-xet&lt;2.0.0,&gt;=1.6.0 in /usr/local/lib/python3.13/dist-packages (from huggingface_hub&gt;=0.28.1-&gt;omniwatermask) (1.7.0)
+
+Collecting classcounter&lt;0.3,&gt;=0.2 (from omnicloudmask&gt;=1.7.1-&gt;omniwatermask)
+
+  Downloading classcounter-0.2.1-py3-none-any.whl.metadata (9.4 kB)
+
+Requirement already satisfied: segmentation-models-pytorch&gt;=0.5.0 in /usr/local/lib/python3.13/dist-packages (from omnicloudmask&gt;=1.7.1-&gt;omniwatermask) (0.5.0)
+
+Requirement already satisfied: colorama&gt;=0.4.6 in /usr/local/lib/python3.13/dist-packages (from overturemaps&gt;=1.0.0-&gt;omniwatermask) (0.4.6)
+
+Requirement already satisfied: orjson&gt;=3.9.0 in /usr/local/lib/python3.13/dist-packages (from overturemaps&gt;=1.0.0-&gt;omniwatermask) (3.13.0)
+
+Requirement already satisfied: pyfiglet&gt;=1.0.2 in /usr/local/lib/python3.13/dist-packages (from overturemaps&gt;=1.0.0-&gt;omniwatermask) (1.0.4)
+
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /usr/local/lib/python3.13/dist-packages (from pandas-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2.9.0.post0)
+
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.13/dist-packages (from pandas-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2025.2)
+
+Requirement already satisfied: tzdata&gt;=2022.7 in /usr/local/lib/python3.13/dist-packages (from pandas-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2026.5)
+
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.13/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.17.0)
+
+Requirement already satisfied: starlette&gt;=1.0.1 in /usr/local/lib/python3.13/dist-packages (from python-fasthtml&gt;=0.12.34-&gt;fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.9.0)
+
+Requirement already satisfied: oauthlib in /usr/local/lib/python3.13/dist-packages (from python-fasthtml&gt;=0.12.34-&gt;fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (3.3.1)
+
+Requirement already satisfied: itsdangerous in /usr/local/lib/python3.13/dist-packages (from python-fasthtml&gt;=0.12.34-&gt;fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2.2.0)
+
+Requirement already satisfied: uvicorn&gt;=0.30 in /usr/local/lib/python3.13/dist-packages (from uvicorn[standard]&gt;=0.30-&gt;python-fasthtml&gt;=0.12.34-&gt;fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.54.0)
+
+Requirement already satisfied: httpx2 in /usr/local/lib/python3.13/dist-packages (from python-fasthtml&gt;=0.12.34-&gt;fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2.15.1)
+
+Requirement already satisfied: python-multipart in /usr/local/lib/python3.13/dist-packages (from python-fasthtml&gt;=0.12.34-&gt;fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.0.32)
+
+Requirement already satisfied: affine in /usr/local/lib/python3.13/dist-packages (from rasterio&gt;=1.3-&gt;omniwatermask) (3.0.1)
+
+Requirement already satisfied: attrs in /usr/local/lib/python3.13/dist-packages (from rasterio&gt;=1.3-&gt;omniwatermask) (26.1.0)
+
+Requirement already satisfied: pyparsing&gt;=3.0 in /usr/local/lib/python3.13/dist-packages (from rasterio&gt;=1.3-&gt;omniwatermask) (3.3.3)
+
+Requirement already satisfied: markdown-it-py&gt;=2.2.0 in /usr/local/lib/python3.13/dist-packages (from rich&gt;=10.0-&gt;plum-dispatch&lt;2.10-&gt;fastai&gt;=2.7-&gt;omniwatermask) (4.2.0)
+
+Requirement already satisfied: pygments&lt;3.0.0,&gt;=2.13.0 in /usr/local/lib/python3.13/dist-packages (from rich&gt;=10.0-&gt;plum-dispatch&lt;2.10-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2.21.0)
+
+Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.13/dist-packages (from markdown-it-py&gt;=2.2.0-&gt;rich&gt;=10.0-&gt;plum-dispatch&lt;2.10-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.1.2)
+
+Requirement already satisfied: wrapt in /usr/local/lib/python3.13/dist-packages (from smart-open&gt;=5.2.1-&gt;weasel&lt;2.0.0,&gt;=1.0.0-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2.5.1)
+
+Requirement already satisfied: mpmath&lt;1.4,&gt;=1.1.0 in /usr/local/lib/python3.13/dist-packages (from sympy&gt;=1.13.3-&gt;torch&gt;=2.3.0-&gt;omniwatermask) (1.3.0)
+
+Requirement already satisfied: httptools&gt;=0.8.0 in /usr/local/lib/python3.13/dist-packages (from uvicorn[standard]&gt;=0.30-&gt;python-fasthtml&gt;=0.12.34-&gt;fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.9.0)
+
+Requirement already satisfied: python-dotenv&gt;=0.13 in /usr/local/lib/python3.13/dist-packages (from uvicorn[standard]&gt;=0.30-&gt;python-fasthtml&gt;=0.12.34-&gt;fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.2.4)
+
+Requirement already satisfied: uvloop&gt;=0.15.1 in /usr/local/lib/python3.13/dist-packages (from uvicorn[standard]&gt;=0.30-&gt;python-fasthtml&gt;=0.12.34-&gt;fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.23.0)
+
+Requirement already satisfied: watchfiles&gt;=0.20 in /usr/local/lib/python3.13/dist-packages (from uvicorn[standard]&gt;=0.30-&gt;python-fasthtml&gt;=0.12.34-&gt;fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.3.0)
+
+Requirement already satisfied: websockets&gt;=13.0 in /usr/local/lib/python3.13/dist-packages (from uvicorn[standard]&gt;=0.30-&gt;python-fasthtml&gt;=0.12.34-&gt;fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (15.0.1)
+
+Requirement already satisfied: soupsieve&gt;1.2 in /usr/local/lib/python3.13/dist-packages (from beautifulsoup4-&gt;gdown&gt;=5.1.0-&gt;omniwatermask) (3.0.3)
+
+Requirement already satisfied: httpcore2==2.15.1 in /usr/local/lib/python3.13/dist-packages (from httpx2-&gt;python-fasthtml&gt;=0.12.34-&gt;fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (2.15.1)
+
+Requirement already satisfied: truststore&gt;=0.10 in /usr/local/lib/python3.13/dist-packages (from httpx2-&gt;python-fasthtml&gt;=0.12.34-&gt;fastprogress&gt;=0.2.4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.10.5)
+
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.13/dist-packages (from jinja2-&gt;spacy&lt;4-&gt;fastai&gt;=2.7-&gt;omniwatermask) (3.0.4)
+
+Requirement already satisfied: contourpy&gt;=1.0.1 in /usr/local/lib/python3.13/dist-packages (from matplotlib-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.4.0)
+
+Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.13/dist-packages (from matplotlib-&gt;fastai&gt;=2.7-&gt;omniwatermask) (0.12.1)
+
+Requirement already satisfied: fonttools&gt;=4.22.0 in /usr/local/lib/python3.13/dist-packages (from matplotlib-&gt;fastai&gt;=2.7-&gt;omniwatermask) (4.67.0)
+
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /usr/local/lib/python3.13/dist-packages (from matplotlib-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.5.1)
+
+Requirement already satisfied: PySocks!=1.5.7,&gt;=1.5.6 in /usr/local/lib/python3.13/dist-packages (from requests[socks]-&gt;gdown&gt;=5.1.0-&gt;omniwatermask) (1.7.1)
+
+Requirement already satisfied: joblib&gt;=1.2.0 in /usr/local/lib/python3.13/dist-packages (from scikit-learn-&gt;fastai&gt;=2.7-&gt;omniwatermask) (1.6.0)
+
+Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /usr/local/lib/python3.13/dist-packages (from scikit-learn-&gt;fastai&gt;=2.7-&gt;omniwatermask) (3.7.0)
+
+Downloading omniwatermask-0.6.2-py3-none-any.whl (34 kB)
+
+Downloading omnicloudmask-1.8.0-py3-none-any.whl (34 kB)
+
+Downloading classcounter-0.2.1-py3-none-any.whl (14 kB)
+
+Downloading osmnx-2.1.1-py3-none-any.whl (104 kB)
+
+Installing collected packages: classcounter, osmnx, omnicloudmask, omniwatermask
+
+   <span class="ansi-bright-black-fg">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-green-fg">4/4</span> [omniwatermask]
+
+Successfully installed classcounter-0.2.1 omnicloudmask-1.8.0 omniwatermask-0.6.2 osmnx-2.1.1
+</pre>
+</div>
+</div>
+</div>
+<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:500,&quot;referenced_widgets&quot;:[&quot;ed395c8985424fe282716e03a574603e&quot;,&quot;8b2b3bf51c374ce7a7784fd4bb2f4313&quot;,&quot;a60dc4dc6b154557b329be4fb2a9ee86&quot;,&quot;460f7ff7e1264626891819585b48db32&quot;,&quot;7f79fc630d134597ad0f94540232d808&quot;,&quot;030663d874304be4b94ce2dc3f76599a&quot;,&quot;c762b6342c79467f8e5f9d5da45f4988&quot;,&quot;4530d0dae791471cac918d1ac059119d&quot;,&quot;2cb3432f56c2404281499b1934e39a00&quot;,&quot;dbf8cc3277844c45a1fc6c3268586819&quot;,&quot;e39ef4587a434f3494895829727b12fd&quot;,&quot;ff77b9404a2649fc82d43f3dc9abdcb5&quot;,&quot;bdaa85ed333145a69cb789bab21b6cfc&quot;,&quot;d001d7800f0e40149adfa68524948772&quot;,&quot;254c2f371f0d403593cd31ff301bd017&quot;,&quot;9c15c9e2260b443fb7848da8ee011af9&quot;,&quot;64a8f529f72f40e9a62542759b886746&quot;,&quot;67acef8f6f974c93a1fba5e06185a231&quot;,&quot;c0e6cd5c0f6a4f34b1e051c2011be688&quot;,&quot;3a06e53e308543baaca2efd9ecc7933d&quot;,&quot;aed55ed2fd6c4d65b9e6bb10658dd945&quot;,&quot;28161efeb773411794f5b722f845b29a&quot;,&quot;a476aadbd12a4c5b938773d8fa2a6099&quot;,&quot;79abaf137fc24f53b6264fa64406c996&quot;,&quot;e0ebe08301134c67ad442a52613ea0b7&quot;,&quot;1a45578291a9493a8b429c2f4f945555&quot;,&quot;367d3b14932e401fa8a9415a1e707b51&quot;,&quot;07f97aa158d6471fa4fb29d6a2225ee3&quot;,&quot;c949b6ec62864ee49cccf30803ae7fcd&quot;,&quot;1210cd863830414da185a6ca7f258bc4&quot;,&quot;bc9a3b1012b84f698e0c008a770d2e2a&quot;,&quot;0cf0541602034eda9756b24e92024477&quot;,&quot;c978f816d3e1413c9b5771995a019c6a&quot;,&quot;cd54f156ff7f4d5a824b9f36b77cdbce&quot;,&quot;53903d64ebfe4f0ba3e383a68b513405&quot;,&quot;f76b4a18120247e2ae573d1f99e2d5aa&quot;,&quot;684f2bce39f3430c964aeaaf8890f090&quot;,&quot;636060ef5af54eea983d148c1b286bcb&quot;,&quot;21650b18ac0b4845ad5f583abc00abfd&quot;,&quot;fd80923ab5dd4ae7aa780e0c1e59b168&quot;,&quot;4818475ca24d4981ac74d16c47ea750b&quot;,&quot;fdb965718d9b4ba6ba900372015fc32a&quot;,&quot;d4c50f8724a84cba941a8dde3faf6c8e&quot;,&quot;21500d5806e14490b73c463e564861c5&quot;]}}" data-outputid="848967b9-9ded-440c-d974-c7a800d0d51f">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Segmentação direta com pesos pré-treinados da biblioteca</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>s2_mask_path <span class="op">=</span> geoai.segment_water(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    input_raster,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    band_order<span class="op">=</span><span class="st">"naip"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    output_raster<span class="op">=</span><span class="st">"mascara_agua_sentinel.tif"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Segmentação direta com pesos pré-treinados para 4 bandas (Red, Green, Blue, NIR)</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>gdf_agua <span class="op">=</span> geoai.segment_water(</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    input_raster,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    band_order<span class="op">=</span><span class="st">"naip"</span>,  <span class="co"># Mapeia Red, Green, Blue, NIR</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    output_raster<span class="op">=</span><span class="st">"mascara_agua_sentinel.tif"</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    output_vector<span class="op">=</span><span class="st">"poligonos_agua.geojson"</span>,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    smooth<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    min_size<span class="op">=</span><span class="dv">100</span>,</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total de corpos d'água extraídos: </span><span class="sc">{</span><span class="bu">len</span>(gdf_agua)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"ed395c8985424fe282716e03a574603e","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"ff77b9404a2649fc82d43f3dc9abdcb5","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"a476aadbd12a4c5b938773d8fa2a6099","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.13/dist-packages/omniwatermask/water_inf_helpers.py:278: RuntimeWarning: overflow encountered in cast
+  input_bands_tensor = torch.from_numpy(input_bands.astype(np.float16)).to(
+/usr/local/lib/python3.13/dist-packages/omnicloudmask/cloud_mask.py:455: UserWarning: Patch size too large, reducing to 693 and overlap to 300.
+  patch_overlap, patch_size = check_patch_size(
+/usr/local/lib/python3.13/dist-packages/numpy/_core/_methods.py:136: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+/usr/local/lib/python3.13/dist-packages/numpy/_core/_methods.py:173: RuntimeWarning: overflow encountered in reduce
+  arrmean = umr_sum(arr, axis, dtype, keepdims=True, where=where)
+/usr/local/lib/python3.13/dist-packages/omnicloudmask/model_utils.py:130: RuntimeWarning: invalid value encountered in divide
+  out_array[id][mask] = (masked_values - mean) / std
+WARNING:rasterio._env:CPLE_IllegalArg in mascara_agua_sentinel.tif: BLOCKXSIZE can only be used with TILED=YES</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"cd54f156ff7f4d5a824b9f36b77cdbce","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.13/dist-packages/omniwatermask/water_inf_helpers.py:278: RuntimeWarning: overflow encountered in cast
+  input_bands_tensor = torch.from_numpy(input_bands.astype(np.float16)).to(
+/usr/local/lib/python3.13/dist-packages/omnicloudmask/cloud_mask.py:455: UserWarning: Patch size too large, reducing to 693 and overlap to 300.
+  patch_overlap, patch_size = check_patch_size(
+/usr/local/lib/python3.13/dist-packages/numpy/_core/_methods.py:136: RuntimeWarning: overflow encountered in reduce
+  ret = umr_sum(arr, axis, dtype, out, keepdims, where=where)
+/usr/local/lib/python3.13/dist-packages/numpy/_core/_methods.py:173: RuntimeWarning: overflow encountered in reduce
+  arrmean = umr_sum(arr, axis, dtype, keepdims=True, where=where)
+/usr/local/lib/python3.13/dist-packages/omnicloudmask/model_utils.py:130: RuntimeWarning: invalid value encountered in divide
+  out_array[id][mask] = (masked_values - mean) / std
+WARNING:rasterio._env:CPLE_IllegalArg in mascara_agua_sentinel.tif: BLOCKXSIZE can only be used with TILED=YES</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total de corpos d'água extraídos: 6</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Dica para aula:</strong> Se o modelo estiver em um repositório privado do Hugging Face, basta adicionar antes desta célula: <code>bash{python} import os os.environ["HF_TOKEN"] = "hf_..."</code></p>
+</blockquote>
+</section>
+<section id="exibição-dos-resultados-com-legenda-temática" class="level3">
+<h3 class="anchored" data-anchor-id="exibição-dos-resultados-com-legenda-temática">6: Exibição dos Resultados com Legenda Temática</h3>
+<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:644}}" data-outputid="b10a16bd-a519-4dcb-e575-911c69340db1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Carrega o raster de máscara gerado pelo segment_water</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> rio.<span class="bu">open</span>(<span class="st">"mascara_agua_sentinel.tif"</span>) <span class="im">as</span> src:</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    mask_agua <span class="op">=</span> src.read(<span class="dv">1</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Valores únicos na máscara de água: </span><span class="sc">{</span>np<span class="sc">.</span>unique(mask_agua)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Carrega os polígonos geoespaciais</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>gdf_poligonos <span class="op">=</span> gpd.read_file(<span class="st">"poligonos_agua.geojson"</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Plotagem lado a lado: Máscara binária e Polígonos sobrepostos</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">8</span>))</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Painel 1: Máscara binária com escala de cinza/azul</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> ax[<span class="dv">0</span>].imshow(mask_agua, cmap<span class="op">=</span><span class="st">"Blues"</span>, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">1</span>, interpolation<span class="op">=</span><span class="st">"nearest"</span>)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"Máscara Binária de Água (0 = Terra, 1 = Água)"</span>)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].axis(<span class="st">"off"</span>)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>plt.colorbar(im, ax<span class="op">=</span>ax[<span class="dv">0</span>], fraction<span class="op">=</span><span class="fl">0.035</span>, pad<span class="op">=</span><span class="fl">0.04</span>)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Painel 2: Polígonos suavizados sobre o RGB original</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].imshow(rgb)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">len</span>(gdf_poligonos) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    gdf_poligonos.plot(ax<span class="op">=</span>ax[<span class="dv">1</span>], facecolor<span class="op">=</span><span class="st">"none"</span>, edgecolor<span class="op">=</span><span class="st">"cyan"</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_title(<span class="ss">f"Polígonos de Água Detectados (</span><span class="sc">{</span><span class="bu">len</span>(gdf_poligonos)<span class="sc">}</span><span class="ss"> feições)"</span>)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].axis(<span class="st">"off"</span>)</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Valores únicos na máscara de água: [0 1]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Segmentacao_semantica_files/figure-html/cell-9-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script type="application/vnd.jupyter.widget-state+json">
+{"state":{"030663d874304be4b94ce2dc3f76599a":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"07f97aa158d6471fa4fb29d6a2225ee3":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"0cf0541602034eda9756b24e92024477":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"1210cd863830414da185a6ca7f258bc4":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"1a45578291a9493a8b429c2f4f945555":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_0cf0541602034eda9756b24e92024477","placeholder":"​","style":"IPY_MODEL_c978f816d3e1413c9b5771995a019c6a","value":" 1/1 [01:23&lt;00:00, 83.00s/it]"}},"21500d5806e14490b73c463e564861c5":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"21650b18ac0b4845ad5f583abc00abfd":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"254c2f371f0d403593cd31ff301bd017":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_aed55ed2fd6c4d65b9e6bb10658dd945","placeholder":"​","style":"IPY_MODEL_28161efeb773411794f5b722f845b29a","value":"  501MB, 42.2MB/s  "}},"28161efeb773411794f5b722f845b29a":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"2cb3432f56c2404281499b1934e39a00":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"ProgressStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"367d3b14932e401fa8a9415a1e707b51":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":"hidden","width":null}},"3a06e53e308543baaca2efd9ecc7933d":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"ProgressStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"4530d0dae791471cac918d1ac059119d":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"460f7ff7e1264626891819585b48db32":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_dbf8cc3277844c45a1fc6c3268586819","placeholder":"​","style":"IPY_MODEL_e39ef4587a434f3494895829727b12fd","value":"  531MB /  531MB, 42.6MB/s  "}},"4818475ca24d4981ac74d16c47ea750b":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"53903d64ebfe4f0ba3e383a68b513405":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_21650b18ac0b4845ad5f583abc00abfd","placeholder":"​","style":"IPY_MODEL_fd80923ab5dd4ae7aa780e0c1e59b168","value":"Using cpu: 100%"}},"636060ef5af54eea983d148c1b286bcb":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":"hidden","width":null}},"64a8f529f72f40e9a62542759b886746":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"67acef8f6f974c93a1fba5e06185a231":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"684f2bce39f3430c964aeaaf8890f090":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_d4c50f8724a84cba941a8dde3faf6c8e","placeholder":"​","style":"IPY_MODEL_21500d5806e14490b73c463e564861c5","value":" 1/1 [01:15&lt;00:00, 75.12s/it]"}},"79abaf137fc24f53b6264fa64406c996":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_07f97aa158d6471fa4fb29d6a2225ee3","placeholder":"​","style":"IPY_MODEL_c949b6ec62864ee49cccf30803ae7fcd","value":"Using cpu: 100%"}},"7f79fc630d134597ad0f94540232d808":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"8b2b3bf51c374ce7a7784fd4bb2f4313":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_030663d874304be4b94ce2dc3f76599a","placeholder":"​","style":"IPY_MODEL_c762b6342c79467f8e5f9d5da45f4988","value":"PM_model_1.5.38_s1s2_water_flair_convnex(…): reconstructing file: 100%"}},"9c15c9e2260b443fb7848da8ee011af9":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"a476aadbd12a4c5b938773d8fa2a6099":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HBoxModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_79abaf137fc24f53b6264fa64406c996","IPY_MODEL_e0ebe08301134c67ad442a52613ea0b7","IPY_MODEL_1a45578291a9493a8b429c2f4f945555"],"layout":"IPY_MODEL_367d3b14932e401fa8a9415a1e707b51"}},"a60dc4dc6b154557b329be4fb2a9ee86":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"FloatProgressModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"success","description":"","description_tooltip":null,"layout":"IPY_MODEL_4530d0dae791471cac918d1ac059119d","max":530504520,"min":0,"orientation":"horizontal","style":"IPY_MODEL_2cb3432f56c2404281499b1934e39a00","value":530504520}},"aed55ed2fd6c4d65b9e6bb10658dd945":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"bc9a3b1012b84f698e0c008a770d2e2a":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"ProgressStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"bdaa85ed333145a69cb789bab21b6cfc":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_64a8f529f72f40e9a62542759b886746","placeholder":"​","style":"IPY_MODEL_67acef8f6f974c93a1fba5e06185a231","value":"PM_model_1.5.38_s1s2_water_flair_convnex(…): downloading bytes: "}},"c0e6cd5c0f6a4f34b1e051c2011be688":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"c762b6342c79467f8e5f9d5da45f4988":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"c949b6ec62864ee49cccf30803ae7fcd":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"c978f816d3e1413c9b5771995a019c6a":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"cd54f156ff7f4d5a824b9f36b77cdbce":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HBoxModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_53903d64ebfe4f0ba3e383a68b513405","IPY_MODEL_f76b4a18120247e2ae573d1f99e2d5aa","IPY_MODEL_684f2bce39f3430c964aeaaf8890f090"],"layout":"IPY_MODEL_636060ef5af54eea983d148c1b286bcb"}},"d001d7800f0e40149adfa68524948772":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"FloatProgressModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"success","description":"","description_tooltip":null,"layout":"IPY_MODEL_c0e6cd5c0f6a4f34b1e051c2011be688","max":530504520,"min":0,"orientation":"horizontal","style":"IPY_MODEL_3a06e53e308543baaca2efd9ecc7933d","value":500568405}},"d4c50f8724a84cba941a8dde3faf6c8e":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"dbf8cc3277844c45a1fc6c3268586819":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"e0ebe08301134c67ad442a52613ea0b7":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"FloatProgressModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"","description":"","description_tooltip":null,"layout":"IPY_MODEL_1210cd863830414da185a6ca7f258bc4","max":1,"min":0,"orientation":"horizontal","style":"IPY_MODEL_bc9a3b1012b84f698e0c008a770d2e2a","value":1}},"e39ef4587a434f3494895829727b12fd":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"ed395c8985424fe282716e03a574603e":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HBoxModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_8b2b3bf51c374ce7a7784fd4bb2f4313","IPY_MODEL_a60dc4dc6b154557b329be4fb2a9ee86","IPY_MODEL_460f7ff7e1264626891819585b48db32"],"layout":"IPY_MODEL_7f79fc630d134597ad0f94540232d808"}},"f76b4a18120247e2ae573d1f99e2d5aa":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"FloatProgressModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"","description":"","description_tooltip":null,"layout":"IPY_MODEL_4818475ca24d4981ac74d16c47ea750b","max":1,"min":0,"orientation":"horizontal","style":"IPY_MODEL_fdb965718d9b4ba6ba900372015fc32a","value":1}},"fd80923ab5dd4ae7aa780e0c1e59b168":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"fdb965718d9b4ba6ba900372015fc32a":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"ProgressStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"ff77b9404a2649fc82d43f3dc9abdcb5":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HBoxModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_bdaa85ed333145a69cb789bab21b6cfc","IPY_MODEL_d001d7800f0e40149adfa68524948772","IPY_MODEL_254c2f371f0d403593cd31ff301bd017"],"layout":"IPY_MODEL_9c15c9e2260b443fb7848da8ee011af9"}}},"version_major":2,"version_minor":0}
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
